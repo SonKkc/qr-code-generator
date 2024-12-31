@@ -1,0 +1,153 @@
+@import "tailwindcss/base.css";
+@import "tailwindcss/components.css";
+@import "tailwindcss/utilities.css";
+[x-cloak] {
+  display: none !important;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  @apply bg-white dark:bg-grayy;
+}
+
+.test {
+  @apply bg-white dark:bg-grayy;
+}
+
+.my_container {
+  @apply max-w-[1200px] mx-auto px-4;
+}
+
+.itemActive {
+  @apply text-white bg-greenn;
+}
+
+.itemInactive {
+  @apply text-greenn bg-white;
+}
+
+.navbar {
+  @apply bg-darkBlack relative h-[98px];
+}
+.navbar .bg-nav {
+  @apply bg-darkBlack fixed top-0 left-0 right-0 z-50;
+}
+.navbar ._container {
+  @apply bg-darkBlack max-w-[1440px] mx-auto px-[49px] flex justify-between items-center;
+}
+.navbar ._container .logo {
+  @apply text-white text-[32px] font-bold;
+}
+.navbar ._container .nav {
+  @apply flex items-center sm:hidden;
+}
+.navbar ._container .nav .-list {
+  @apply flex items-center;
+}
+.navbar ._container .nav .-list li {
+  @apply py-[35px] px-[15px] text-lg font-semibold text-white flex items-center gap-[5px] hover:cursor-pointer;
+}
+.navbar ._container .nav .-list li svg {
+  @apply w-5 h-5 text-white font-semibold;
+}
+.navbar ._container .nav .-list li:hover {
+  @apply cursor-pointer;
+}
+.navbar ._container .nav .-list li:hover a {
+  @apply text-greenn;
+}
+.navbar ._container .nav .-list li:hover svg {
+  @apply text-greenn transition-all duration-300;
+}
+.navbar ._container .nav .user {
+  @apply flex items-center gap-[15px] ps-[15px];
+}
+.navbar ._container .nav .user ._login {
+  @apply text-white text-lg font-semibold underline underline-offset-[3px];
+}
+.navbar ._container .nav .user ._signUp {
+  @apply rounded-full text-lg font-semibold text-black bg-white px-3 py-1;
+}
+.navbar .nav_dropdown {
+  @apply absolute top-[100%] left-0 right-0 w-full rounded-[10px];
+}
+.navbar .nav_dropdown .-list {
+  @apply flex flex-row-reverse;
+}
+.navbar .nav_dropdown .-list a {
+  @apply text-white bg-darkBlack py-[30px] px-[20px] w-[250px] flex flex-col gap-[30px];
+}
+.navbar .nav_dropdown .-list a p {
+  @apply text-base font-medium uppercase;
+}
+.navbar .nav_dropdown .-list a span {
+  @apply text-sm pb-[20px];
+}
+.navbar .nav_dropdown .-list a:hover p {
+  @apply text-greenn;
+}
+.navbar .nav_dropdown .-list a:hover span {
+  @apply text-greenn;
+}
+
+.hero {
+  @apply bg-white dark:bg-grayy;
+}
+.hero ._grid {
+  @apply grid grid-cols-2 grid-flow-col py-[170px];
+}
+.hero ._grid .-left {
+  @apply flex flex-col gap-[45px];
+}
+.hero ._grid .-left ._container {
+  @apply flex flex-col gap-[15px] justify-center;
+}
+.hero ._grid .-left ._container h2 {
+  @apply text-[64px] leading-none font-bold dark:text-white;
+}
+.hero ._grid .-left ._container span {
+  @apply text-[18px] font-semibold text-grayy dark:text-white;
+}
+.hero ._grid .-left ._container p {
+  @apply text-[24px] font-medium text-grayy dark:text-white;
+}
+.hero ._grid .-left button {
+  @apply w-fit bg-white text-greenn border border-greenn text-sm font-semibold px-[20px] py-[12px] rounded-full hover:bg-[#2d9d8f] hover:text-white transition-all duration-300;
+}
+
+.QrForm {
+  @apply dark:bg-grayy;
+}
+.QrForm ._container {
+  @apply flex flex-col gap-[30px];
+}
+.QrForm ._container ._selection {
+  @apply border border-grayy rounded-lg dark:border-white flex;
+}
+.QrForm ._container ._selection .over-flow {
+  @apply flex overflow-x-auto relative mx-[15px];
+}
+.QrForm ._container ._selection .over-flow .-list {
+  @apply relative flex flex-nowrap gap-[10px] py-[15px] dark:bg-grayy;
+}
+.QrForm ._container ._selection .over-flow .-list .sl_list-item {
+  @apply font-semibold border border-greenn rounded-lg w-[82px] h-[82px] flex justify-center items-center;
+}
+.QrForm ._container ._selection .over-flow::-webkit-scrollbar {
+  display: none;
+}
+.QrForm ._container ._selection .arrow-start {
+  @apply flex items-center justify-center w-[50px] font-semibold cursor-pointer ps-[10px];
+}
+.QrForm ._container ._selection .arrow-start svg {
+  @apply text-black dark:text-white;
+}
+.QrForm ._container ._selection .arrow-end {
+  @apply flex items-center justify-center w-[50px] font-semibold cursor-pointer pe-[10px];
+}
+.QrForm ._container ._selection .arrow-end svg {
+  @apply text-black dark:text-white;
+}/*# sourceMappingURL=style.css.map */

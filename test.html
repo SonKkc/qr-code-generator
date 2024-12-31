@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Sidebar with Drag Scrolling</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Optional custom scrollbar styles */
+    #list-container::-webkit-scrollbar {
+      width: 8px;
+    }
+    #list-container::-webkit-scrollbar-thumb {
+      background-color: #9ca3af; /* Gray-400 */
+      border-radius: 4px;
+    }
+    #list-container::-webkit-scrollbar-track {
+      background-color: #f3f4f6; /* Gray-100 */
+    }
+  </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center h-screen">
+
+  <!-- Wrapper with max width -->
+  <div class="w-full max-w-screen-xl mx-auto flex flex-col h-full">
+
+    <!-- Sidebar at the top -->
+    <div id="sidebar" class="w-full bg-white shadow-lg flex justify-between items-center py-4 px-6 space-x-4">
+      <!-- Scroll Up Button -->
+      <button id="up" class="p-3 bg-gray-300 rounded-full shadow-md">⬆</button>
+
+      <!-- Scrollable List -->
+      <div id="list-container" class="overflow-hidden w-full h-16 relative overflow-x-auto scroll-smooth flex space-x-4 items-center">
+        <div id="list" class="flex space-x-4">
+          <button class="item bg-gray-200 w-32 h-12 flex justify-center items-center rounded-lg shadow-md">Item 1</button>
+          <button class="item bg-gray-200 w-32 h-12 flex justify-center items-center rounded-lg shadow-md">Item 2</button>
+          <button class="item bg-gray-200 w-32 h-12 flex justify-center items-center rounded-lg shadow-md">Item 3</button>
+          <button class="item bg-gray-200 w-32 h-12 flex justify-center items-center rounded-lg shadow-md">Item 4</button>
+          <button class="item bg-gray-200 w-32 h-12 flex justify-center items-center rounded-lg shadow-md">Item 5</button>
+          <button class="item bg-gray-200 w-32 h-12 flex justify-center items-center rounded-lg shadow-md">Item 6</button>
+          <button class="item bg-gray-200 w-32 h-12 flex justify-center items-center rounded-lg shadow-md">Item 7</button>
+          <button class="item bg-gray-200 w-32 h-12 flex justify-center items-center rounded-lg shadow-md">Item 8</button>
+          <button class="item bg-gray-200 w-32 h-12 flex justify-center items-center rounded-lg shadow-md">Item 8</button>
+        </div>
+      </div>
+
+      <!-- Scroll Down Button -->
+      <button id="down" class="p-3 bg-gray-300 rounded-full shadow-md">⬇</button>
+    </div>
+
+    <!-- Content -->
+    <div id="content" class="w-full bg-gray-50 p-8 flex flex-col items-center text-gray-700 overflow-y-auto">
+      <!-- Forms -->
+      <div id="content-1" class="content-box hidden">
+        <h2 class="text-2xl font-bold mb-4">Form 1</h2>
+        <form>
+          <label class="block mb-2">Name:</label>
+          <input type="text" class="w-full p-2 border rounded-lg mb-4">
+          <label class="block mb-2">Email:</label>
+          <input type="email" class="w-full p-2 border rounded-lg mb-4">
+          <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Submit</button>
+        </form>
+      </div>
+      <div id="content-2" class="content-box hidden">
+        <h2 class="text-2xl font-bold mb-4">Form 2</h2>
+        <form>
+          <label class="block mb-2">Address:</label>
+          <input type="text" class="w-full p-2 border rounded-lg mb-4">
+          <label class="block mb-2">Phone:</label>
+          <input type="tel" class="w-full p-2 border rounded-lg mb-4">
+          <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Initialization
+    const listContainer = document.getElementById('list-container');
+    const items = document.querySelectorAll('.item');
+    const contents = document.querySelectorAll('.content-box');
+    const upButton = document.getElementById('up');
+    const downButton = document.getElementById('down');
+    const itemWidth = 128; // Approx width of each item including margin
+    const containerWidth = listContainer.offsetWidth;
+    let isDragging = false;
+    let startX = 0;
+    let scrollStart = 0;
+  
+    // Scroll Left
+    upButton.addEventListener('click', () => {
+      listContainer.scrollLeft -= itemWidth;
+      toggleArrowVisibility();
+    });
+  
+    // Scroll Right
+    downButton.addEventListener('click', () => {
+      listContainer.scrollLeft += itemWidth;
+      toggleArrowVisibility();
+    });
+  
+    // Drag gestures
+    listContainer.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      startX = e.pageX - listContainer.offsetLeft;
+      scrollStart = listContainer.scrollLeft;
+      listContainer.classList.add('cursor-grabbing');
+    });
+  
+    listContainer.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      const x = e.pageX - listContainer.offsetLeft;
+      const walk = x - startX;
+      listContainer.scrollLeft = scrollStart - walk;
+      toggleArrowVisibility();
+    });
+  
+    listContainer.addEventListener('mouseup', () => {
+      isDragging = false;
+      listContainer.classList.remove('cursor-grabbing');
+    });
+  
+    listContainer.addEventListener('mouseleave', () => {
+      isDragging = false;
+      listContainer.classList.remove('cursor-grabbing');
+    });
+  
+    listContainer.addEventListener('scroll', () => {
+      toggleArrowVisibility();
+    });
+  
+    // Add click event to items
+    items.forEach((item, index) => {
+      item.addEventListener('click', () => setActiveItem(index));
+    });
+  
+    // Set Active Item
+    function setActiveItem(index) {
+      items.forEach((item, idx) => {
+        if (idx === index) {
+          item.classList.add('bg-blue-500', 'text-white');
+          item.classList.remove('bg-gray-200');
+        } else {
+          item.classList.remove('bg-blue-500', 'text-white');
+          item.classList.add('bg-gray-200');
+        }
+      });
+  
+      // Update content display
+      contents.forEach((content, idx) => {
+        content.classList.toggle('hidden', idx !== index);
+      });
+    }
+  
+    // Check arrow visibility
+    function toggleArrowVisibility() {
+      const scrollLeft = listContainer.scrollLeft;
+      const scrollWidth = listContainer.scrollWidth;
+      const visibleWidth = listContainer.offsetWidth;
+  
+      upButton.classList.toggle('hidden', scrollLeft <= 0);
+      downButton.classList.toggle('hidden', scrollLeft + visibleWidth >= scrollWidth);
+    }
+  
+    // Set default active item (Item 1)
+    window.addEventListener('DOMContentLoaded', () => {
+      setActiveItem(0); // Open Item 1 and its content
+      toggleArrowVisibility(); // Check arrow visibility initially
+    });
+  </script>
+  
+  
+</body>
+</html>

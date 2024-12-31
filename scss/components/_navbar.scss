@@ -1,0 +1,84 @@
+.navbar{
+    @apply bg-darkBlack relative h-[98px];
+
+    .bg-nav{
+        @apply bg-darkBlack fixed top-0 left-0 right-0 z-50;
+    }
+
+    ._container{
+        @apply bg-darkBlack max-w-[1440px] mx-auto px-[49px] flex justify-between items-center ; 
+
+        .logo{
+            @apply text-white text-[32px] font-bold;
+        }
+
+        .nav{
+            @apply flex items-center sm:hidden;
+            .-list{
+                @apply flex items-center;
+
+                li{
+                    @apply py-[35px] px-[15px] text-lg font-semibold text-white flex items-center gap-[5px] hover:cursor-pointer;
+
+                    svg{
+                        @apply w-5 h-5 text-white font-semibold;
+                    }
+                }
+
+                li:hover{
+                    @apply cursor-pointer;
+
+                    a{
+                        @apply text-greenn;
+                    }
+
+                    svg{
+                        @apply text-greenn transition-all duration-300;
+                    }
+                }
+            }
+
+            .user{
+                @apply flex items-center gap-[15px] ps-[15px];
+                ._login{
+                    @apply text-white text-lg font-semibold underline underline-offset-[3px];
+                }
+
+                ._signUp{
+                    @apply rounded-full text-lg font-semibold text-black bg-white px-3 py-1;
+                }
+            }
+        }
+
+    }
+    .nav_dropdown{
+        @apply absolute top-[100%] left-0 right-0 w-full rounded-[10px];
+
+        .-list{
+            @apply flex flex-row-reverse;
+
+            a{
+                @apply text-white bg-darkBlack py-[30px] px-[20px] w-[250px] flex flex-col gap-[30px];
+
+                p{
+                    @apply text-base font-medium uppercase;
+                }
+
+                span{
+                    @apply text-sm pb-[20px];
+                }
+            }
+
+            a:hover{
+                p{
+                    @apply text-greenn;
+                }
+
+                span{
+                    @apply text-greenn;
+                }
+            }
+        }
+    }
+
+}

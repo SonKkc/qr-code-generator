@@ -1,1 +1,1 @@
-# morden-essence-theme
+# qr-code-generator

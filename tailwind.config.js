@@ -21,6 +21,12 @@ export default {
     },
     extend: {
       colors: {
+        'black': '#000000',
+        'white': '#FFFFFF',
+        'grayy': '#191C20',
+        'darkBlack': '#121519',
+        'greenn': '#448C74',
+        'darkGreen': '#428871',
         'primary': '#333B7C',
         'secondary': '#EF8041',
         'tertiary': '#333B7C',
@@ -31,5 +37,6 @@ export default {
     },
   },
   plugins: [],
+  darkMode: 'class',
 }
 

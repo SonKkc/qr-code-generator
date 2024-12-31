@@ -8,14 +8,269 @@
     <link rel="stylesheet" type="text/css" href="scss/style.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 
-<body>
-    <div class="my_container">
+<body class="">
+    <header class="navbar" x-data="{dropDown: false}">
+        <div class="bg-nav">
+            <div class="_container">
+                <!-- logo -->  
+                <div class="logo">
+                    <span class="dark:text-white text-black">Logo</span>
+                </div>
+    
+                <!-- nav -->
+                <nav class="nav">
+                    <ul class="-list">
+                        <li @mouseenter="dropDown = true" @mouseleave="dropDown = false" @click="dropDown =! dropDown">
+                            <a href="#" class="">Product</a><svg :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m19 9-7 7-7-7"/></svg>
+                        </li>
+                        <li><a href="#" class="">Resources</a><svg class="" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m19 9-7 7-7-7"/></svg></li>
+                        <li><a href="#" class="">Support</a><svg class="" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m19 9-7 7-7-7"/></svg></li>
+                        <li><a href="#" class="">About us</a><svg class="" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m19 9-7 7-7-7"/></svg></li>
+                        <li><a href="#" class="">Blog</a></li>
+                    </ul>
+        
+                    <!-- user -->
+                    <div class="user">
+                        <button class="_login">Login</button>
+                        <button class="_signUp">Sign Up</button>
+                    </div>  
+                </nav>
+            </div>
+        </div>
+        <!-- dropdown -->
+        <div x-cloak x-show="dropDown" 
+            @mouseenter="dropDown = true" @mouseleave="dropDown = false"
+            x-transition:enter="transition ease-in-out duration-300"
+            x-transition:enter-start="-translate-y-full transform"
+            x-transition:enter-end="translate-y-0 transform"
+            x-transition:leave="transition ease-in-out duration-300"
+            x-transition:leave-start="translate-y-0 transform"
+            x-transition:leave-end="-translate-y-full transform"
+         class="nav_dropdown">
+            <div class="flex flex-row-reverse -list">
+                <a href="#" class="">
+                    <p class="">Pages</p>
+                    <span class="">Mobile-friendly, no-code landing pages</span>
+                </a>
+                <a href="#" class="">
+                    <p class="">QR code solutions</p>
+                    <span class="">New here? Get started with the basics</span>
+                </a>
+                <a href="#" class="">
+                    <p class="">Pricing</p>
+                    <span class="">Select a plan for any budget</span>
+                </a>
+                <a href="#" class="">
+                    <p class="">Api</p>
+                    <span class="">Intergrate QR Code creation in your system</span>
+                </a>
+                <a href="#" class="">
+                    <p class="">Guides</p>
+                    <span class="">Take advantage of everything we have to offer</span>
+                </a>
+            </div>
+        </div>
+    </header>
 
-        <h1>Hello World</h1>
+    <div class="hero">
+        <div class="my_container">
+            <div class="_grid">
+                <div class="-left">
+                    <div class="_container">
+                        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h2>
+                        <span class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque incidunt, aspernatur eum vitae reprehenderit molestias dicta, libero doloribus exercitationem dolores obcaecati laudantium maxime pariatur, tempore voluptatem consequatur molestiae fugit. Dolores.</span>
+                        <p class="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla neque eum vel quidem facilis consequatur voluptate ab officiis. Dolorem exercitationem aliquam assumenda nulla cum veniam iusto. Incidunt beatae vitae tenetur.</p>
+                    </div>
+                    <button>
+                        button
+                    </button>
+                </div>
+    
+                <div class="flex flex-row-reverse">
+                    <div class="w-[434px] h-[428px] bg-red-500"></div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <div class="QrForm">
+        <div class="my_container">
+            <div class="_container">
+                <!-- selection -->
+                <div class="_selection">
+                    <div class="arrow-start"><svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/></svg></div>
+                    <div id="selection_list" class="over-flow">
+                        <div id="list" class="-list">
+                            <button class="sl_list-item itemInactive"> item1</button>
+                            <button class="sl_list-item itemInactive"> item2</button>
+                            <button class="sl_list-item itemInactive"> item3</button>
+                            <button class="sl_list-item itemInactive"> item4</button>
+                            <button class="sl_list-item itemInactive"> item5</button>
+                            <button class="sl_list-item itemInactive"> item6</button>
+                            <button class="sl_list-item itemInactive"> item7</button>
+                            <button class="sl_list-item itemInactive"> item8</button>
+                            <button class="sl_list-item itemInactive"> item9</button>
+                            <button class="sl_list-item itemInactive"> item10</button>
+                            <button class="sl_list-item itemInactive"> item11</button>
+                            <button class="sl_list-item itemInactive"> item12</button>
+                            <button class="sl_list-item itemInactive"> item13</button>
+                            <button class="sl_list-item itemInactive"> item14</button>
+                            <button class="sl_list-item itemInactive"> item15</button>
+                            <button class="sl_list-item itemInactive"> item16</button>
+                        </div>
+                    </div>
+                    <div class="arrow-end"><svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/></svg></div>
+                </div>
+
+                <!-- content -->
+                <div class="_smt p-[15px] border border-grayy bg-gray-500">
+                    <div class="content-box hidden" id="content-1">
+                        <div class="_container flex flex-col gap-[10px]">
+                            <div class="-title text-2xl font-bold">Title</div>
+                            <span class="-des text-xl font-semibold">Description</span>
+                            <div class="-input bg-red-500 w-full py-[10px] px-[15px]">
+                                <input type="text" class="w-full bg-transparent border-0 outline-one forced-color-adjust-none" style="box-shadow: none" placeholder="Input">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-box hidden" id="content-2">
+                        <div class="_container flex flex-col gap-[10px]">
+                            <div class="-title text-2xl font-bold">Title 2</div>
+                            <span class="-des text-xl font-semibold">Description 2</span>
+                            <div class="-input bg-red-500 w-full py-[10px] px-[15px]">
+                                <input type="text" class="w-full bg-transparent border-0 outline-one forced-color-adjust-none" style="box-shadow: none" placeholder="Input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- main form-->
+                <div class="_mainForm flex gap-[30px]">
+                    <div class="_selection p-[15px] border border-grayy">
+
+                        <div class=" -list flex flex-col gap-[15px]">
+                            <div class="bg-red-500 h-[82px] w-[82px] border border-grayy">Item 1</div>
+                            <div class="bg-red-500 h-[82px] w-[82px] border border-grayy">Item 2</div>
+                            <div class="bg-red-500 h-[82px] w-[82px] border border-grayy">item 3</div>
+                            <div class="bg-red-500 h-[82px] w-[82px] border border-grayy">Item 4</div>
+                            <div class="bg-red-500 h-[82px] w-[82px] border border-grayy">Item 5</div>
+                        </div>
+                    </div>
+
+                    <div class=""></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="test h-screen"></div>
+
+    <script>
+        //intit
+        const listContainer = document.getElementById('selection_list');
+        const items = document.querySelectorAll('.sl_list-item');
+        const contents = document.querySelectorAll('.content-box');
+        const arrowStart = document.querySelector('.arrow-start');
+        const arrowEnd = document.querySelector('.arrow-end');
+        const itemWidth = items[0].offsetWidth;
+        const containerWidth = listContainer.offsetWidth;
+        let isDragging = false;
+        let startX = 0;
+        let scrollStart = 0;
+        
+        //scroll left
+        arrowStart.addEventListener('click', () =>{
+            listContainer.scrollLeft -= itemWidth;
+            toggleArrowVisibility();
+        })
+
+        //scroll right
+        arrowEnd.addEventListener('click', () =>{
+            listContainer.scrollLeft += itemWidth;
+            toggleArrowVisibility();
+        })
+
+        //Drag gestures
+        listContainer.addEventListener('mousedown', (e) =>{
+            isDragging = true;
+            startX = e.pageX - listContainer.offsetLeft;
+            scrollStart = listContainer.scrollLeft;
+            listContainer.style.cursor = 'grabbing';
+        })
+
+        listContainer.addEventListener('mousemove', (e) =>{
+            if(!isDragging) return;
+            const x = e.pageX - listContainer.offsetLeft;
+            const scroll = x - startX;
+            listContainer.scrollLeft = scrollStart - scroll;
+            toggleArrowVisibility();
+        })
+
+        listContainer.addEventListener('mouseup', () =>{
+            isDragging = false;
+            listContainer.style.cursor = 'grab';
+        })
+
+        listContainer.addEventListener('mouseleave', () =>{
+            isDragging = false;
+            listContainer.style.cursor = 'grab';
+        })
+
+        listContainer.addEventListener('scroll', () =>{
+            toggleArrowVisibility();
+        })
+
+        //item click event
+        items.forEach((item, index) => {
+            item.addEventListener('click', () => setActiveItem(index));
+        })
+
+        listContainer.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            listContainer.scrollLeft += e.deltaY * 0.5;
+            toggleArrowVisibility()
+          });
+
+        function setActiveItem(index){
+            items.forEach((item, idx) => {
+                if(idx === index){
+                    item.classList.add('itemActive');
+                    item.classList.remove('itemInactive')
+                }else{
+                    item.classList.add('itemInactive');
+                    item.classList.remove('itemActive');
+                }
+            })
+
+            // Update content display
+            contents.forEach((content, idx) => {
+                content.classList.toggle('hidden', idx !== index);
+            });
+        }
+
+        const clientWidth = listContainer.clientWidth;
+        console.log(clientWidth);
+
+        function toggleArrowVisibility(){
+            const scrollLeft = listContainer.scrollLeft;
+            const scrollWidth = listContainer.scrollWidth;
+            const clientWidth = listContainer.clientWidth;
+
+            arrowStart.style.display = scrollLeft <= 0 ? 'none' : 'flex';
+            arrowEnd.style.display = scrollLeft + clientWidth >= scrollWidth ? 'none' : 'flex';
+        }
+
+        window.addEventListener('DOMContentLoaded', () =>{
+            setActiveItem(0);
+            toggleArrowVisibility();
+        })
+
+    </script>
 </body>
 
 </html>
