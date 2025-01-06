@@ -21,6 +21,10 @@ body {
   @apply max-w-[1200px] mx-auto px-4;
 }
 
+.card_container {
+  @apply max-w-[1400px] mx-auto px-4 grid grid-cols-3 gap-[20px];
+}
+
 .itemActive {
   @apply text-white bg-greenn;
 }
@@ -93,6 +97,13 @@ body {
   @apply text-greenn;
 }
 
+.breadcrumb_container {
+  @apply inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse mt-4;
+}
+.breadcrumb_container li {
+  @apply text-[14px] text-white font-medium last:text-greenn hover:text-greenn;
+}
+
 .hero {
   @apply bg-white dark:bg-grayy;
 }
@@ -150,4 +161,125 @@ body {
 }
 .QrForm ._container ._selection .arrow-end svg {
   @apply text-black dark:text-white;
+}
+
+.slt_page .solutions_container {
+  @apply bg-grayy w-full;
+}
+.slt_page .hero_container {
+  @apply grid grid-cols-2 md:grid-cols-2 gap-24 pt-[170px] pb-[150px];
+}
+.slt_page .hero_container h4 {
+  @apply text-white text-3xl font-semibold;
+}
+.slt_page .hero_container h3 {
+  @apply text-white text-4xl font-bold;
+}
+.slt_page .hero_container p {
+  @apply text-white text-lg font-semibold;
+}
+.slt_page .hero_text {
+  @apply flex flex-col flex-1 justify-center gap-8;
+}
+.slt_page .hero_img {
+  @apply max-w-[550px] max-h-[414px] object-cover shrink-0;
+}
+.slt_page .solutions_article {
+  @apply py-[60px];
+}
+.slt_page .solutions_article div h2 {
+  @apply text-5xl font-bold text-center;
+}
+.slt_page .solutions_article div p {
+  @apply text-lg font-semibold text-start;
+}
+.slt_page .solutions_article div ul {
+  @apply text-lg font-semibold flex flex-col gap-4 list-disc;
+}
+.slt_page .solutions_article-wrapper {
+  @apply space-y-[30px];
+}
+.slt_page .solutions_article .card_item {
+  @apply bg-article_card space-y-2 p-5 rounded-xl;
+}
+.slt_page .solutions_article .card_item button {
+  @apply flex gap-[10px] items-center bg-article_card border-2 border-greenn text-white text-base uppercase font-medium px-[15px] py-[10px] rounded-3xl hover:bg-greenn hover:text-white;
+}
+.slt_page .solutions_article .card_item p {
+  @apply text-white text-base font-medium text-start line-clamp-5;
+}
+.slt_page .card_icon {
+  @apply w-[24px] h-[24px];
+}
+.slt_page .benefit_container {
+  @apply px-[120px] py-[100px] bg-benefits_background rounded-t-xl;
+}
+.slt_page .benefit_container h3 {
+  @apply text-4xl text-white font-bold text-center;
+}
+.slt_page .benefit_items {
+  @apply mt-[90px] grid grid-cols-3 gap-[70px];
+}
+.slt_page .benefit_item img {
+  @apply object-cover shrink-0 mb-[30px];
+}
+.slt_page .benefit_item h5 {
+  @apply text-2xl text-greenn font-bold mb-[15px];
+}
+.slt_page .benefit_item p {
+  @apply text-[22px] text-white font-medium;
+}
+.slt_page .example_container {
+  @apply flex max-w-[1300px] mx-auto gap-10 mt-[90px];
+}
+.slt_page .example_image img {
+  @apply w-full h-full object-cover shrink-0;
+}
+.slt_page .example_text-container {
+  @apply flex flex-col justify-center flex-1 text-white;
+}
+.slt_page .example_text-container ul {
+  @apply list-disc mt-5 px-4;
+}
+.slt_page .example_text-container ul li {
+  @apply text-base font-semibold;
+}
+.slt_page .example_text {
+  @apply border-b;
+}
+.slt_page .example_text h3 {
+  @apply text-4xl font-bold mb-5;
+}
+.slt_page .example_text h6 {
+  @apply text-xl font-semibold mb-5;
+}
+.slt_page .about_container {
+  @apply flex max-w-[1300px] items-center mx-auto text-white gap-[116px] pt-[90px] pb-[150px];
+}
+.slt_page .about_text {
+  @apply max-w-3xl w-full flex-1;
+}
+.slt_page .about_text div {
+  @apply py-[15px] first:pt-0 last:pb-0;
+}
+.slt_page .about_text h3 {
+  @apply text-4xl font-bold mb-10;
+}
+.slt_page .accordion_container {
+  @apply w-full mx-auto;
+}
+.slt_page .accordion_button {
+  @apply w-full text-left flex justify-between items-center;
+}
+.slt_page .accordion_title {
+  @apply text-lg font-semibold text-white;
+}
+.slt_page .accordion_icon {
+  @apply h-6 w-6 transition-transform duration-300;
+}
+.slt_page .accordion_content {
+  @apply text-white text-base font-[150];
+}
+.slt_page .accordion_image {
+  @apply flex justify-self-end;
 }/*# sourceMappingURL=style.css.map */
