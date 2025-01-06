@@ -1,174 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic Sidebar with Drag Scrolling</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Optional custom scrollbar styles */
-    #list-container::-webkit-scrollbar {
-      width: 8px;
-    }
-    #list-container::-webkit-scrollbar-thumb {
-      background-color: #9ca3af; /* Gray-400 */
-      border-radius: 4px;
-    }
-    #list-container::-webkit-scrollbar-track {
-      background-color: #f3f4f6; /* Gray-100 */
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Tutorial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            background: #D1D5DB;
+            transition: all 0.3s ease;
+        }
+        
+        .swiper-pagination-bullet-active {
+            width: 32px;
+            border-radius: 4px;
+            background: #111827;
+        }
+
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: #111827;
+            transition: width 0.3s ease;
+        }
+
+        .folder-top {
+            clip-path: polygon(0 0, 20% 0, 25% 40%, 100% 40%, 100% 100%, 0% 100%);
+          }
+      
+    </style>
 </head>
-<body class="bg-gray-100 flex flex-col items-center h-screen">
-
-  <!-- Wrapper with max width -->
-  <div class="w-full max-w-screen-xl mx-auto flex flex-col h-full">
-
-    <!-- Sidebar at the top -->
-    <div id="sidebar" class="w-full bg-white shadow-lg flex justify-between items-center py-4 px-6 space-x-4">
-      <!-- Scroll Up Button -->
-      <button id="up" class="p-3 bg-gray-300 rounded-full shadow-md">⬆</button>
-
-      <!-- Scrollable List -->
-      <div id="list-container" class="overflow-hidden w-full h-16 relative overflow-x-auto scroll-smooth flex space-x-4 items-center">
-        <div id="list" class="flex space-x-4">
-          <button class="item bg-gray-200 w-32 h-12 flex justify-center items-center rounded-lg shadow-md">Item 1</button>
-          <button class="item bg-gray-200 w-32 h-12 flex justify-center items-center rounded-lg shadow-md">Item 2</button>
-          <button class="item bg-gray-200 w-32 h-12 flex justify-center items-center rounded-lg shadow-md">Item 3</button>
-          <button class="item bg-gray-200 w-32 h-12 flex justify-center items-center rounded-lg shadow-md">Item 4</button>
-          <button class="item bg-gray-200 w-32 h-12 flex justify-center items-center rounded-lg shadow-md">Item 5</button>
-          <button class="item bg-gray-200 w-32 h-12 flex justify-center items-center rounded-lg shadow-md">Item 6</button>
-          <button class="item bg-gray-200 w-32 h-12 flex justify-center items-center rounded-lg shadow-md">Item 7</button>
-          <button class="item bg-gray-200 w-32 h-12 flex justify-center items-center rounded-lg shadow-md">Item 8</button>
-          <button class="item bg-gray-200 w-32 h-12 flex justify-center items-center rounded-lg shadow-md">Item 8</button>
+<body class="">
+    <div class="bg-gray-100 flex items-center justify-center min-h-screen">
+        <!-- Folder Container -->
+        <div class="max-w-sm shadow-lg rounded-lg overflow-hidden">
+          <!-- Folder Top (Tab Section) -->
+          <svg
+            class="w-full"
+            viewBox="0 0 400 150"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0 0 H80 Q100 0, 100 20 H400 V150 H0 Z"
+              fill="#e5e7eb" 
+            />
+          </svg>
+          <!-- Folder Bottom (Content Section) -->
+          <div class="p-6 bg-white">
+            <p class="text-gray-700 text-sm leading-relaxed mb-4">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+            </p>
+            <a href="#" class="text-blue-500 text-sm font-medium flex items-center">
+              Explore More
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
-
-      <!-- Scroll Down Button -->
-      <button id="down" class="p-3 bg-gray-300 rounded-full shadow-md">⬇</button>
-    </div>
-
-    <!-- Content -->
-    <div id="content" class="w-full bg-gray-50 p-8 flex flex-col items-center text-gray-700 overflow-y-auto">
-      <!-- Forms -->
-      <div id="content-1" class="content-box hidden">
-        <h2 class="text-2xl font-bold mb-4">Form 1</h2>
-        <form>
-          <label class="block mb-2">Name:</label>
-          <input type="text" class="w-full p-2 border rounded-lg mb-4">
-          <label class="block mb-2">Email:</label>
-          <input type="email" class="w-full p-2 border rounded-lg mb-4">
-          <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Submit</button>
-        </form>
+    <div class="bg-gray-100 flex items-center justify-center min-h-screen">
+        <!-- Folder Container -->
+        <div class="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden">
+          <!-- Folder Top (Tab Section) -->
+          <div class="folder-top bg-gray-200 p-4">
+            <p class="text-sm font-medium text-gray-700 uppercase">Text</p>
+          </div>
+          <!-- Folder Bottom (Content Section) -->
+          <div class="p-6 bg-white">
+            <p class="text-gray-700 text-sm leading-relaxed mb-4">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+            </p>
+            <a href="#" class="text-blue-500 text-sm font-medium flex items-center">
+              Explore More
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
-      <div id="content-2" class="content-box hidden">
-        <h2 class="text-2xl font-bold mb-4">Form 2</h2>
-        <form>
-          <label class="block mb-2">Address:</label>
-          <input type="text" class="w-full p-2 border rounded-lg mb-4">
-          <label class="block mb-2">Phone:</label>
-          <input type="tel" class="w-full p-2 border rounded-lg mb-4">
-          <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Submit</button>
-        </form>
+    <div class="min-h-screen bg-[#14161A] text-white p-8">
+        <!-- Header Section -->
+        <div class="max-w-7xl mx-auto relative">
+          <div class="mb-12">
+            <h1 class="text-5xl font-bold mb-6">What type of QR codes can I create for free?</h1>
+            <p class="text-lg max-w-4xl">
+              We offer these Static QR Codes that are completely for free and will never expire. Once generated, it's yours forever but you will not be able to edit the content or track its scans.
+            </p>
+          </div>
+      
+          <!-- Cards Container -->
+          <div class="flex gap-6 mb-8">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-3xl p-8 text-black flex-1">
+              <div class="flex items-center gap-2 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                </svg>
+                <span class="text-xl font-semibold">Text</span>
+              </div>
+              <p class="mb-6 text-gray-700">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+              </p>
+              <a href="#" class="inline-flex items-center text-black font-medium">
+                Explore More
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+      
+            <!-- Card 2 -->
+            <div class="bg-white rounded-3xl p-8 text-black flex-1">
+              <div class="flex items-center gap-2 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                </svg>
+                <span class="text-xl font-semibold">Text</span>
+              </div>
+              <p class="mb-6 text-gray-700">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+              </p>
+              <a href="#" class="inline-flex items-center text-black font-medium">
+                Explore More
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+      
+            <!-- Card 3 -->
+            <div class="bg-white rounded-3xl p-8 text-black flex-1">
+              <div class="flex items-center gap-2 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                </svg>
+                <span class="text-xl font-semibold">Text</span>
+              </div>
+              <p class="mb-6 text-gray-700">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+              </p>
+              <a href="#" class="inline-flex items-center text-black font-medium">
+                Explore More
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+      
+          <!-- Navigation Dots -->
+          <div class="flex justify-center gap-2">
+            <button class="w-2 h-2 rounded-full bg-white"></button>
+            <button class="w-2 h-2 rounded-full bg-gray-600"></button>
+            <button class="w-2 h-2 rounded-full bg-gray-600"></button>
+            <button class="w-2 h-2 rounded-full bg-gray-600"></button>
+            <button class="w-2 h-2 rounded-full bg-gray-600"></button>
+          </div>
+      
+          <!-- Navigation Arrows -->
+          <div class="absolute right-0 top-0 flex gap-2">
+            <button class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
+    <div class="min-h-screen bg-white">
+        <div class="swiper w-full h-full">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="grid md:grid-cols-2 gap-8 p-8">
+                        <div class="bg-gray-900 aspect-square flex items-center justify-center rounded-lg">
+                            <svg viewBox="0 0 24 24" class="w-16 h-16 text-white">
+                                <path fill="currentColor" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <div class="flex flex-col justify-center space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center text-xl font-bold">1</div>
+                                <h2 class="text-2xl font-bold">Choose the Type of QR Code</h2>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed">
+                                Select the type of QR code you want to create, such as URL, vCard (contact details), Plain Text, Email, SMS, Twitter, Wi-Fi, or even Bitcoin. These basic QR codes are free, but they are not editable or trackable.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="grid md:grid-cols-2 gap-8 p-8">
+                        <div class="bg-gray-900 aspect-square flex items-center justify-center rounded-lg">
+                            <svg viewBox="0 0 24 24" class="w-16 h-16 text-white">
+                                <path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"></path>
+                            </svg>
+                        </div>
+                        <div class="flex flex-col justify-center space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center text-xl font-bold">2</div>
+                                <h2 class="text-2xl font-bold">Enter Your Content</h2>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed">
+                                Input the content you want to encode in your QR code. This could be a website URL, contact information, or any other supported data type.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="grid md:grid-cols-2 gap-8 p-8">
+                        <div class="bg-gray-900 aspect-square flex items-center justify-center rounded-lg">
+                            <svg viewBox="0 0 24 24" class="w-16 h-16 text-white">
+                                <path fill="currentColor" d="M7 3h2v2H7V3zm12 6h2v2h-2V9zM3 19h2v2H3v-2zm14-8h2v2h-2v-2zM7 15h2v2H7v-2zm12 2h2v2h-2v-2zM3 7h2v2H3V7zm14 8h2v2h-2v-2zM7 7h2v2H7V7z"></path>
+                            </svg>
+                        </div>
+                        <div class="flex flex-col justify-center space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center text-xl font-bold">3</div>
+                                <h2 class="text-2xl font-bold">Generate QR Code</h2>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed">
+                                Click the generate button to create your QR code. You can then download it in various formats or share it directly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Progress bar container -->
+            <div class="w-full h-1 bg-gray-200 relative mt-8">
+                <div class="progress-bar" style="width: 33.33%"></div>
+            </div>
+    
+            <!-- Custom pagination -->
+            <div class="swiper-pagination mt-4"></div>
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script>
+            const swiper = new Swiper('.swiper', {
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                on: {
+                    slideChange: function () {
+                        // Update progress bar
+                        const progress = ((this.activeIndex + 1) / this.slides.length) * 100;
+                        document.querySelector('.progress-bar').style.width = `${progress}%`;
+                    }
+                }
+            });
+        </script>
     </div>
-  </div>
-
-  <script>
-    // Initialization
-    const listContainer = document.getElementById('list-container');
-    const items = document.querySelectorAll('.item');
-    const contents = document.querySelectorAll('.content-box');
-    const upButton = document.getElementById('up');
-    const downButton = document.getElementById('down');
-    const itemWidth = 128; // Approx width of each item including margin
-    const containerWidth = listContainer.offsetWidth;
-    let isDragging = false;
-    let startX = 0;
-    let scrollStart = 0;
-  
-    // Scroll Left
-    upButton.addEventListener('click', () => {
-      listContainer.scrollLeft -= itemWidth;
-      toggleArrowVisibility();
-    });
-  
-    // Scroll Right
-    downButton.addEventListener('click', () => {
-      listContainer.scrollLeft += itemWidth;
-      toggleArrowVisibility();
-    });
-  
-    // Drag gestures
-    listContainer.addEventListener('mousedown', (e) => {
-      isDragging = true;
-      startX = e.pageX - listContainer.offsetLeft;
-      scrollStart = listContainer.scrollLeft;
-      listContainer.classList.add('cursor-grabbing');
-    });
-  
-    listContainer.addEventListener('mousemove', (e) => {
-      if (!isDragging) return;
-      const x = e.pageX - listContainer.offsetLeft;
-      const walk = x - startX;
-      listContainer.scrollLeft = scrollStart - walk;
-      toggleArrowVisibility();
-    });
-  
-    listContainer.addEventListener('mouseup', () => {
-      isDragging = false;
-      listContainer.classList.remove('cursor-grabbing');
-    });
-  
-    listContainer.addEventListener('mouseleave', () => {
-      isDragging = false;
-      listContainer.classList.remove('cursor-grabbing');
-    });
-  
-    listContainer.addEventListener('scroll', () => {
-      toggleArrowVisibility();
-    });
-  
-    // Add click event to items
-    items.forEach((item, index) => {
-      item.addEventListener('click', () => setActiveItem(index));
-    });
-  
-    // Set Active Item
-    function setActiveItem(index) {
-      items.forEach((item, idx) => {
-        if (idx === index) {
-          item.classList.add('bg-blue-500', 'text-white');
-          item.classList.remove('bg-gray-200');
-        } else {
-          item.classList.remove('bg-blue-500', 'text-white');
-          item.classList.add('bg-gray-200');
-        }
-      });
-  
-      // Update content display
-      contents.forEach((content, idx) => {
-        content.classList.toggle('hidden', idx !== index);
-      });
-    }
-  
-    // Check arrow visibility
-    function toggleArrowVisibility() {
-      const scrollLeft = listContainer.scrollLeft;
-      const scrollWidth = listContainer.scrollWidth;
-      const visibleWidth = listContainer.offsetWidth;
-  
-      upButton.classList.toggle('hidden', scrollLeft <= 0);
-      downButton.classList.toggle('hidden', scrollLeft + visibleWidth >= scrollWidth);
-    }
-  
-    // Set default active item (Item 1)
-    window.addEventListener('DOMContentLoaded', () => {
-      setActiveItem(0); // Open Item 1 and its content
-      toggleArrowVisibility(); // Check arrow visibility initially
-    });
-  </script>
-  
-  
 </body>
 </html>

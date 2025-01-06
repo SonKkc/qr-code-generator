@@ -5,7 +5,11 @@
 }
 
 body{
-    @apply bg-white dark:bg-grayy;
+    @apply bg-white dark:bg-grayy text-black;
+}
+
+.main{
+    @apply mt-[90px] py-[170px] dark:bg-grayy
 }
 
 .test{
@@ -16,10 +20,24 @@ body{
     @apply max-w-[1200px] mx-auto px-4;
 }
 
+.nav_container{
+    @apply max-w-[1440px] mx-auto;
+}
+
+
+
 .itemActive{
     @apply text-white bg-greenn;
 }
 
 .itemInactive{
     @apply text-greenn bg-white;
+}
+
+.flex-justify-center{
+    @apply flex justify-center;
+}
+
+.flex-justify-between{
+    @apply flex justify-between;
 }

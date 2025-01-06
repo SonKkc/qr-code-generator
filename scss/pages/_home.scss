@@ -1,10 +1,10 @@
 .hero{
     @apply bg-white dark:bg-grayy;
     ._grid{
-        @apply grid grid-cols-2 grid-flow-col py-[170px];
+        @apply flex gap-[50px] pb-[170px];
 
         .-left{
-            @apply flex flex-col gap-[45px];
+            @apply flex flex-col justify-center gap-[45px];
 
             ._container{
                 @apply flex flex-col gap-[15px] justify-center;
@@ -15,23 +15,31 @@
                 }
     
                 span{
-                    @apply text-[18px] font-semibold text-grayy dark:text-white;
+                    @apply text-[18px] font-normal text-grayy dark:text-white;
                 }
     
                 p{
-                    @apply text-[24px] font-medium text-grayy dark:text-white;
+                    @apply text-[24px] pt-[30px] font-semibold text-grayy dark:text-white;
                 }
             }
 
             button{
-                @apply w-fit bg-white text-greenn border border-greenn text-sm font-semibold px-[20px] py-[12px] rounded-full hover:bg-[#2d9d8f] hover:text-white transition-all duration-300;
+                @apply w-fit bg-greenn text-white text-[18px] font-semibold px-[20px] py-[12px] rounded-full hover:bg-darkGreenn hover:text-white transition-all duration-300;
+            }
+        }
+
+        ._right{
+            @apply flex flex-row-reverse;
+
+            img{
+                @apply w-full h-full object-cover;
             }
         }
     }
 }
 
 .QrForm{
-    @apply dark:bg-grayy;
+    @apply dark:bg-grayy pb-[260px];
 
     ._container{
         @apply flex flex-col gap-[30px];
@@ -45,7 +53,7 @@
                     @apply relative flex flex-nowrap gap-[10px] py-[15px] dark:bg-grayy;
     
                     .sl_list-item{
-                        @apply font-semibold border border-greenn rounded-lg w-[82px] h-[82px] flex justify-center items-center;
+                        @apply font-semibold border border-greenn rounded-lg w-[60px] h-[60px] flex justify-center items-center;
                     }
                 }
             }
@@ -68,6 +76,257 @@
                 svg{
                     @apply text-black dark:text-white;
                 }
+            }
+        }
+    }
+}
+
+.section1{
+    @apply dark:bg-grayy;
+
+    ._container{
+        @apply flex gap-[105px];
+
+        ._left{
+            img{
+                @apply w-[480px] h-[472px] object-cover;
+            }
+        }
+
+        ._right{
+            @apply flex flex-col justify-center flex-1;
+
+            ._container{
+                @apply flex flex-col justify-center;
+
+                h2{
+                    @apply text-[64px] font-bold dark:text-white;
+                }
+    
+                p{
+                    @apply text-[18px] font-semibold dark:text-white;
+                }
+            }
+
+        }
+    }
+}
+
+.section2{
+    @apply dark:bg-grayy py-[150px];
+
+    ._container{
+        @apply p-[50px] bg-white;
+
+        .-box{
+            @apply flex gap-[90px];
+
+            ._left{
+                @apply flex flex-col justify-center flex-1;
+
+                ._flex-col{
+                    @apply flex flex-col gap-[35px];
+
+                    .-title{
+                        @apply flex flex-col gap-[15px];
+
+                        h2{
+                            @apply text-5xl font-bold;
+                        }
+
+                        span{
+                            @apply text-lg font-semibold;
+                        }
+                    }
+
+                    button{
+                        @apply p-[12px] rounded-full bg-greenn text-sm w-fit text-white hover:bg-darkGreenn transition-all duration-300;
+                    }
+                }
+            }
+
+            ._right{
+
+                img{
+                    @apply w-full h-full object-cover;
+                }
+            }
+        }
+    }
+}
+
+.section3{
+    @apply dark:bg-grayy;
+
+    ._container{
+        @apply flex gap-[116px];
+
+        ._left{
+
+            img{
+                @apply w-full h-full object-cover;
+            }
+
+        }
+
+        ._right{
+            @apply flex flex-col justify-center w-full flex-1;
+
+            .-flex-col{
+                @apply flex flex-col gap-[40px];
+
+                ._title{
+                    @apply text-4xl font-bold dark:text-white text-black;
+                }
+
+                ._list{
+                    @apply flex flex-col gap-[15px];
+
+                    .-box{
+                        @apply flex justify-between items-center dark:text-white;
+
+                        span{
+                            @apply text-lg font-semibold;
+                        }
+
+                        svg{
+                            @apply w-6 h-6;
+                        }
+                    }
+                }
+
+            }
+        }
+
+    }
+}
+
+.section4{
+    @apply dark:bg-grayy pt-[150px];
+
+    .swiper1{
+        @apply w-full h-full;
+
+        .-slide{
+            @apply p-[50px] bg-white flex justify-between gap-[207px];
+
+            ._left{
+
+                img{
+                    @apply w-full h-full object-cover;
+                }
+            }
+
+            ._right{
+                @apply flex flex-col gap-[45px] flex-1;
+
+                ._content{
+                    @apply flex flex-col gap-[30px];
+
+                    .-title{
+                        @apply flex items-center gap-[30px];
+
+                        .-circle{
+                            @apply w-[80px] h-[80px] rounded-full bg-greenn flex items-center justify-center text-5xl font-bold text-white;
+                        }
+
+                        p{
+                            @apply text-black text-4xl font-bold;
+                        }
+                    }
+
+                    .-desc{
+                        @apply text-base font-medium text-black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.section5{
+    @apply dark:bg-grayy pt-[150px];
+
+    ._container{
+        @apply flex flex-col gap-[30px];
+
+        ._left{
+            @apply flex flex-col gap-[20px] max-w-[722px];
+
+            .-title{
+                @apply text-5xl font-bold dark:text-white;
+            }
+
+            .-desc{
+                @apply text-lg font-semibold dark:text-white;
+            }
+        }
+
+        ._right{
+            @apply flex items-center gap-[10px];
+
+            .swiper-btn-prev, .swiper-btn-next{
+                @apply w-[50px] h-[50px] bg-greenn flex items-center justify-center rounded-full cursor-pointer;
+            }
+        }
+
+        .swiper2{
+            .-slide{
+                @apply flex items-center justify-between;
+                 
+                div{
+                    @apply w-[380px] h-[230px] bg-red-500;
+                }
+            }
+
+        }
+    }
+}
+
+
+.FAQ{
+    @apply dark:bg-grayy pt-[150px] max-w-[1055px] mx-auto;
+
+    ._container{
+        @apply flex flex-col items-center gap-[50px];
+
+        .-header{
+            @apply w-full;
+
+            ._title{
+                @apply text-[64px] font-bold dark:text-white text-center pb-[50px];
+            }
+
+           ._btom{
+                @apply flex items-center justify-between w-[560px];
+
+                span{
+                    @apply text-xl dark:text-white hover:underline cursor-pointer select-none;
+                }
+            } 
+        }
+
+        .-questList{
+            @apply w-full flex flex-col gap-[30px];
+
+            ._questBlock{
+                @apply p-[20px] bg-grayy dark:bg-white dark:text-black text-white bg-grayy rounded-lg transition-all ease-out duration-300 cursor-pointer;
+
+                .-title{
+                    @apply flex items-center justify-between select-none;
+
+                    span{
+                        @apply text-2xl line-clamp-1 flex-1;
+                    }
+
+                    svg{
+                        @apply w-6 h-6 transition-all duration-300;
+                    }
+                }
+            }
+
+            ._questBlock:hover{
+                @apply bg-darkGreenn text-white;
             }
         }
     }
