@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import "tailwindcss/base.css";
 @import "tailwindcss/components.css";
 @import "tailwindcss/utilities.css";
@@ -10,7 +11,11 @@
 }
 
 body {
-  @apply bg-white dark:bg-grayy;
+  @apply bg-white dark:bg-grayy text-black;
+}
+
+.main {
+  @apply mt-[90px] py-[170px] dark:bg-grayy;
 }
 
 .test {
@@ -21,25 +26,40 @@ body {
   @apply max-w-[1200px] mx-auto px-4;
 }
 
+.nav_container {
+  @apply max-w-[1440px] mx-auto;
+}
+
 .itemActive {
-  @apply text-white bg-greenn;
+  @apply text-white bg-greenn stroke-white;
 }
 
 .itemInactive {
-  @apply text-greenn bg-white;
+  @apply text-white bg-gray-400 stroke-greenn;
+}
+
+.flex-justify-center {
+  @apply flex justify-center;
+}
+
+.flex-justify-between {
+  @apply flex justify-between;
 }
 
 .navbar {
-  @apply bg-darkBlack relative h-[98px];
+  @apply h-[90px] bg-darkBlack fixed top-0 left-0 right-0 z-50;
 }
 .navbar .bg-nav {
-  @apply bg-darkBlack fixed top-0 left-0 right-0 z-50;
+  @apply bg-darkBlack relative z-50;
 }
 .navbar ._container {
-  @apply bg-darkBlack max-w-[1440px] mx-auto px-[49px] flex justify-between items-center;
+  @apply bg-darkBlack px-[49px] flex justify-between items-center;
 }
 .navbar ._container .logo {
-  @apply text-white text-[32px] font-bold;
+  @apply max-w-[224px];
+}
+.navbar ._container .logo img {
+  @apply w-full h-full object-cover;
 }
 .navbar ._container .nav {
   @apply flex items-center sm:hidden;
@@ -48,7 +68,7 @@ body {
   @apply flex items-center;
 }
 .navbar ._container .nav .-list li {
-  @apply py-[35px] px-[15px] text-lg font-semibold text-white flex items-center gap-[5px] hover:cursor-pointer;
+  @apply py-[31px] px-[15px] text-lg font-semibold text-white flex items-center gap-[5px] hover:cursor-pointer;
 }
 .navbar ._container .nav .-list li svg {
   @apply w-5 h-5 text-white font-semibold;
@@ -78,7 +98,7 @@ body {
   @apply flex flex-row-reverse;
 }
 .navbar .nav_dropdown .-list a {
-  @apply text-white bg-darkBlack py-[30px] px-[20px] w-[250px] flex flex-col gap-[30px];
+  @apply text-white bg-darkBlack py-[18px] px-[10px] w-[250px] flex flex-col gap-[20px];
 }
 .navbar .nav_dropdown .-list a p {
   @apply text-base font-medium uppercase;
@@ -93,6 +113,51 @@ body {
   @apply text-greenn;
 }
 
+footer {
+  @apply bg-footerGrayy;
+}
+footer ._top {
+  @apply pt-[50px] pb-[80px] bg-footerGrayy;
+}
+footer ._top ._container {
+  @apply flex justify-between w-full;
+}
+footer ._top ._container .-column {
+  @apply flex-1 flex flex-col gap-[36px] w-fit text-white max-w-[140px];
+}
+footer ._top ._container .-column .-title {
+  @apply text-lg font-semibold uppercase;
+}
+footer ._top ._container .-column .-list {
+  @apply flex flex-col gap-[20px];
+}
+footer ._top ._container .-column .-list a {
+  @apply text-lg font-semibold;
+}
+footer ._top ._container .-column .-desc {
+  @apply text-lg font-semibold;
+}
+footer ._top ._container .-column .Logo {
+  @apply max-w-[244px];
+}
+footer ._top ._container .-column .Logo img {
+  @apply w-full h-full object-cover;
+}
+footer ._top ._container .-column:nth-child(1) {
+  @apply max-w-[300px];
+}
+footer ._bottom {
+  @apply bg-grayy border-t-[1px] border-white;
+}
+footer ._bottom ._container {
+  @apply py-[60px] flex items-center justify-between;
+}
+footer ._bottom ._container span {
+  @apply text-lg font-semibold text-white;
+}
+footer ._bottom ._container span a {
+  @apply underline underline-offset-[3px];
+
 .breadcrumb_container {
   @apply inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse mt-4;
 }
@@ -104,35 +169,41 @@ body {
   @apply bg-white dark:bg-grayy;
 }
 .hero ._grid {
-  @apply grid grid-cols-2 grid-flow-col py-[170px];
+  @apply flex gap-[50px] pb-[170px];
 }
-.hero ._grid .-left {
-  @apply flex flex-col gap-[45px];
+.hero ._grid ._left {
+  @apply flex flex-col justify-center gap-[45px];
 }
-.hero ._grid .-left ._container {
+.hero ._grid ._left ._container {
   @apply flex flex-col gap-[15px] justify-center;
 }
-.hero ._grid .-left ._container h2 {
-  @apply text-[64px] leading-none font-bold dark:text-white;
+.hero ._grid ._left ._container h2 {
+  @apply text-[64px] leading-none font-bold text-yelloww;
 }
-.hero ._grid .-left ._container span {
-  @apply text-[18px] font-semibold text-grayy dark:text-white;
+.hero ._grid ._left ._container span {
+  @apply text-[18px] font-normal text-grayy dark:text-white;
 }
-.hero ._grid .-left ._container p {
-  @apply text-[24px] font-medium text-grayy dark:text-white;
+.hero ._grid ._left ._container p {
+  @apply text-[24px]  font-semibold text-grayy dark:text-white;
 }
-.hero ._grid .-left button {
-  @apply w-fit bg-white text-greenn border border-greenn text-sm font-semibold px-[20px] py-[12px] rounded-full hover:bg-[#2d9d8f] hover:text-white transition-all duration-300;
+.hero ._grid ._left button {
+  @apply w-fit bg-greenn text-white text-[18px] font-semibold px-[20px] py-[12px] rounded-full hover:bg-darkGreenn hover:text-white transition-all duration-300;
+}
+.hero ._grid ._right {
+  @apply flex flex-row-reverse max-w-[434px] max-h-[428px];
+}
+.hero ._grid ._right img {
+  @apply w-full h-full object-cover;
 }
 
 .QrForm {
-  @apply dark:bg-grayy;
+  @apply dark:bg-grayy pb-[260px];
 }
 .QrForm ._container {
   @apply flex flex-col gap-[30px];
 }
 .QrForm ._container ._selection {
-  @apply border border-grayy rounded-lg dark:border-white flex;
+  @apply border border-grayy rounded-lg bg-grayy flex;
 }
 .QrForm ._container ._selection .over-flow {
   @apply flex overflow-x-auto relative mx-[15px];
@@ -141,7 +212,13 @@ body {
   @apply relative flex flex-nowrap gap-[10px] py-[15px] dark:bg-grayy;
 }
 .QrForm ._container ._selection .over-flow .-list .sl_list-item {
-  @apply font-semibold border border-greenn rounded-lg w-[82px] h-[82px] flex justify-center items-center;
+  @apply font-semibold rounded-lg px-[20px] py-[10px] w-max flex flex-col justify-center items-center;
+}
+.QrForm ._container ._selection .over-flow .-list .sl_list-item span {
+  @apply text-base font-medium;
+}
+.QrForm ._container ._selection .over-flow .-list .sl_list-item svg {
+  @apply w-6 h-6 stroke-none;
 }
 .QrForm ._container ._selection .over-flow::-webkit-scrollbar {
   display: none;
@@ -159,6 +236,190 @@ body {
   @apply text-black dark:text-white;
 }
 
+.section1 {
+  @apply dark:bg-grayy;
+}
+.section1 ._container {
+  @apply flex gap-[105px];
+}
+.section1 ._container ._left img {
+  @apply w-[480px] h-[472px] object-cover;
+}
+.section1 ._container ._right {
+  @apply flex flex-col justify-center flex-1;
+}
+.section1 ._container ._right ._container {
+  @apply flex flex-col justify-center;
+}
+.section1 ._container ._right ._container h2 {
+  @apply text-[64px] font-bold dark:text-white;
+}
+.section1 ._container ._right ._container p {
+  @apply text-[18px] font-semibold dark:text-white;
+}
+
+.section2 {
+  @apply dark:bg-grayy py-[150px];
+}
+.section2 ._container {
+  @apply p-[50px] bg-white;
+}
+.section2 ._container .-box {
+  @apply flex gap-[90px];
+}
+.section2 ._container .-box ._left {
+  @apply flex flex-col justify-center flex-1;
+}
+.section2 ._container .-box ._left ._flex-col {
+  @apply flex flex-col gap-[35px];
+}
+.section2 ._container .-box ._left ._flex-col .-title {
+  @apply flex flex-col gap-[15px];
+}
+.section2 ._container .-box ._left ._flex-col .-title h2 {
+  @apply text-5xl font-bold;
+}
+.section2 ._container .-box ._left ._flex-col .-title span {
+  @apply text-lg font-semibold;
+}
+.section2 ._container .-box ._left ._flex-col button {
+  @apply p-[12px] rounded-full bg-greenn text-sm w-fit text-white hover:bg-darkGreenn transition-all duration-300;
+}
+.section2 ._container .-box ._right img {
+  @apply w-full h-full object-cover;
+}
+
+.section3 {
+  @apply dark:bg-grayy;
+}
+.section3 ._container {
+  @apply flex gap-[116px];
+}
+.section3 ._container ._left img {
+  @apply w-full h-full object-cover;
+}
+.section3 ._container ._right {
+  @apply flex flex-col justify-center w-full flex-1;
+}
+.section3 ._container ._right .-flex-col {
+  @apply flex flex-col gap-[40px];
+}
+.section3 ._container ._right .-flex-col ._title {
+  @apply text-4xl font-bold dark:text-white text-black;
+}
+.section3 ._container ._right .-flex-col ._list {
+  @apply flex flex-col gap-[15px];
+}
+.section3 ._container ._right .-flex-col ._list .-box {
+  @apply flex justify-between items-center dark:text-white;
+}
+.section3 ._container ._right .-flex-col ._list .-box span {
+  @apply text-lg font-semibold;
+}
+.section3 ._container ._right .-flex-col ._list .-box svg {
+  @apply w-6 h-6;
+}
+
+.section4 {
+  @apply dark:bg-grayy pt-[150px];
+}
+.section4 .swiper1 {
+  @apply w-full h-full;
+}
+.section4 .swiper1 .-slide {
+  @apply p-[50px] bg-white flex justify-between gap-[207px];
+}
+.section4 .swiper1 .-slide ._left img {
+  @apply w-full h-full object-cover;
+}
+.section4 .swiper1 .-slide ._right {
+  @apply flex flex-col gap-[45px] flex-1;
+}
+.section4 .swiper1 .-slide ._right ._content {
+  @apply flex flex-col gap-[30px];
+}
+.section4 .swiper1 .-slide ._right ._content .-title {
+  @apply flex items-center gap-[30px];
+}
+.section4 .swiper1 .-slide ._right ._content .-title .-circle {
+  @apply w-[80px] h-[80px] rounded-full bg-greenn flex items-center justify-center text-5xl font-bold text-white;
+}
+.section4 .swiper1 .-slide ._right ._content .-title p {
+  @apply text-black text-4xl font-bold;
+}
+.section4 .swiper1 .-slide ._right ._content .-desc {
+  @apply text-base font-medium text-black;
+}
+
+.section5 {
+  @apply dark:bg-grayy pt-[150px];
+}
+.section5 ._container {
+  @apply flex flex-col gap-[30px];
+}
+.section5 ._container ._left {
+  @apply flex flex-col gap-[20px] max-w-[722px];
+}
+.section5 ._container ._left .-title {
+  @apply text-5xl font-bold dark:text-white;
+}
+.section5 ._container ._left .-desc {
+  @apply text-lg font-semibold dark:text-white;
+}
+.section5 ._container ._right {
+  @apply flex items-center gap-[10px];
+}
+.section5 ._container ._right .swiper-btn-prev, .section5 ._container ._right .swiper-btn-next {
+  @apply w-[50px] h-[50px] flex items-center justify-center rounded-full cursor-pointer;
+}
+.section5 ._container .swiper2 .-slide {
+  @apply flex items-center justify-between;
+}
+.section5 ._container .swiper2 .-slide .folder {
+  width: 380px;
+  height: 229px;
+  background-color: rgba(255, 255, 255, 0.05); /* Giống màu SVG */
+  -webkit-clip-path: path("M188.969 4.453C187.114 1.67101 183.992 0 180.648 0H10C4.47715 0 0 4.47716 0 10V219C0 224.523 4.47716 229 10 229H370C375.523 229 380 224.523 380 219V45C380 39.4772 375.523 35 370 35H214.685C211.342 35 208.219 33.329 206.365 30.547L188.969 4.453Z");
+          clip-path: path("M188.969 4.453C187.114 1.67101 183.992 0 180.648 0H10C4.47715 0 0 4.47716 0 10V219C0 224.523 4.47716 229 10 229H370C375.523 229 380 224.523 380 219V45C380 39.4772 375.523 35 370 35H214.685C211.342 35 208.219 33.329 206.365 30.547L188.969 4.453Z");
+  transition: all 0.3s ease; /* Hiệu ứng chuyển đổi */
+}
+
+.FAQ {
+  @apply dark:bg-grayy pt-[150px] max-w-[1055px] mx-auto;
+}
+.FAQ ._container {
+  @apply flex flex-col items-center gap-[50px];
+}
+.FAQ ._container .-header {
+  @apply w-full;
+}
+.FAQ ._container .-header ._title {
+  @apply text-[64px] font-bold dark:text-white text-center pb-[50px];
+}
+.FAQ ._container .-header ._btom {
+  @apply flex items-center justify-between w-[560px];
+}
+.FAQ ._container .-header ._btom span {
+  @apply text-xl dark:text-white hover:underline cursor-pointer select-none;
+}
+.FAQ ._container .-questList {
+  @apply w-full flex flex-col gap-[30px];
+}
+.FAQ ._container .-questList ._questBlock {
+  @apply p-[20px] bg-grayy dark:bg-white dark:text-black text-white bg-grayy rounded-lg transition-all ease-out duration-300 cursor-pointer;
+}
+.FAQ ._container .-questList ._questBlock .-title {
+  @apply flex items-center justify-between select-none;
+}
+.FAQ ._container .-questList ._questBlock .-title span {
+  @apply text-2xl line-clamp-1 flex-1;
+}
+.FAQ ._container .-questList ._questBlock .-title svg {
+  @apply w-6 h-6 transition-all duration-300;
+}
+.FAQ ._container .-questList ._questBlock:hover {
+  @apply bg-darkGreenn text-white;
+=======
 .slt_page .solutions_container {
   @apply bg-white w-full dark:bg-darkBlack;
 }

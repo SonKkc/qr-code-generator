@@ -9,47 +9,66 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
-<body class="">
+<body class="dark">
     <header class="navbar" x-data="{dropDown: false}">
         <div class="bg-nav">
-            <div class="_container">
-                <!-- logo -->  
+            <div class="_container nav_container">
+                <!-- logo -->
                 <div class="logo">
-                    <span class="dark:text-white text-black">Logo</span>
+                    <img src="images/Logo.png" alt="Logo" class="">
                 </div>
-    
+
                 <!-- nav -->
                 <nav class="nav">
                     <ul class="-list">
                         <li @mouseenter="dropDown = true" @mouseleave="dropDown = false" @click="dropDown =! dropDown">
-                            <a href="#" class="">Product</a><svg :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m19 9-7 7-7-7"/></svg>
+                            <a href="#" class="">Product</a>
+                            <svg
+                                :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}"
+                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="3" d="m19 9-7 7-7-7" />
+                            </svg>
                         </li>
-                        <li><a href="#" class="">Resources</a><svg class="" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m19 9-7 7-7-7"/></svg></li>
-                        <li><a href="#" class="">Support</a><svg class="" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m19 9-7 7-7-7"/></svg></li>
-                        <li><a href="#" class="">About us</a><svg class="" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m19 9-7 7-7-7"/></svg></li>
+                        <li><a href="#" class="">Resources</a><svg class="" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="3" d="m19 9-7 7-7-7" />
+                            </svg></li>
+                        <li><a href="#" class="">Support</a><svg class="" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="3" d="m19 9-7 7-7-7" />
+                            </svg></li>
+                        <li><a href="#" class="">About us</a><svg class="" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="3" d="m19 9-7 7-7-7" />
+                            </svg></li>
                         <li><a href="#" class="">Blog</a></li>
                     </ul>
-        
+
                     <!-- user -->
                     <div class="user">
                         <button class="_login">Login</button>
                         <button class="_signUp">Sign Up</button>
-                    </div>  
+                    </div>
                 </nav>
             </div>
         </div>
         <!-- dropdown -->
-        <div x-cloak x-show="dropDown" 
-            @mouseenter="dropDown = true" @mouseleave="dropDown = false"
+        <div x-cloak x-show="dropDown" @mouseenter="dropDown = true" @mouseleave="dropDown = false"
             x-transition:enter="transition ease-in-out duration-300"
-            x-transition:enter-start="-translate-y-full transform"
-            x-transition:enter-end="translate-y-0 transform"
-            x-transition:leave="transition ease-in-out duration-300"
-            x-transition:leave-start="translate-y-0 transform"
-            x-transition:leave-end="-translate-y-full transform"
-         class="nav_dropdown">
+            x-transition:enter-start="-translate-y-full transform" x-transition:enter-end="translate-y-0 transform"
+            x-transition:leave="transition ease-in-out duration-300" x-transition:leave-start="translate-y-0 transform"
+            x-transition:leave-end="-translate-y-full transform" class="nav_dropdown">
             <div class="flex flex-row-reverse -list">
                 <a href="#" class="">
                     <p class="">Pages</p>
@@ -75,101 +94,875 @@
         </div>
     </header>
 
-    <div class="hero">
-        <div class="my_container">
-            <div class="_grid">
-                <div class="-left">
+    <div class="main">
+
+        <div class="hero">
+            <div class="my_container">
+                <div class="_grid">
+                    <div class="_left">
+                        <div class="_container">
+                            <h2>QR Code Generator</h2>
+                            <span class="">Easily create customizable QR Codes for free.</span>
+                            <p class="">No Signup, No Captcha & No Limit - Just FreeQR.</p>
+                        </div>
+                        <button>
+                            Create Free QR +
+                        </button>
+                    </div>
+
+                    <div class="_right">
+                        <img src="images/Room-blue.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="QrForm">
+            <div class="my_container">
+                <div class="_container">
+                    <!-- selection -->
+                    <div class="_selection">
+                        <div class="arrow-start"><svg class="w-6 h-6" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m15 19-7-7 7-7" />
+                            </svg></div>
+                        <div id="selection_list" class="over-flow transition-all scroll-smooth">
+                            <div id="list" class="-list">
+                                <button class="sl_list-item itemInactive">
+                                    <svg viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.5 16.9409C13.0368 17.6586 13.7217 18.2524 14.5082 18.6821C15.2947 19.1118 16.1644 19.3673 17.0583 19.4314C17.9522 19.4954 18.8495 19.3664 19.6892 19.0532C20.5289 18.7399 21.2914 18.2498 21.925 17.6159L25.675 13.8659C26.8135 12.6872 27.4435 11.1084 27.4292 9.46968C27.415 7.83095 26.7577 6.26337 25.5989 5.10457C24.4401 3.94577 22.8725 3.28846 21.2338 3.27422C19.595 3.25998 18.0163 3.88995 16.8375 5.02844L14.6875 7.16594" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M17.5 14.4409C16.9632 13.7232 16.2783 13.1294 15.4918 12.6997C14.7053 12.27 13.8356 12.0145 12.9417 11.9505C12.0478 11.8865 11.1505 12.0154 10.3108 12.3287C9.47113 12.6419 8.70861 13.1321 8.07501 13.7659L4.32501 17.5159C3.18652 18.6947 2.55655 20.2734 2.57079 21.9122C2.58503 23.5509 3.24234 25.1185 4.40114 26.2773C5.55994 27.4361 7.12752 28.0934 8.76625 28.1076C10.405 28.1218 11.9837 27.4919 13.1625 26.3534L15.3 24.2159" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                        
+                                    <span class="">Link</span>
+                                </button>
+                                <button class="sl_list-item itemInactive">
+                                    <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M26.25 13.1909H3.75" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M26.25 8.19092H3.75" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M26.25 18.1909H3.75" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M26.25 23.1909H3.75" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                        
+                                    <span class="">Text</span>
+                                </button>
+                                <button class="sl_list-item itemInactive"> 
+                                    <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 5.69092H25C26.375 5.69092 27.5 6.81592 27.5 8.19092V23.1909C27.5 24.5659 26.375 25.6909 25 25.6909H5C3.625 25.6909 2.5 24.5659 2.5 23.1909V8.19092C2.5 6.81592 3.625 5.69092 5 5.69092Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M27.5 8.19092L15 16.9409L2.5 8.19092" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                        
+                                    <span class="">E-mail</span>
+                                </button>
+                                <button class="sl_list-item itemInactive">
+                                    <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M28.75 9.44092L20 15.6909L28.75 21.9409V9.44092Z" fill="white" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M17.5 6.94092H3.75C2.36929 6.94092 1.25 8.06021 1.25 9.44092V21.9409C1.25 23.3216 2.36929 24.4409 3.75 24.4409H17.5C18.8807 24.4409 20 23.3216 20 21.9409V9.44092C20 8.06021 18.8807 6.94092 17.5 6.94092Z" fill="white" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                        
+                                    <span class="">Zoom</span>
+                                </button>
+                                <button class="sl_list-item itemInactive"> 
+                                    <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M27.5 21.8409V25.5909C27.5015 25.939 27.4301 26.2836 27.2907 26.6026C27.1512 26.9215 26.9467 27.2079 26.6901 27.4432C26.4336 27.6786 26.1308 27.8577 25.801 27.9693C25.4712 28.0808 25.1218 28.1222 24.775 28.0909C20.9286 27.6729 17.2338 26.3586 13.9875 24.2534C10.9673 22.3342 8.40671 19.7736 6.48754 16.7534C4.37501 13.4924 3.06034 9.77963 2.65004 5.91589C2.6188 5.57022 2.65988 5.22184 2.77066 4.89292C2.88145 4.564 3.0595 4.26175 3.2935 4.00541C3.52749 3.74908 3.81229 3.54427 4.12978 3.40404C4.44726 3.2638 4.79046 3.19121 5.13754 3.19089H8.88754C9.49417 3.18492 10.0823 3.39973 10.5422 3.7953C11.0022 4.19087 11.3026 4.74019 11.3875 5.34089C11.5458 6.54097 11.8394 7.7193 12.2625 8.85339C12.4307 9.30079 12.4671 9.78703 12.3674 10.2545C12.2677 10.7219 12.0361 11.151 11.7 11.4909L10.1125 13.0784C11.892 16.2078 14.4831 18.7989 17.6125 20.5784L19.2 18.9909C19.5399 18.6548 19.969 18.4232 20.4364 18.3235C20.9039 18.2238 21.3901 18.2602 21.8375 18.4284C22.9716 18.8516 24.15 19.1451 25.35 19.3034C25.9572 19.389 26.5118 19.6949 26.9082 20.1628C27.3046 20.6306 27.5152 21.2279 27.5 21.8409Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                                                                
+                                    <span class="">Phone</span>
+                                </button>
+                                <button class="sl_list-item itemInactive">
+                                    <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_1140_6728)">
+                                        <path d="M26.75 13.1909C26.75 21.9409 15.5 29.4409 15.5 29.4409C15.5 29.4409 4.25 21.9409 4.25 13.1909C4.25 10.2072 5.43526 7.34575 7.54505 5.23597C9.65483 3.12618 12.5163 1.94092 15.5 1.94092C18.4837 1.94092 21.3452 3.12618 23.455 5.23597C25.5647 7.34575 26.75 10.2072 26.75 13.1909Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M15.5 16.9409C17.5711 16.9409 19.25 15.262 19.25 13.1909C19.25 11.1199 17.5711 9.44092 15.5 9.44092C13.4289 9.44092 11.75 11.1199 11.75 13.1909C11.75 15.262 13.4289 16.9409 15.5 16.9409Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </g>
+                                        <defs>
+                                        <clipPath id="clip0_1140_6728">
+                                        <rect width="30" height="30" fill="white" transform="translate(0.5 0.690918)"/>
+                                        </clipPath>
+                                        </defs>
+                                    </svg>
+                                                                                
+                                    <span class="">Location</span>
+                                </button>
+                                <button class="sl_list-item itemInactive"> 
+                                    <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M27.5 21.8409V25.5909C27.5015 25.939 27.4301 26.2836 27.2907 26.6026C27.1512 26.9215 26.9467 27.2079 26.6901 27.4432C26.4336 27.6786 26.1308 27.8577 25.801 27.9693C25.4712 28.0808 25.1218 28.1222 24.775 28.0909C20.9286 27.6729 17.2338 26.3586 13.9875 24.2534C10.9673 22.3342 8.40671 19.7736 6.48754 16.7534C4.37501 13.4924 3.06034 9.77963 2.65004 5.91589C2.6188 5.57022 2.65988 5.22184 2.77066 4.89292C2.88145 4.564 3.0595 4.26175 3.2935 4.00541C3.52749 3.74908 3.81229 3.54427 4.12978 3.40404C4.44726 3.2638 4.79046 3.19121 5.13754 3.19089H8.88754C9.49417 3.18492 10.0823 3.39973 10.5422 3.7953C11.0022 4.19087 11.3026 4.74019 11.3875 5.34089C11.5458 6.54097 11.8394 7.7193 12.2625 8.85339C12.4307 9.30079 12.4671 9.78703 12.3674 10.2545C12.2677 10.7219 12.0361 11.151 11.7 11.4909L10.1125 13.0784C11.892 16.2078 14.4831 18.7989 17.6125 20.5784L19.2 18.9909C19.5399 18.6548 19.969 18.4232 20.4364 18.3235C20.9039 18.2238 21.3901 18.2602 21.8375 18.4284C22.9716 18.8516 24.15 19.1451 25.35 19.3034C25.9572 19.389 26.5118 19.6949 26.9082 20.1628C27.3046 20.6306 27.5152 21.2279 27.5 21.8409Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                        
+                                    <span class="">SMS</span>
+                                </button>
+                                <button class="sl_list-item itemInactive">
+                                    <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.5 30.6909L2.60875 22.9871C1.3075 20.7322 0.62375 18.1759 0.625 15.5547C0.62875 7.35968 7.29749 0.690948 15.4912 0.690948C19.4675 0.692198 23.2 2.24095 26.0074 5.05094C28.8137 7.86093 30.3587 11.5959 30.3574 15.5684C30.3537 23.7646 23.6849 30.4334 15.4912 30.4334C13.0037 30.4321 10.5525 29.8084 8.38123 28.6234L0.5 30.6909ZM8.74623 25.9321C10.8412 27.1759 12.8412 27.9209 15.4862 27.9221C22.2962 27.9221 27.8437 22.3797 27.8474 15.5659C27.8499 8.73843 22.3287 3.20344 15.4962 3.20094C8.68123 3.20094 3.13749 8.74343 3.13499 15.5559C3.13374 18.3372 3.94874 20.4197 5.31749 22.5984L4.06874 27.1584L8.74623 25.9321ZM22.98 19.1022C22.8875 18.9472 22.64 18.8547 22.2675 18.6684C21.8962 18.4822 20.07 17.5834 19.7287 17.4597C19.3887 17.3359 19.1412 17.2734 18.8925 17.6459C18.645 18.0172 17.9325 18.8547 17.7162 19.1022C17.5 19.3497 17.2825 19.3809 16.9112 19.1947C16.54 19.0084 15.3425 18.6172 13.9237 17.3509C12.82 16.3659 12.0737 15.1497 11.8575 14.7772C11.6412 14.4059 11.835 14.2047 12.02 14.0197C12.1875 13.8534 12.3912 13.5859 12.5775 13.3684C12.7662 13.1534 12.8275 12.9984 12.9525 12.7497C13.0762 12.5022 13.015 12.2847 12.9212 12.0984C12.8275 11.9134 12.085 10.0847 11.7762 9.34093C11.4737 8.61718 11.1675 8.71468 10.94 8.70343L10.2275 8.69093C9.97998 8.69093 9.57748 8.78343 9.23748 9.15593C8.89748 9.52843 7.93748 10.4259 7.93748 12.2547C7.93748 14.0834 9.26873 15.8497 9.45373 16.0972C9.63998 16.3447 12.0725 20.0972 15.7987 21.7059C16.685 22.0884 17.3775 22.3172 17.9162 22.4884C18.8062 22.7709 19.6162 22.7309 20.2562 22.6359C20.97 22.5297 22.4537 21.7372 22.7637 20.8697C23.0737 20.0009 23.0737 19.2572 22.98 19.1022Z" fill="white"/>
+                                    </svg>
+                                        
+                                    <span class="">WhatsApp</span>
+                                </button>
+                                <button class="sl_list-item itemInactive"> 
+                                    <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M27.0901 5.54663H2.9101C1.89469 5.54663 1.07153 6.36979 1.07153 7.3852V23.9966C1.07153 25.012 1.89469 25.8352 2.9101 25.8352H27.0901C28.1055 25.8352 28.9287 25.012 28.9287 23.9966V7.3852C28.9287 6.36979 28.1055 5.54663 27.0901 5.54663Z" stroke="white" stroke-width="2.14286" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M20.0559 13.2896H24.3134" stroke="white" stroke-width="2.14286" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M20.0559 17.5092H24.3134" stroke="white" stroke-width="2.14286" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M7.51562 13.9931C7.51562 15.935 9.08979 17.5091 11.0316 17.5091C11.5225 17.5091 11.9899 17.4085 12.4143 17.2268C13.6688 16.6897 14.5476 15.4441 14.5476 13.9931C14.5476 12.0513 12.9735 10.4771 11.0316 10.4771C9.08979 10.4771 7.51562 12.0513 7.51562 13.9931Z" stroke="white" stroke-width="2.14286" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M5.68677 20.9908C6.24545 19.9282 7.03066 19.0499 7.9669 18.4405C8.90313 17.8311 9.95892 17.511 11.0327 17.511C12.1066 17.511 13.1624 17.8311 14.0986 18.4405C15.0349 19.0499 15.8201 19.9282 16.3787 20.9908" stroke="white" stroke-width="2.14286" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                        
+                                    <span class="">V-card</span>
+                                </button>
+                                <button class="sl_list-item itemInactive"> 
+                                    <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.25 16.3784C8.7207 14.3205 11.8345 13.1936 15.05 13.1936C18.2655 13.1936 21.3793 14.3205 23.85 16.3784" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M1.7749 11.9409C5.42793 8.72086 10.1303 6.94421 14.9999 6.94421C19.8695 6.94421 24.5719 8.72086 28.2249 11.9409" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M10.6626 20.8284C11.9316 19.9269 13.4497 19.4425 15.0063 19.4425C16.563 19.4425 18.0811 19.9269 19.3501 20.8284" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M15 25.6909H15.0125" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                        
+                                    <span class="">WI-FI</span>
+                                </button>
+                                <button class="sl_list-item itemInactive"> 
+                                    <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M23.75 5.69092H6.25C4.86929 5.69092 3.75 6.81021 3.75 8.19092V25.6909C3.75 27.0716 4.86929 28.1909 6.25 28.1909H23.75C25.1307 28.1909 26.25 27.0716 26.25 25.6909V8.19092C26.25 6.81021 25.1307 5.69092 23.75 5.69092Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M20 3.19092V8.19092" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M10 3.19092V8.19092" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M3.75 13.1909H26.25" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                        
+                                    <span class="">Event</span>
+                                </button>
+                                <button class="sl_list-item itemInactive"> 
+                                    <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M23.75 5.69092H6.25C4.86929 5.69092 3.75 6.81021 3.75 8.19092V25.6909C3.75 27.0716 4.86929 28.1909 6.25 28.1909H23.75C25.1307 28.1909 26.25 27.0716 26.25 25.6909V8.19092C26.25 6.81021 25.1307 5.69092 23.75 5.69092Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M20 3.19092V8.19092" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M10 3.19092V8.19092" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M3.75 13.1909H26.25" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                        
+                                    <span class="">Link</span>
+                                </button>
+                                <button class="sl_list-item itemInactive"> <svg viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.5 16.9409C13.0368 17.6586 13.7217 18.2524 14.5082 18.6821C15.2947 19.1118 16.1644 19.3673 17.0583 19.4314C17.9522 19.4954 18.8495 19.3664 19.6892 19.0532C20.5289 18.7399 21.2914 18.2498 21.925 17.6159L25.675 13.8659C26.8135 12.6872 27.4435 11.1084 27.4292 9.46968C27.415 7.83095 26.7577 6.26337 25.5989 5.10457C24.4401 3.94577 22.8725 3.28846 21.2338 3.27422C19.595 3.25998 18.0163 3.88995 16.8375 5.02844L14.6875 7.16594" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M17.5 14.4409C16.9632 13.7232 16.2783 13.1294 15.4918 12.6997C14.7053 12.27 13.8356 12.0145 12.9417 11.9505C12.0478 11.8865 11.1505 12.0154 10.3108 12.3287C9.47113 12.6419 8.70861 13.1321 8.07501 13.7659L4.32501 17.5159C3.18652 18.6947 2.55655 20.2734 2.57079 21.9122C2.58503 23.5509 3.24234 25.1185 4.40114 26.2773C5.55994 27.4361 7.12752 28.0934 8.76625 28.1076C10.405 28.1218 11.9837 27.4919 13.1625 26.3534L15.3 24.2159" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                        
+                                    <span class="">Link</span>
+                                </button>
+                                <button class="sl_list-item itemInactive"> <svg viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.5 16.9409C13.0368 17.6586 13.7217 18.2524 14.5082 18.6821C15.2947 19.1118 16.1644 19.3673 17.0583 19.4314C17.9522 19.4954 18.8495 19.3664 19.6892 19.0532C20.5289 18.7399 21.2914 18.2498 21.925 17.6159L25.675 13.8659C26.8135 12.6872 27.4435 11.1084 27.4292 9.46968C27.415 7.83095 26.7577 6.26337 25.5989 5.10457C24.4401 3.94577 22.8725 3.28846 21.2338 3.27422C19.595 3.25998 18.0163 3.88995 16.8375 5.02844L14.6875 7.16594" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M17.5 14.4409C16.9632 13.7232 16.2783 13.1294 15.4918 12.6997C14.7053 12.27 13.8356 12.0145 12.9417 11.9505C12.0478 11.8865 11.1505 12.0154 10.3108 12.3287C9.47113 12.6419 8.70861 13.1321 8.07501 13.7659L4.32501 17.5159C3.18652 18.6947 2.55655 20.2734 2.57079 21.9122C2.58503 23.5509 3.24234 25.1185 4.40114 26.2773C5.55994 27.4361 7.12752 28.0934 8.76625 28.1076C10.405 28.1218 11.9837 27.4919 13.1625 26.3534L15.3 24.2159" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                        
+                                    <span class="">Link</span>
+                                </button>
+                                <button class="sl_list-item itemInactive"> <svg viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.5 16.9409C13.0368 17.6586 13.7217 18.2524 14.5082 18.6821C15.2947 19.1118 16.1644 19.3673 17.0583 19.4314C17.9522 19.4954 18.8495 19.3664 19.6892 19.0532C20.5289 18.7399 21.2914 18.2498 21.925 17.6159L25.675 13.8659C26.8135 12.6872 27.4435 11.1084 27.4292 9.46968C27.415 7.83095 26.7577 6.26337 25.5989 5.10457C24.4401 3.94577 22.8725 3.28846 21.2338 3.27422C19.595 3.25998 18.0163 3.88995 16.8375 5.02844L14.6875 7.16594" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M17.5 14.4409C16.9632 13.7232 16.2783 13.1294 15.4918 12.6997C14.7053 12.27 13.8356 12.0145 12.9417 11.9505C12.0478 11.8865 11.1505 12.0154 10.3108 12.3287C9.47113 12.6419 8.70861 13.1321 8.07501 13.7659L4.32501 17.5159C3.18652 18.6947 2.55655 20.2734 2.57079 21.9122C2.58503 23.5509 3.24234 25.1185 4.40114 26.2773C5.55994 27.4361 7.12752 28.0934 8.76625 28.1076C10.405 28.1218 11.9837 27.4919 13.1625 26.3534L15.3 24.2159" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                        
+                                    <span class="">Link</span>
+                                </button>
+                                <button class="sl_list-item itemInactive"> <svg viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.5 16.9409C13.0368 17.6586 13.7217 18.2524 14.5082 18.6821C15.2947 19.1118 16.1644 19.3673 17.0583 19.4314C17.9522 19.4954 18.8495 19.3664 19.6892 19.0532C20.5289 18.7399 21.2914 18.2498 21.925 17.6159L25.675 13.8659C26.8135 12.6872 27.4435 11.1084 27.4292 9.46968C27.415 7.83095 26.7577 6.26337 25.5989 5.10457C24.4401 3.94577 22.8725 3.28846 21.2338 3.27422C19.595 3.25998 18.0163 3.88995 16.8375 5.02844L14.6875 7.16594" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M17.5 14.4409C16.9632 13.7232 16.2783 13.1294 15.4918 12.6997C14.7053 12.27 13.8356 12.0145 12.9417 11.9505C12.0478 11.8865 11.1505 12.0154 10.3108 12.3287C9.47113 12.6419 8.70861 13.1321 8.07501 13.7659L4.32501 17.5159C3.18652 18.6947 2.55655 20.2734 2.57079 21.9122C2.58503 23.5509 3.24234 25.1185 4.40114 26.2773C5.55994 27.4361 7.12752 28.0934 8.76625 28.1076C10.405 28.1218 11.9837 27.4919 13.1625 26.3534L15.3 24.2159" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                        
+                                    <span class="">Link</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="arrow-end"><svg class="w-6 h-6" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m9 5 7 7-7 7" />
+                            </svg></div>
+                    </div>
+
+                    <!-- content -->
+                    <div class="_smt p-[15px] border border-grayy bg-gray-500">
+                        <div class="content-box hidden" id="content-1">
+                            <div class="_container flex flex-col gap-[10px]">
+                                <div class="-title text-2xl font-bold">Title</div>
+                                <span class="-des text-xl font-semibold">Description</span>
+                                <div class="-input bg-red-500 w-full py-[10px] px-[15px]">
+                                    <input type="text"
+                                        class="w-full bg-transparent border-0 outline-one forced-color-adjust-none"
+                                        style="box-shadow: none" placeholder="Input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-box hidden" id="content-2">
+                            <div class="_container flex flex-col gap-[10px]">
+                                <div class="-title text-2xl font-bold">Title 2</div>
+                                <span class="-des text-xl font-semibold">Description 2</span>
+                                <div class="-input bg-red-500 w-full py-[10px] px-[15px]">
+                                    <input type="text"
+                                        class="w-full bg-transparent border-0 outline-one forced-color-adjust-none"
+                                        style="box-shadow: none" placeholder="Input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- main form-->
+                    <div class="_mainForm flex gap-[30px]">
+                        <div class="_selection p-[15px] border border-grayy">
+
+                            <div class=" -list flex flex-col gap-[15px]">
+                                <div class="bg-red-500 h-[50px] w-[50px] border border-grayy">Item 1</div>
+                                <div class="bg-red-500 h-[50px] w-[50px] border border-grayy">Item 2</div>
+                                <div class="bg-red-500 h-[50px] w-[50px] border border-grayy">item 3</div>
+                                <div class="bg-red-500 h-[50px] w-[50px] border border-grayy">Item 4</div>
+                                <div class="bg-red-500 h-[50px] w-[50px] border border-grayy">Item 5</div>
+                            </div>
+                        </div>
+
+                        <div class="w-[662px] bg-red-500"></div>
+
+                        <div class="w-[388px] bg-red-500"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="section1">
+            <div class="my_container _container">
+                <div class="_left">
+                    <img src="https://via.placeholder.com/480x472" alt="">
+                </div>
+
+                <div class="_right">
                     <div class="_container">
-                        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h2>
-                        <span class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque incidunt, aspernatur eum vitae reprehenderit molestias dicta, libero doloribus exercitationem dolores obcaecati laudantium maxime pariatur, tempore voluptatem consequatur molestiae fugit. Dolores.</span>
-                        <p class="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla neque eum vel quidem facilis consequatur voluptate ab officiis. Dolorem exercitationem aliquam assumenda nulla cum veniam iusto. Incidunt beatae vitae tenetur.</p>
+                        <h2 class="">Lorem ipsum</h2>
+                        <p class="">Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Sed veritatis atque natus. Harum minus architecto obcaecati aspernatur
+                            recusandae maiores perspiciatis facere! Minima doloremque fugiat consequuntur dolorem dicta
+                            minus nihil praesentium. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+                            cupiditate nihil vel. Repudiandae porro, explicabo esse, corporis et omnis excepturi sit
+                            fugiat distinctio rerum suscipit repellendus perspiciatis molestias numquam necessitatibus.
+                        </p>
                     </div>
-                    <button>
-                        button
-                    </button>
                 </div>
-    
-                <div class="flex flex-row-reverse">
-                    <div class="w-[434px] h-[428px] bg-red-500"></div>
+            </div>
+        </div>
+
+        <div class="section2">
+            <div class="my_container _container">
+                <div class="-box">
+                    <div class="_left">
+                        <div class="_flex-col">
+                            <div class="-title">
+                                <h2>
+                                    Effortlessly design landing pages in munites
+                                </h2>
+                                <span>
+                                    Showcase your content, products, and services on a customizable, no-code landing
+                                    page. Track engagement and drive conversions with captivating landing pages that
+                                    compel your audience to act.
+                                </span>
+                            </div>
+                            <button class="">Get started for Free +</button>
+                        </div>
+                    </div>
+
+                    <div class="_right">
+                        <img src="https://via.placeholder.com/389x339" alt="" class="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section3 dark:bg-grayy">
+            <div class="my_container _container">
+                <div class="_left">
+                    <img src="https://via.placeholder.com/455x448" alt="" class="">
+                </div>
+                <div class="_right">
+                    <div class="-flex-col">
+                        <div class="_title">
+                            Learn about QR codes?
+                        </div>
+
+                        <div class="_list">
+                            <div class="-box">
+                                <span>What is a QR code generator?</span>
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                                    height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m19 9-7 7-7-7" />
+                                </svg>
+                            </div>
+                            <div class="-box">
+                                <span>How do QR code work?</span>
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                                    height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m19 9-7 7-7-7" />
+                                </svg>
+                            </div>
+                            <div class="-box">
+                                <span>Why create QR code?</span>
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                                    height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m19 9-7 7-7-7" />
+                                </svg>
+                            </div>
+                            <div class="-box">
+                                <span>What are the benefits of using a QR code?</span>
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                                    height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m19 9-7 7-7-7" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section4 dark:bg-grayy pt-[150px]">
+            <div class="my_container">
+                <!-- Swiper -->
+                <div class="swiper swiper1 w-full h-full">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide -slide ">
+                            <div class="_left">
+                                <img src="https://via.placeholder.com/346x339" alt="" class="">
+                            </div>
+                            <div class="_right flex flex-col gap-[45px] flex-1">
+                                <div class="_content flex flex-col gap-[30px]">
+                                    <div class="-title flex items-center gap-[30px]">
+                                        <div class="-circle">1</div>
+                                        <p>Choose the Type of Code</p>
+                                    </div>
+                                    <div class="-desc">Select the Type of QR code you
+                                        want to create, such as URL, vCard (contact details), Plain Text, Email, SMS,
+                                        Twitter, Wi-Fi, or even Bitcoin. These basic QR codes are free, but they are not
+                                        editable or trackable.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide -slide ">
+                            <div class="_left">
+                                <img src="https://via.placeholder.com/346x339" alt="" class="">
+                            </div>
+                            <div class="_right flex flex-col gap-[45px] flex-1">
+                                <div class="_content flex flex-col gap-[30px]">
+                                    <div class="-title flex items-center gap-[30px]">
+                                        <div class="-circle">1</div>
+                                        <p>Choose the Type of Code</p>
+                                    </div>
+                                    <div class="-desc">Select the Type of QR code you
+                                        want to create, such as URL, vCard (contact details), Plain Text, Email, SMS,
+                                        Twitter, Wi-Fi, or even Bitcoin. These basic QR codes are free, but they are not
+                                        editable or trackable.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide -slide ">
+                            <div class="_left">
+                                <img src="https://via.placeholder.com/346x339" alt="" class="">
+                            </div>
+                            <div class="_right flex flex-col gap-[45px] flex-1">
+                                <div class="_content flex flex-col gap-[30px]">
+                                    <div class="-title flex items-center gap-[30px]">
+                                        <div class="-circle">1</div>
+                                        <p>Choose the Type of Code</p>
+                                    </div>
+                                    <div class="-desc">Select the Type of QR code you
+                                        want to create, such as URL, vCard (contact details), Plain Text, Email, SMS,
+                                        Twitter, Wi-Fi, or even Bitcoin. These basic QR codes are free, but they are not
+                                        editable or trackable.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide -slide ">
+                            <div class="_left">
+                                <img src="https://via.placeholder.com/346x339" alt="" class="">
+                            </div>
+                            <div class="_right flex flex-col gap-[45px] flex-1">
+                                <div class="_content flex flex-col gap-[30px]">
+                                    <div class="-title flex items-center gap-[30px]">
+                                        <div class="-circle">1</div>
+                                        <p>Choose the Type of Code</p>
+                                    </div>
+                                    <div class="-desc">Select the Type of QR code you
+                                        want to create, such as URL, vCard (contact details), Plain Text, Email, SMS,
+                                        Twitter, Wi-Fi, or even Bitcoin. These basic QR codes are free, but they are not
+                                        editable or trackable.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var swiper = new Swiper(".swiper1", {
+                    pagination: {
+                        el: ".swiper-pagination",
+                    },
+                });
+            });
+        </script>
+
+        <div class="section5">
+            <div class="my_container _container">
+                <div class="flex-justify-between">
+                    <div class="_left">
+                        <h2 class="-title">What type of QR codes can I create for
+                            free</h2>
+                        <span class="-desc">We offer these Static QR Codes that
+                            are completely for free and will never expire. Once generated, it’s yours forever but you
+                            will not be able to edit the content or track its scans.</span>
+                    </div>
+                    <div class="_right flex items-center gap-[10px]">
+                        <svg class="swiper-btn-prev" width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M23.5003 4.33332C12.9149 4.33332 4.33366 12.9145 4.33366 23.5C4.33366 34.0854 12.9149 42.6667 23.5003 42.6667C34.0858 42.6667 42.667 34.0854 42.667 23.5C42.667 12.9145 34.0858 4.33332 23.5003 4.33332Z"
+                                stroke="white" stroke-width="4.04167" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M31.168 23.5L15.8346 23.5M15.8346 23.5L23.5013 15.8333M15.8346 23.5L23.5013 31.1666"
+                                stroke="white" stroke-width="4.04167" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                        <svg class="swiper-btn-next" width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M23.4997 42.6667C34.0851 42.6667 42.6663 34.0855 42.6663 23.5C42.6663 12.9146 34.0851 4.33334 23.4997 4.33334C12.9142 4.33334 4.33301 12.9146 4.33301 23.5C4.33301 34.0855 12.9142 42.6667 23.4997 42.6667Z"
+                                stroke="white" stroke-width="4.04167" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M15.832 23.5H31.1654M31.1654 23.5L23.4987 31.1667M31.1654 23.5L23.4987 15.8334"
+                                stroke="white" stroke-width="4.04167" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="">
+                    <div class="swiper swiper2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide -slide flex items-center justify-between">
+                                <div class="folder"></div>
+                                <div class="folder"></div>
+                                <div class="folder"></div>
+                            </div>
+                            <div class="swiper-slide -slide flex items-center justify-between">
+                                <div class="folder"></div>
+                                <div class="folder"></div>
+                                <div class="folder"></div>
+                            </div>
+                            <div class="swiper-slide -slide flex items-center justify-between">
+                                <div class="folder"></div>
+                                <div class="folder"></div>
+                                <div class="folder"></div>
+                            </div>
+                            <div class="swiper-slide -slide flex items-center justify-between">
+                                <div class="folder"></div>
+                                <div class="folder"></div>
+                                <div class="folder"></div>
+                            </div>
+                            <div class="swiper-slide -slide flex items-center justify-between">
+                                <div class="folder"></div>
+                                <div class="folder"></div>
+                                <div class="folder"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            var swiper = new Swiper(".swiper2", {
+                                spaceBetween: 30,
+                                navigation: {
+                                    nextEl: ".swiper-btn-next",
+                                    prevEl: ".swiper-btn-prev",
+                                },
+                            });
+                        });
+                      </script>
+                </div>
+            </div>
+        </div>
+        <!-- FAQ -->
+        <div class="FAQ section6">
+            <div class="my_container">
+                <div x-data="{basicCt: true, crtDesign: false, scanPrint: false}" class="_container">
+                    <div class="-header">
+                        <h2 class="_title">FAQ</h2>
+                        <div class="flex-justify-center">
+                            <div class="_btom">
+                                <span @click="basicCt = true, crtDesign = false, scanPrint = false">Basic</span>
+                                <span @click="basicCt = false, crtDesign = true, scanPrint = false" >Creating&Designing</span>
+                                <span @click="basicCt = false, crtDesign = false, scanPrint = true">Scanning&Printing</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Basic list-->
+                    <div x-show="basicCt" class="-questList">
+                        <div x-data="{dropDown: false}" class="_questBlock">
+                            <div @click="dropDown = !dropDown" class="-title">
+                                <span>What Kind of Information Can Be Stored in a QR Code?</span>
+                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                </svg>
+                            </div>
+
+                            <div x-cloak x-show="dropDown" 
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                x-transition:enter-end="opacity-100 transform translate-y-0"
+                                x-transition:leave="transition ease-in duration-300"
+                                x-transition:leave-start="opacity-100 transform translate-y-0"
+                                x-transition:leave-end="opacity-0 transform -translate-y-2"
+                            class="dropdown pt-[20px]">
+                                <p class="">QR codes are incredibly versatile and can store a wide range of information. This includes URLs to open websites instantly, contact details like name, phone number, and email, as well as plain text messages. They can even store Wi-Fi credentials, making it easy for customers to connect to your network with a simple scan. The possibilities are endless for what can be embedded in a QR code.</p>
+                            </div>
+                        </div>
+                        <div x-data="{dropDown: false}" class="_questBlock">
+                            <div @click="dropDown = !dropDown" class="-title">
+                                <span>Can QR Code Scans Be Tracked?</span>
+                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                </svg>
+                            </div>
+
+                            <div x-cloak x-show="dropDown" 
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                x-transition:enter-end="opacity-100 transform translate-y-0"
+                                x-transition:leave="transition ease-in duration-300"
+                                x-transition:leave-start="opacity-100 transform translate-y-0"
+                                x-transition:leave-end="opacity-0 transform -translate-y-2"
+                            class="dropdown pt-[20px]">
+                                <p class="">Yes, it is possible to track QR code scans, including where, when, and how often they are scanned. Additionally, you can see which devices and operating systems were used for the scan. This data is valuable for measuring the success of marketing campaigns and understanding user behavior.</p>
+                            </div>
+                        </div>
+                        <div x-data="{dropDown: false}" class="_questBlock">
+                            <div @click="dropDown = !dropDown" class="-title">
+                                <span>Do QR Codes Expire?</span>
+                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                </svg>
+                            </div>
+
+                            <div x-cloak x-show="dropDown" 
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                x-transition:enter-end="opacity-100 transform translate-y-0"
+                                x-transition:leave="transition ease-in duration-300"
+                                x-transition:leave-start="opacity-100 transform translate-y-0"
+                                x-transition:leave-end="opacity-0 transform -translate-y-2"
+                            class="dropdown pt-[20px]">
+                                <p class="">Static QR codes do not expire. They will remain functional indefinitely, as long as the information they contain (e.g., a URL) remains unchanged. If you want more flexibility, such as the ability to update content or track scans, you can opt for dynamic QR codes. These codes are also permanent but allow content to be modified after generation.</p>
+                            </div>
+                        </div>
+                        <div x-data="{dropDown: false}" class="_questBlock">
+                            <div @click="dropDown = !dropDown" class="-title">
+                                <span>What is the Difference Between Static and Dynamic QR Codes?</span>
+                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                </svg>
+                            </div>
+
+                            <div x-cloak x-show="dropDown" 
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                x-transition:enter-end="opacity-100 transform translate-y-0"
+                                x-transition:leave="transition ease-in duration-300"
+                                x-transition:leave-start="opacity-100 transform translate-y-0"
+                                x-transition:leave-end="opacity-0 transform -translate-y-2"
+                            class="dropdown pt-[20px]">
+                                <p class="">Static QR codes are fixed once created and cannot be edited or tracked. They are best for simple applications where the content doesn’t need to change. Dynamic QR codes, on the other hand, are more flexible and offer the ability to update the embedded content (such as links or text) after printing. Dynamic codes also allow for tracking and analytics, making them ideal for marketing campaigns.</p>
+                            </div>
+                        </div>
+                        <div x-data="{dropDown: false}" class="_questBlock">
+                            <div @click="dropDown = !dropDown" class="-title">
+                                <span>How Do I Manage a QR Code with a QR Code Generator?</span>
+                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                </svg>
+                            </div>
+
+                            <div x-cloak x-show="dropDown" 
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                x-transition:enter-end="opacity-100 transform translate-y-0"
+                                x-transition:leave="transition ease-in duration-300"
+                                x-transition:leave-start="opacity-100 transform translate-y-0"
+                                x-transition:leave-end="opacity-0 transform -translate-y-2"
+                            class="dropdown pt-[20px]">
+                                <p class="">After signing up for a QR code generator, you can use it to create and manage both static and dynamic QR codes. You can access features such as adding logos or branding to your codes, tracking scan statistics, and even setting up custom short URLs. The platform might offer a trial period to explore these features before committing to a paid version</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Creating&Designing list-->
+                    <div x-cloak x-show="crtDesign" class="-questList">
+                        <div x-data="{dropDown: false}" class="_questBlock">
+                            <div @click="dropDown = !dropDown" class="-title">
+                                <span>Is it Possible to Create Different QR Codes for the Same Content?</span>
+                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                </svg>
+                            </div>
+
+                            <div x-cloak x-show="dropDown" 
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                x-transition:enter-end="opacity-100 transform translate-y-0"
+                                x-transition:leave="transition ease-in duration-300"
+                                x-transition:leave-start="opacity-100 transform translate-y-0"
+                                x-transition:leave-end="opacity-0 transform -translate-y-2"
+                            class="dropdown pt-[20px]">
+                                <p class="">Yes, QR codes are highly customizable, and there are numerous versions available for any given content. With 40 different QR code versions, four error correction levels, and eight possible mask designs, there are up to 1280 possible combinations for a single input. However, for marketing purposes, only versions 1-7 are commonly used.</p>
+                            </div>
+                        </div>
+                        <div x-data="{dropDown: false}" class="_questBlock">
+                            <div @click="dropDown = !dropDown" class="-title">
+                                <span>Can I Customize a QR Code with My Company Logo or Icon?</span>
+                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                </svg>
+                            </div>
+
+                            <div x-cloak x-show="dropDown" 
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                x-transition:enter-end="opacity-100 transform translate-y-0"
+                                x-transition:leave="transition ease-in duration-300"
+                                x-transition:leave-start="opacity-100 transform translate-y-0"
+                                x-transition:leave-end="opacity-0 transform -translate-y-2"
+                            class="dropdown pt-[20px]">
+                                <p class="">Yes, it is possible to incorporate your company’s logo or icon into the center of the QR code to make it more branded and visually appealing. This customization is often done for marketing purposes to make the QR code stand out.</p>
+                            </div>
+                        </div>
+                        <div x-data="{dropDown: false}" class="_questBlock">
+                            <div @click="dropDown = !dropDown" class="-title">
+                                <span>Do QR Codes Have to Be Black and White?</span>
+                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                </svg>
+                            </div>
+
+                            <div x-cloak x-show="dropDown" 
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                x-transition:enter-end="opacity-100 transform translate-y-0"
+                                x-transition:leave="transition ease-in duration-300"
+                                x-transition:leave-start="opacity-100 transform translate-y-0"
+                                x-transition:leave-end="opacity-0 transform -translate-y-2"
+                            class="dropdown pt-[20px]">
+                                <p class="">No, QR codes do not need to be black and white. You can customize the colors to match your brand's colors or choose any color scheme you prefer. There are over 16 million possible color combinations using RGB notation, allowing for vibrant and personalized designs.</p>
+                            </div>
+                        </div>
+                        <div x-data="{dropDown: false}" class="_questBlock">
+                            <div @click="dropDown = !dropDown" class="-title">
+                                <span>Can a QR Code Be Edited or Changed?</span>
+                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                </svg>
+                            </div>
+
+                            <div x-cloak x-show="dropDown" 
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                x-transition:enter-end="opacity-100 transform translate-y-0"
+                                x-transition:leave="transition ease-in duration-300"
+                                x-transition:leave-start="opacity-100 transform translate-y-0"
+                                x-transition:leave-end="opacity-0 transform -translate-y-2"
+                            class="dropdown pt-[20px]">
+                                <p class="">Yes, you can change the content of a dynamic QR code after it has been printed or distributed. For example, if you need to correct a typo or change the destination link, you can do so without reprinting the QR code. This flexibility is available with a pro version of a QR code generator.</p>
+                            </div>
+                        </div>
+                        <div x-data="{dropDown: false}" class="_questBlock">
+                            <div @click="dropDown = !dropDown" class="-title">
+                                <span>How Do I Generate a Large Batch of QR Codes?</span>
+                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                </svg>
+                            </div>
+
+                            <div x-cloak x-show="dropDown" 
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                x-transition:enter-end="opacity-100 transform translate-y-0"
+                                x-transition:leave="transition ease-in duration-300"
+                                x-transition:leave-start="opacity-100 transform translate-y-0"
+                                x-transition:leave-end="opacity-0 transform -translate-y-2"
+                            class="dropdown pt-[20px]">
+                                <p class="">Some QR code generators allow you to create large batches of codes in one go. This is useful if you need to generate a series of QR codes for a specific campaign or event.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Scanning&Printing list-->
+                    <div x-cloak x-show="scanPrint" class="-questList">
+                        <div x-data="{dropDown: false}" class="_questBlock">
+                            <div @click="dropDown = !dropDown" class="-title">
+                                <span>What Graphic Formats Do the Generated QR Codes Support?</span>
+                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                </svg>
+                            </div>
+
+                            <div x-cloak x-show="dropDown" 
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                x-transition:enter-end="opacity-100 transform translate-y-0"
+                                x-transition:leave="transition ease-in duration-300"
+                                x-transition:leave-start="opacity-100 transform translate-y-0"
+                                x-transition:leave-end="opacity-0 transform -translate-y-2"
+                            class="dropdown pt-[20px]">
+                                <p class="">QR codes can be downloaded in high-resolution JPG format. If you need other formats like PNG, SVG, or EPS, you will need to sign up for an account. Note that EPS formats are typically available in black and white only.</p>
+                            </div>
+                        </div>
+                        <div x-data="{dropDown: false}" class="_questBlock">
+                            <div @click="dropDown = !dropDown" class="-title">
+                                <span>What Should I Know Before Printing My QR Code?</span>
+                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                </svg>
+                            </div>
+
+                            <div x-cloak x-show="dropDown" 
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                x-transition:enter-end="opacity-100 transform translate-y-0"
+                                x-transition:leave="transition ease-in duration-300"
+                                x-transition:leave-start="opacity-100 transform translate-y-0"
+                                x-transition:leave-end="opacity-0 transform -translate-y-2"
+                            class="dropdown pt-[20px]">
+                                <p class="">Before printing your QR code, it is important to consider factors such as the appropriate size, contrasting colors, and overall clarity. A blurry or poorly contrasted code might be unreadable. Always test your QR code thoroughly to ensure it works before printing it for distribution.</p>
+                            </div>
+                        </div>
+                        <div x-data="{dropDown: false}" class="_questBlock">
+                            <div @click="dropDown = !dropDown" class="-title">
+                                <span>How Do I Read or Scan a QR Code?</span>
+                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                </svg>
+                            </div>
+
+                            <div x-cloak x-show="dropDown" 
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                x-transition:enter-end="opacity-100 transform translate-y-0"
+                                x-transition:leave="transition ease-in duration-300"
+                                x-transition:leave-start="opacity-100 transform translate-y-0"
+                                x-transition:leave-end="opacity-0 transform -translate-y-2"
+                            class="dropdown pt-[20px]">
+                                <p class="">On most smartphones, simply open the camera app and point it at the QR code. The phone will automatically recognize the code and show a notification. If the scan doesn’t trigger, check the settings to ensure QR code scanning is enabled. Alternatively, you can install a third-party QR code reader app from your app store.</p>
+                            </div>
+                        </div>
+                        <div x-data="{dropDown: false}" class="_questBlock">
+                            <div @click="dropDown = !dropDown" class="-title">
+                                <span>Can QR Codes Be Scanned Without an App?</span>
+                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                </svg>
+                            </div>
+
+                            <div x-cloak x-show="dropDown" 
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                x-transition:enter-end="opacity-100 transform translate-y-0"
+                                x-transition:leave="transition ease-in duration-300"
+                                x-transition:leave-start="opacity-100 transform translate-y-0"
+                                x-transition:leave-end="opacity-0 transform -translate-y-2"
+                            class="dropdown pt-[20px]">
+                                <p class="">Yes, most iOS and Android smartphones now have QR code scanning functionality built directly into the camera app. You don't need to download a separate app to scan QR codes unless your phone doesn't have this feature.</p>
+                            </div>
+                        </div>
+                        <div x-data="{dropDown: false}" class="_questBlock">
+                            <div @click="dropDown = !dropDown" class="-title">
+                                <span>Is There a Scan Limit for QR Codes?</span>
+                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                </svg>
+                            </div>
+
+                            <div x-cloak x-show="dropDown" 
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                x-transition:enter-end="opacity-100 transform translate-y-0"
+                                x-transition:leave="transition ease-in duration-300"
+                                x-transition:leave-start="opacity-100 transform translate-y-0"
+                                x-transition:leave-end="opacity-0 transform -translate-y-2"
+                            class="dropdown pt-[20px]">
+                                <p class="">No, there is no scan limit for QR codes. They can be scanned an unlimited number of times, making them perfect for widespread use in marketing and customer engagement.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="QrForm">
-        <div class="my_container">
-            <div class="_container">
-                <!-- selection -->
-                <div class="_selection">
-                    <div class="arrow-start"><svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/></svg></div>
-                    <div id="selection_list" class="over-flow">
-                        <div id="list" class="-list">
-                            <button class="sl_list-item itemInactive"> item1</button>
-                            <button class="sl_list-item itemInactive"> item2</button>
-                            <button class="sl_list-item itemInactive"> item3</button>
-                            <button class="sl_list-item itemInactive"> item4</button>
-                            <button class="sl_list-item itemInactive"> item5</button>
-                            <button class="sl_list-item itemInactive"> item6</button>
-                            <button class="sl_list-item itemInactive"> item7</button>
-                            <button class="sl_list-item itemInactive"> item8</button>
-                            <button class="sl_list-item itemInactive"> item9</button>
-                            <button class="sl_list-item itemInactive"> item10</button>
-                            <button class="sl_list-item itemInactive"> item11</button>
-                            <button class="sl_list-item itemInactive"> item12</button>
-                            <button class="sl_list-item itemInactive"> item13</button>
-                            <button class="sl_list-item itemInactive"> item14</button>
-                            <button class="sl_list-item itemInactive"> item15</button>
-                            <button class="sl_list-item itemInactive"> item16</button>
-                        </div>
+    <footer>
+        <div class="_top">
+            <div class="_container nav_container">
+                <div class="-column">
+                    <div class="Logo">
+                        <img src="images/Logo.png" alt="Logo" class="">
                     </div>
-                    <div class="arrow-end"><svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/></svg></div>
+                    <span class="-desc">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut odio rerum necessitatibus eius doloribus ad exercitationem ea, explicabo nobis dolor porro hic dicta doloremque a veniam cumque animi sed. Mollitia!
+                    </span>
                 </div>
-
-                <!-- content -->
-                <div class="_smt p-[15px] border border-grayy bg-gray-500">
-                    <div class="content-box hidden" id="content-1">
-                        <div class="_container flex flex-col gap-[10px]">
-                            <div class="-title text-2xl font-bold">Title</div>
-                            <span class="-des text-xl font-semibold">Description</span>
-                            <div class="-input bg-red-500 w-full py-[10px] px-[15px]">
-                                <input type="text" class="w-full bg-transparent border-0 outline-one forced-color-adjust-none" style="box-shadow: none" placeholder="Input">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="content-box hidden" id="content-2">
-                        <div class="_container flex flex-col gap-[10px]">
-                            <div class="-title text-2xl font-bold">Title 2</div>
-                            <span class="-des text-xl font-semibold">Description 2</span>
-                            <div class="-input bg-red-500 w-full py-[10px] px-[15px]">
-                                <input type="text" class="w-full bg-transparent border-0 outline-one forced-color-adjust-none" style="box-shadow: none" placeholder="Input">
-                            </div>
-                        </div>
+                <div class="-column">
+                    <div class="-title">Menu Column</div>
+                    <div class="-list">
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
                     </div>
                 </div>
-
-                <!-- main form-->
-                <div class="_mainForm flex gap-[30px]">
-                    <div class="_selection p-[15px] border border-grayy">
-
-                        <div class=" -list flex flex-col gap-[15px]">
-                            <div class="bg-red-500 h-[82px] w-[82px] border border-grayy">Item 1</div>
-                            <div class="bg-red-500 h-[82px] w-[82px] border border-grayy">Item 2</div>
-                            <div class="bg-red-500 h-[82px] w-[82px] border border-grayy">item 3</div>
-                            <div class="bg-red-500 h-[82px] w-[82px] border border-grayy">Item 4</div>
-                            <div class="bg-red-500 h-[82px] w-[82px] border border-grayy">Item 5</div>
-                        </div>
+                <div class="-column">
+                    <div class="-title">Menu Column</div>
+                    <div class="-list">
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
                     </div>
-
-                    <div class=""></div>
                 </div>
-
+                <div class="-column">
+                    <div class="-title">Menu Column</div>
+                    <div class="-list">
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
+                    </div>
+                </div>
+                <div class="-column">
+                    <div class="-title">Menu Column</div>
+                    <div class="-list">
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="test h-screen"></div>
+        <div class="_bottom">
+            <div class=" my_container _container">
+                <span class="text-lg font-semibold text-white">© 2024. All Rights Reserved by <a href="#" class="">FreeQR</a></span>
+                <span class="text-lg font-semibold text-white">
+                    <a href="#" class="">Privacy Policy</a> • <a href="#" class="">Terms and Conditions</a></span>
+            </div>
+        </div>
+    </footer>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         //intit
         const listContainer = document.getElementById('selection_list');
@@ -182,46 +975,46 @@
         let isDragging = false;
         let startX = 0;
         let scrollStart = 0;
-        
+
         //scroll left
-        arrowStart.addEventListener('click', () =>{
+        arrowStart.addEventListener('click', () => {
             listContainer.scrollLeft -= itemWidth;
             toggleArrowVisibility();
         })
 
         //scroll right
-        arrowEnd.addEventListener('click', () =>{
+        arrowEnd.addEventListener('click', () => {
             listContainer.scrollLeft += itemWidth;
             toggleArrowVisibility();
         })
 
         //Drag gestures
-        listContainer.addEventListener('mousedown', (e) =>{
+        listContainer.addEventListener('mousedown', (e) => {
             isDragging = true;
             startX = e.pageX - listContainer.offsetLeft;
             scrollStart = listContainer.scrollLeft;
             listContainer.style.cursor = 'grabbing';
         })
 
-        listContainer.addEventListener('mousemove', (e) =>{
-            if(!isDragging) return;
+        listContainer.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
             const x = e.pageX - listContainer.offsetLeft;
             const scroll = x - startX;
             listContainer.scrollLeft = scrollStart - scroll;
             toggleArrowVisibility();
         })
 
-        listContainer.addEventListener('mouseup', () =>{
+        listContainer.addEventListener('mouseup', () => {
             isDragging = false;
             listContainer.style.cursor = 'grab';
         })
 
-        listContainer.addEventListener('mouseleave', () =>{
+        listContainer.addEventListener('mouseleave', () => {
             isDragging = false;
             listContainer.style.cursor = 'grab';
         })
 
-        listContainer.addEventListener('scroll', () =>{
+        listContainer.addEventListener('scroll', () => {
             toggleArrowVisibility();
         })
 
@@ -234,14 +1027,14 @@
             e.preventDefault();
             listContainer.scrollLeft += e.deltaY * 0.5;
             toggleArrowVisibility()
-          });
+        });
 
-        function setActiveItem(index){
+        function setActiveItem(index) {
             items.forEach((item, idx) => {
-                if(idx === index){
+                if (idx === index) {
                     item.classList.add('itemActive');
                     item.classList.remove('itemInactive')
-                }else{
+                } else {
                     item.classList.add('itemInactive');
                     item.classList.remove('itemActive');
                 }
@@ -253,10 +1046,7 @@
             });
         }
 
-        const clientWidth = listContainer.clientWidth;
-        console.log(clientWidth);
-
-        function toggleArrowVisibility(){
+        function toggleArrowVisibility() {
             const scrollLeft = listContainer.scrollLeft;
             const scrollWidth = listContainer.scrollWidth;
             const clientWidth = listContainer.clientWidth;
@@ -265,7 +1055,7 @@
             arrowEnd.style.display = scrollLeft + clientWidth >= scrollWidth ? 'none' : 'flex';
         }
 
-        window.addEventListener('DOMContentLoaded', () =>{
+        window.addEventListener('DOMContentLoaded', () => {
             setActiveItem(0);
             toggleArrowVisibility();
         })
