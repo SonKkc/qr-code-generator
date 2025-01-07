@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="scss/style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body class="dark">
+    <header class="navbar" x-data="{dropDown: false}">
+        <div class="bg-nav">
+            <div class="_container">
+                <!-- logo -->
+                <div class="logo">
+                    <span class="dark:text-white text-black">Logo</span>
+                </div>
+
+                <!-- nav -->
+                <nav class="nav">
+                    <ul class="-list">
+                        <li @mouseenter="dropDown = true" @mouseleave="dropDown = false" @click="dropDown =! dropDown">
+                            <a href="#" class="">Product</a><svg
+                                :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}"
+                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="3" d="m19 9-7 7-7-7" />
+                            </svg>
+                        </li>
+                        <li><a href="#" class="">Resources</a><svg class="" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="3" d="m19 9-7 7-7-7" />
+                            </svg></li>
+                        <li><a href="#" class="">Support</a><svg class="" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="3" d="m19 9-7 7-7-7" />
+                            </svg></li>
+                        <li><a href="#" class="">About us</a><svg class="" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="3" d="m19 9-7 7-7-7" />
+                            </svg></li>
+                        <li><a href="#" class="">Blog</a></li>
+                    </ul>
+
+                    <!-- user -->
+                    <div class="user">
+                        <button class="_login">Login</button>
+                        <button class="_signUp">Sign Up</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- dropdown -->
+        <div x-cloak x-show="dropDown" @mouseenter="dropDown = true" @mouseleave="dropDown = false"
+            x-transition:enter="transition ease-in-out duration-300"
+            x-transition:enter-start="-translate-y-full transform" x-transition:enter-end="translate-y-0 transform"
+            x-transition:leave="transition ease-in-out duration-300" x-transition:leave-start="translate-y-0 transform"
+            x-transition:leave-end="-translate-y-full transform" class="nav_dropdown">
+            <div class="flex flex-row-reverse -list">
+                <a href="#" class="">
+                    <p class="">Pages</p>
+                    <span class="">Mobile-friendly, no-code landing pages</span>
+                </a>
+                <a href="#" class="">
+                    <p class="">QR code solutions</p>
+                    <span class="">New here? Get started with the basics</span>
+                </a>
+                <a href="#" class="">
+                    <p class="">Pricing</p>
+                    <span class="">Select a plan for any budget</span>
+                </a>
+                <a href="#" class="">
+                    <p class="">Api</p>
+                    <span class="">Intergrate QR Code creation in your system</span>
+                </a>
+                <a href="#" class="">
+                    <p class="">Guides</p>
+                    <span class="">Take advantage of everything we have to offer</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="slt_page">
+        <section class="solutions_container">
+            <!-- <div class="my_container">
+                <ol class="breadcrumb_container">
+                    <li>
+                        <a href="#">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="flex items-center">
+                        <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 9 4-4-4-4" />
+                        </svg>
+                        Solutions
+                    </li>
+                </ol>
+            </div> -->
+
+            <div class="hero_container my_container h-full">
+                <div class="hero_text flex-1">
+                    <h4>QR CODE SOLUTIONS</h4>
+
+                    <h3><span class="text-brading">QR Code Solution</span> for <br /> Every Purpose</h3>
+
+                    <p>From adding a downloadable PDF file to playable videos and audio, use any of our QR Code
+                        solutions to enrich your print
+                        materials</p>
+                </div>
+
+                <div class="hero_img">
+                    <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        alt="hero" />
+                </div>
+            </div>
+
+            <div class="solutions_article bg-white dark:bg-darkBlack">
+                <div class="my_container solutions_article-wrapper">
+                    <h2>
+                        What is a QR code?
+                    </h2>
+
+                    <p>
+                        A QR code (Quick Response Code) is a two-dimensional barcode, composed of a grid of black and
+                        white squares arranged in
+                        a specific pattern. It was developed by Denso Wave, a subsidiary of the Toyota supplier Denso,
+                        to streamline logistics
+                        in automobile production by marking components. Over time, it has evolved and become widely used
+                        in mobile marketing,
+                        especially with the rise of smartphones. The term "QR" signifies the ability to access
+                        information quickly by scanning
+                        the code, providing instant access to the embedded data.
+                    </p>
+                </div>
+            </div>
+
+            <div class="solutions_article bg-article_gray dark:bg-neutral_10">
+                <div class="my_container solutions_article-wrapper">
+                    <h2>
+                        What can a QR code do?
+                    </h2>
+
+                    <p>
+                        A QR Code is an incredibly versatile tool that can perform a wide range of functions and is
+                        divided into two main types:
+                        Dynamic and Static. Among these, Dynamic QR Codes are particularly advantageous for businesses
+                        and nonprofits as part of
+                        their marketing strategies. Though they require a subscription, the benefits they offer make
+                        them a worthwhile
+                        investment. Dynamic QR Codes are editable, meaning any mistakes or changes needed after printing
+                        can be easily managed
+                        via an online dashboard without having to reprint or alter the appearance of the already printed
+                        codes. Here are some
+                        detailed reasons why this is beneficial
+                    </p>
+
+                    <ul>
+                        <li>
+                            Early Print Deadlines: In many cases, print deadlines occur before the finalization of
+                            campaign content. With a Dynamic
+                            QR Code, you can print a placeholder code and update the content later when it's ready. This
+                            ensures you meet your
+                            deadlines without compromising on accuracy.
+                        </li>
+
+                        <li>
+                            Error Management: Typos are a common occurrence in marketing materials like business cards,
+                            flyers, or brochures.
+                            Dynamic QR Codes eliminate the need for costly reprints by allowing you to correct errors
+                            after the materials are
+                            printed, saving both time and resources.
+                        </li>
+
+                        <li>
+                            Campaign Flexibility: Marketing strategies often evolve, and Dynamic QR Codes allow you to
+                            adapt. For example, if a QR
+                            Code initially directs users to a Facebook page but you later decide to collect customer
+                            feedback instead, you can
+                            simply update the code's destination in the dashboard. This flexibility means you can make
+                            as many changes as needed
+                            during the subscription period, enabling you to align your QR Code’s function with your
+                            campaign goals without hassle.
+                        </li>
+                    </ul>
+
+                    <p>
+                        Dynamic QR Codes offer a seamless solution for businesses to stay agile, reduce costs, and
+                        improve efficiency in their
+                        marketing efforts.
+                    </p>
+                </div>
+            </div>
+
+            <div class="min-h-screen relative mt-[150px]">
+                <!-- Split background -->
+                <div class="absolute inset-0">
+                    <div class="h-[65%] bg-white dark:bg-darkBlack"></div>
+                    <div class="h-[35%] bg-card_background-light dark:bg-neutral_3-night"></div>
+                </div>
+
+                <!-- Content -->
+                <div class="relative solutions_article">
+                    <div class="my_container solutions_article-wrapper">
+                        <h2>
+                            List of Dynamic QR Code solutions
+                        </h2>
+
+                        <p>
+                            Dynamic QR Code solutions allow users to create QR Codes that can be edited even after
+                            printing. Unlike static QR Codes,
+                            they offer flexibility for real-time updates, tracking, and error correction. Ideal for
+                            marketing, events, and
+                            promotions, these solutions help businesses manage and adapt their campaigns efficiently
+                            without reprinting.
+                        </p>
+                    </div>
+
+                    <div class="card_container">
+                        <!-- Repeat this card 12 times -->
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox=" 0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path
+                                            d="M8.26751 14.6799C8.08351 14.6799 7.95951 14.6979 7.89551 14.7159V15.8939C7.97151 15.9119 8.06651 15.9169 8.19751 15.9169C8.67651 15.9169 8.97151 15.6749 8.97151 15.2659C8.97151 14.8999 8.71751 14.6799 8.26751 14.6799ZM11.7545 14.6919C11.5545 14.6919 11.4245 14.7099 11.3475 14.7279V17.3379C11.4245 17.3559 11.5485 17.3559 11.6605 17.3559C12.4775 17.3619 13.0095 16.9119 13.0095 15.9599C13.0155 15.1299 12.5305 14.6919 11.7545 14.6919Z"
+                                            fill="currentColor" />
+                                        <path
+                                            d="M14.001 2.00012H6.00098C5.47054 2.00012 4.96184 2.21084 4.58676 2.58591C4.21169 2.96098 4.00098 3.46969 4.00098 4.00012V20.0001C4.00098 20.5306 4.21169 21.0393 4.58676 21.4143C4.96184 21.7894 5.47054 22.0001 6.00098 22.0001H18.001C18.5314 22.0001 19.0401 21.7894 19.4152 21.4143C19.7903 21.0393 20.001 20.5306 20.001 20.0001V8.00012L14.001 2.00012ZM9.49898 16.1901C9.18998 16.4801 8.73398 16.6101 8.20298 16.6101C8.1 16.6121 7.99703 16.606 7.89498 16.5921V18.0181H7.00098V14.0821C7.40445 14.0221 7.8121 13.9947 8.21998 14.0001C8.77698 14.0001 9.17298 14.1061 9.43998 14.3191C9.69398 14.5211 9.86598 14.8521 9.86598 15.2421C9.86498 15.6341 9.73498 15.9651 9.49898 16.1901ZM13.306 17.5451C12.886 17.8941 12.247 18.0601 11.466 18.0601C10.998 18.0601 10.667 18.0301 10.442 18.0001V14.0831C10.8456 14.0244 11.2531 13.9967 11.661 14.0001C12.418 14.0001 12.91 14.1361 13.294 14.4261C13.709 14.7341 13.969 15.2251 13.969 15.9301C13.969 16.6931 13.69 17.2201 13.306 17.5451ZM17.001 14.7701H15.469V15.6811H16.901V16.4151H15.469V18.0191H14.563V14.0301H17.001V14.7701ZM14.001 9.00012H13.001V4.00012L18.001 9.00012H14.001Z"
+                                            fill="currentColor" />
+                                    </svg>
+
+                                    PDf</button>
+                                <p>
+                                    Offer a convenient way to share documents by providing a downloadable PDF file that
+                                    users can access and save with ease.
+                                </p>
+                            </a>
+                        </div>
+
+                        <!-- Repeat the above div 11 more times -->
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" class="card_icon" xmlns="http://www.w3.org/2000/svg">
+                                        <mask id="mask0_1045_4804" style="mask-type:luminance"
+                                            maskUnits="userSpaceOnUse" x="2" y="2" width="20" height="20">
+                                            <path
+                                                d="M19.5 3H4.5C4.10218 3 3.72064 3.15804 3.43934 3.43934C3.15804 3.72064 3 4.10218 3 4.5V19.5C3 19.8978 3.15804 20.2794 3.43934 20.5607C3.72064 20.842 4.10218 21 4.5 21H19.5C19.8978 21 20.2794 20.842 20.5607 20.5607C20.842 20.2794 21 19.8978 21 19.5V4.5C21 4.10218 20.842 3.72064 20.5607 3.43934C20.2794 3.15804 19.8978 3 19.5 3Z"
+                                                fill="currentColor" stroke="currentColor" stroke-width="2" />
+                                            <path
+                                                d="M14 6.5L10.75 12L9.9375 13.375L9.5315 14.0625M7.5 17.5L7.9065 16.8125M6 14.5H11.5M15 14.5H18M9.5 6.5L11.25 9.25L11.6875 9.9375M16.5 17.5L14.75 14.75L13.875 13.375L13.4375 12.6875"
+                                                stroke="black" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </mask>
+                                        <g mask="url(#mask0_1045_4804)">
+                                            <path d="M0 0H24V24H0V0Z" fill="currentColor" />
+                                        </g>
+                                    </svg>
+
+                                    App Store</button>
+                                <p>
+                                    Simplify app downloads by generating a single QR Code that seamlessly redirects
+                                    users to
+                                    the appropriate app store based
+                                    on their device.
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" class="card_icon" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0 6C0 5.20435 0.316071 4.44129 0.87868 3.87868C1.44129 3.31607 2.20435 3 3 3H21C21.7956 3 22.5587 3.31607 23.1213 3.87868C23.6839 4.44129 24 5.20435 24 6V18C24 18.7956 23.6839 19.5587 23.1213 20.1213C22.5587 20.6839 21.7956 21 21 21H3C2.20435 21 1.44129 20.6839 0.87868 20.1213C0.316071 19.5587 0 18.7956 0 18V6ZM13.5 8.25C13.5 8.44891 13.579 8.63968 13.7197 8.78033C13.8603 8.92098 14.0511 9 14.25 9H20.25C20.4489 9 20.6397 8.92098 20.7803 8.78033C20.921 8.63968 21 8.44891 21 8.25C21 8.05109 20.921 7.86032 20.7803 7.71967C20.6397 7.57902 20.4489 7.5 20.25 7.5H14.25C14.0511 7.5 13.8603 7.57902 13.7197 7.71967C13.579 7.86032 13.5 8.05109 13.5 8.25ZM13.5 12C13.5 12.1989 13.579 12.3897 13.7197 12.5303C13.8603 12.671 14.0511 12.75 14.25 12.75H20.25C20.4489 12.75 20.6397 12.671 20.7803 12.5303C20.921 12.3897 21 12.1989 21 12C21 11.8011 20.921 11.6103 20.7803 11.4697C20.6397 11.329 20.4489 11.25 20.25 11.25H14.25C14.0511 11.25 13.8603 11.329 13.7197 11.4697C13.579 11.6103 13.5 11.8011 13.5 12ZM13.5 18.75C13.5 15.8505 10.815 13.5 7.5 13.5C4.371 13.5 1.8 15.597 1.524 18.2715C1.58751 18.6166 1.76997 18.9285 2.03964 19.1529C2.30931 19.3774 2.64914 19.5002 3 19.5H13.44C13.48 19.255 13.5 19.005 13.5 18.75ZM10.5 9C10.5 8.20435 10.1839 7.44129 9.62132 6.87868C9.05871 6.31607 8.29565 6 7.5 6C6.70435 6 5.94129 6.31607 5.37868 6.87868C4.81607 7.44129 4.5 8.20435 4.5 9C4.5 9.79565 4.81607 10.5587 5.37868 11.1213C5.94129 11.6839 6.70435 12 7.5 12C8.29565 12 9.05871 11.6839 9.62132 11.1213C10.1839 10.5587 10.5 9.79565 10.5 9Z"
+                                            fill="currentColor" />
+                                        <circle cx="20" cy="20" r="3" fill="#343434" />
+                                        <path
+                                            d="M21.4997 19.5H20.4995V18.4999C20.4995 18.2248 20.2745 17.9998 19.9994 17.9998C19.7244 17.9998 19.4993 18.2248 19.4993 18.4999V19.5H18.4991C18.2241 19.5 17.999 19.7251 17.999 20.0001C17.999 20.2752 18.2241 20.5002 18.4991 20.5002H19.4993V21.5004C19.4993 21.7755 19.7244 22.0005 19.9994 22.0005C20.2745 22.0005 20.4995 21.7755 20.4995 21.5004V20.5002H21.4997C21.7748 20.5002 21.9998 20.2752 21.9998 20.0001C21.9998 19.7251 21.7748 19.5 21.4997 19.5Z"
+                                            fill="white" />
+                                    </svg>
+                                    VCARD PLUS</button>
+                                <p>
+                                    Design a professional and editable electronic business card that allows users to
+                                    save
+                                    your contact information directly
+                                    to their devices with just one tap.
+
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" class="card_icon" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M18.3638 5.43719L21.8842 1.95039C22.0337 1.80236 22.2809 1.82669 22.3986 2.00101L23.2107 3.20331C23.3226 3.36892 23.2659 3.59495 23.0891 3.68819L18.7566 5.97269C18.6835 6.01129 18.5986 6.02151 18.5184 6.00138C18.4381 5.98126 18.3681 5.93221 18.3219 5.86365C18.278 5.79883 18.2582 5.72073 18.2659 5.64286C18.2735 5.56499 18.3082 5.49224 18.3638 5.43719ZM18.946 8.43151C18.9591 8.49601 18.9957 8.55336 19.0486 8.59256C19.1015 8.63176 19.167 8.65005 19.2325 8.6439L23.1129 8.28165C23.1503 8.27816 23.1865 8.26683 23.2192 8.24841C23.2519 8.22998 23.2803 8.20488 23.3026 8.17474C23.325 8.14459 23.3407 8.11008 23.3489 8.07344C23.357 8.03681 23.3573 7.99887 23.3498 7.96211L23.1182 6.83106C23.0847 6.66709 22.9103 6.574 22.7554 6.63742L19.1065 8.13067C19.0489 8.15426 19.0013 8.19722 18.972 8.25215C18.9427 8.30708 18.9335 8.37052 18.946 8.43151ZM16.0487 4.31383C16.1036 4.35007 16.17 4.36477 16.2351 4.3551C16.3002 4.34543 16.3594 4.31207 16.4014 4.26142L18.8891 1.26142C18.9131 1.23253 18.9307 1.19892 18.9408 1.16277C18.9509 1.12663 18.9532 1.08876 18.9477 1.05164C18.9422 1.01452 18.9289 0.978978 18.9088 0.947328C18.8886 0.915679 18.862 0.888633 18.8307 0.867951L17.8673 0.231904C17.7276 0.139701 17.5384 0.19717 17.4737 0.351576L15.9495 3.98762C15.9254 4.04504 15.9222 4.10905 15.9403 4.1686C15.9584 4.22816 15.9967 4.27952 16.0487 4.31383Z"
+                                            fill="currentColor" />
+                                        <path
+                                            d="M10.2376 22.4923L9.4882 22.9306C8.87901 23.2869 8.09638 23.0818 7.74013 22.4726L5.7531 19.0748C5.39685 18.4656 5.60188 17.683 6.21107 17.3268L6.96051 16.8885C7.5697 16.5322 8.35232 16.7373 8.70857 17.3464L10.6956 20.7443C11.0519 21.3535 10.8468 22.1361 10.2376 22.4923Z"
+                                            fill="currentColor" />
+                                        <path
+                                            d="M5.64388 19.1579L12.9053 15.2044L7.94137 7.43219L1.37741 12.3087C1.33509 12.3358 -0.439038 13.9591 1.50932 17.0097C3.45768 20.0604 5.64388 19.1579 5.64388 19.1579Z"
+                                            fill="currentColor" />
+                                        <path
+                                            d="M16.994 7.13575C19.1659 10.5364 20.4818 14.2205 19.5731 14.8008C18.6645 15.3812 15.8754 12.638 13.7034 9.2373C11.5315 5.83657 10.2157 2.15257 11.1243 1.57221C12.0329 0.991846 14.822 3.73502 16.994 7.13575Z"
+                                            fill="currentColor" />
+                                        <path
+                                            d="M15.9713 11.8546C16.7241 11.3738 16.5084 9.691 15.4896 8.09593C14.4708 6.50086 13.0347 5.59756 12.2819 6.07835C11.5292 6.55915 11.7448 8.24197 12.7636 9.83705C13.7824 11.4321 15.2186 12.3354 15.9713 11.8546Z"
+                                            fill="currentColor" />
+                                        <path
+                                            d="M19.5335 14.8262C18.7398 15.3331 16.0439 12.5305 13.8719 9.12974C11.7 5.72901 10.2909 2.10449 11.0846 1.59759C11.1303 1.56838 11.1816 1.54912 11.2376 1.53848C10.8632 1.5299 10.4963 1.72518 10.2793 2.14031C9.32263 3.96974 6.88124 8.02865 6.88124 8.02865C6.88124 8.02865 5.66975 9.6599 7.79943 12.9944C9.9291 16.3288 11.9852 15.9115 11.9852 15.9115C11.9852 15.9115 16.6559 15.4344 18.7082 15.3364C19.194 15.3132 19.5324 15.0434 19.673 14.6795C19.6357 14.7409 19.5895 14.7904 19.5335 14.8262Z"
+                                            fill="currentColor" />
+                                    </svg>
+
+                                    SOCIAL MEDIA</button>
+                                <p>
+                                    Centralize your online presence by displaying all your social media profiles on a
+                                    visually appealing and
+                                    mobile-optimized page, making it easier for your audience to connect with you.
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path
+                                            d="M23.001 10.0001C23.001 9.46963 22.7903 8.96092 22.4152 8.58585C22.0401 8.21078 21.5314 8.00006 21.001 8.00006H14.681L15.641 3.43006C15.661 3.33006 15.671 3.22006 15.671 3.11006C15.671 2.70006 15.501 2.32006 15.231 2.05006L14.171 1.00006L7.59098 7.58006C7.22098 7.95006 7.00098 8.45006 7.00098 9.00006V19.0001C7.00098 19.5305 7.21169 20.0392 7.58676 20.4143C7.96184 20.7893 8.47054 21.0001 9.00098 21.0001H18.001C18.831 21.0001 19.541 20.5001 19.841 19.7801L22.861 12.7301C22.951 12.5001 23.001 12.2601 23.001 12.0001V10.0001ZM1.00098 21.0001H5.00098V9.00006H1.00098V21.0001Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                    FACEBOOK</button>
+                                <p>
+                                    Promote your Facebook profile or business page effectively to grow your followers
+                                    and
+                                    engage more users in a streamlined
+                                    manner.
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path
+                                            d="M4.875 3C3.97989 3 3.12145 3.35558 2.48851 3.98851C1.85558 4.62145 1.5 5.47989 1.5 6.375V17.625C1.5 18.5201 1.85558 19.3785 2.48851 20.0115C3.12145 20.6444 3.97989 21 4.875 21H19.125C20.0201 21 20.8785 20.6444 21.5115 20.0115C22.1444 19.3785 22.5 18.5201 22.5 17.625V6.375C22.5 5.47989 22.1444 4.62145 21.5115 3.98851C20.8785 3.35558 20.0201 3 19.125 3H4.875ZM9 9.00075C9.00009 8.87132 9.03367 8.74412 9.09747 8.63151C9.16128 8.5189 9.25314 8.42472 9.36413 8.35813C9.47511 8.29154 9.60144 8.2548 9.73083 8.25149C9.86022 8.24819 9.98826 8.27842 10.1025 8.33925L15.726 11.3385C15.8458 11.4025 15.946 11.4979 16.0158 11.6144C16.0857 11.7309 16.1226 11.8642 16.1226 12C16.1226 12.1358 16.0857 12.2691 16.0158 12.3856C15.946 12.5021 15.8458 12.5975 15.726 12.6615L10.1032 15.6608C9.98898 15.7218 9.86086 15.7521 9.73137 15.7489C9.60187 15.7457 9.47542 15.709 9.36432 15.6424C9.25323 15.5758 9.16128 15.4815 9.09743 15.3688C9.03358 15.2561 9.00002 15.1288 9 14.9993V9.00075Z"
+                                            fill="currentColor" />
+                                    </svg>
+
+                                    Video</button>
+                                <p>
+                                    Present multiple videos on a sleek, organized summary page, enabling viewers to
+                                    access
+                                    and enjoy your content without
+                                    distractions.
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path
+                                            d="M20.5556 1.7984C21.2039 1.7984 21.8256 2.05594 22.284 2.51436C22.7425 2.97278 23 3.59454 23 4.24285V18.9095C23 19.5578 22.7425 20.1796 22.284 20.638C21.8256 21.0964 21.2039 21.354 20.5556 21.354H3.44444C2.79614 21.354 2.17438 21.0964 1.71596 20.638C1.25754 20.1796 1 19.5578 1 18.9095V4.24285C1 3.59454 1.25754 2.97278 1.71596 2.51436C2.17438 2.05594 2.79614 1.7984 3.44444 1.7984H20.5556ZM20.5556 9.13173H3.44444V17.6873C3.44448 17.9867 3.55439 18.2756 3.75332 18.4993C3.95225 18.723 4.22636 18.8659 4.52367 18.901L4.66667 18.9095H19.3333C19.6327 18.9095 19.9216 18.7996 20.1453 18.6006C20.3691 18.4017 20.512 18.1276 20.547 17.8303L20.5556 17.6873V9.13173ZM4.66667 4.24285C4.34251 4.24285 4.03164 4.37161 3.80242 4.60083C3.57321 4.83004 3.44444 5.14091 3.44444 5.46507C3.44444 5.78922 3.57321 6.1001 3.80242 6.32931C4.03164 6.55852 4.34251 6.68729 4.66667 6.68729C4.99082 6.68729 5.3017 6.55852 5.53091 6.32931C5.76012 6.1001 5.88889 5.78922 5.88889 5.46507C5.88889 5.14091 5.76012 4.83004 5.53091 4.60083C5.3017 4.37161 4.99082 4.24285 4.66667 4.24285ZM8.33333 4.24285C8.00918 4.24285 7.6983 4.37161 7.46909 4.60083C7.23988 4.83004 7.11111 5.14091 7.11111 5.46507C7.11111 5.78922 7.23988 6.1001 7.46909 6.32931C7.6983 6.55852 8.00918 6.68729 8.33333 6.68729C8.65749 6.68729 8.96836 6.55852 9.19757 6.32931C9.42678 6.1001 9.55555 5.78922 9.55555 5.46507C9.55555 5.14091 9.42678 4.83004 9.19757 4.60083C8.96836 4.37161 8.65749 4.24285 8.33333 4.24285ZM12 4.24285C11.6758 4.24285 11.365 4.37161 11.1358 4.60083C10.9065 4.83004 10.7778 5.14091 10.7778 5.46507C10.7778 5.78922 10.9065 6.1001 11.1358 6.32931C11.365 6.55852 11.6758 6.68729 12 6.68729C12.3242 6.68729 12.635 6.55852 12.8642 6.32931C13.0935 6.1001 13.2222 5.78922 13.2222 5.46507C13.2222 5.14091 13.0935 4.83004 12.8642 4.60083C12.635 4.37161 12.3242 4.24285 12 4.24285Z"
+                                            fill="currentColor" />
+                                        <path
+                                            d="M14.7939 15.4612V11.2707H14.0955V16.1596H16.8891V15.4612H14.7939ZM13.397 13.3659V11.9691C13.397 11.5839 13.0838 11.2707 12.6986 11.2707H10.6034V16.1596H11.3018V14.0643H11.8186L12.634 16.1596H13.3831L12.5684 14.0643H12.6986C13.0838 14.0643 13.397 13.7511 13.397 13.3659ZM11.3018 11.9691H12.6986V13.3659H11.3018V11.9691ZM9.20657 16.1596H7.80974C7.42457 16.1596 7.11133 15.8463 7.11133 15.4612V11.2707H7.80974V15.4612H9.20657V11.2707H9.90498V15.4612C9.90498 15.8463 9.59174 16.1596 9.20657 16.1596Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                    DYNAMIC URL</button>
+                                <p>
+                                    Create dynamic links to any webpage, giving you the flexibility to update or change
+                                    the
+                                    destination URL whenever needed,
+                                    ensuring your audience always gets the most relevant content.
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path
+                                            d="M21.375 3H2.625C2.32663 3 2.04048 3.11853 1.8295 3.3295C1.61853 3.54048 1.5 3.82663 1.5 4.125V19.875C1.5 20.1734 1.61853 20.4595 1.8295 20.6705C2.04048 20.8815 2.32663 21 2.625 21H21.375C21.6734 21 21.9595 20.8815 22.1705 20.6705C22.3815 20.4595 22.5 20.1734 22.5 19.875V4.125C22.5 3.82663 22.3815 3.54048 22.1705 3.3295C21.9595 3.11853 21.6734 3 21.375 3ZM15.5447 6.00937C16.0053 5.96717 16.4677 6.06795 16.869 6.29798C17.2703 6.52801 17.5909 6.87612 17.7872 7.29491C17.9836 7.71371 18.0461 8.18283 17.9662 8.63842C17.8864 9.09401 17.668 9.51392 17.341 9.84098C17.0139 10.168 16.594 10.3864 16.1384 10.4662C15.6828 10.5461 15.2137 10.4836 14.7949 10.2872C14.3761 10.0909 14.028 9.77026 13.798 9.36898C13.5679 8.96771 13.4672 8.50529 13.5094 8.04469C13.5574 7.52107 13.7872 7.0308 14.159 6.659C14.5308 6.2872 15.0211 6.05735 15.5447 6.00937ZM3.5625 19.5C3.41332 19.5 3.27024 19.4407 3.16475 19.3352C3.05926 19.2298 3 19.0867 3 18.9375V14.8298L9.03 9.46875L13.5745 14.0039L8.07984 19.5H3.5625ZM21 18.9375C21 19.0867 20.9407 19.2298 20.8352 19.3352C20.7298 19.4407 20.5867 19.5 20.4375 19.5H10.2014L17.2106 12.4908L21 15.6487V18.9375Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                    IMAGE GALLERY</button>
+                                <p>
+                                    Curate a stunning image gallery to display multiple photos in an eye-catching
+                                    format,
+                                    perfect for showcasing your
+                                    portfolio, events, or products.
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path
+                                            d="M15 13.0001H16.5V15.8201L18.94 17.2301L18.19 18.5301L15 16.6901V13.0001ZM19 8.00006H5V19.0001H9.67C9.24 18.0901 9 17.0701 9 16.0001C9 14.1435 9.7375 12.3631 11.0503 11.0503C12.363 9.73756 14.1435 9.00006 16 9.00006C17.07 9.00006 18.09 9.24006 19 9.67006V8.00006ZM5 21.0001C4.46957 21.0001 3.96086 20.7893 3.58579 20.4143C3.21071 20.0392 3 19.5305 3 19.0001V5.00006C3 3.89006 3.89 3.00006 5 3.00006H6V1.00006H8V3.00006H16V1.00006H18V3.00006H19C19.5304 3.00006 20.0391 3.21077 20.4142 3.58585C20.7893 3.96092 21 4.46963 21 5.00006V11.1001C22.24 12.3601 23 14.0901 23 16.0001C23 17.8566 22.2625 19.6371 20.9497 20.9498C19.637 22.2626 17.8565 23.0001 16 23.0001C14.09 23.0001 12.36 22.2401 11.1 21.0001H5ZM16 11.1501C14.7137 11.1501 13.4801 11.661 12.5705 12.5706C11.661 13.4801 11.15 14.7138 11.15 16.0001C11.15 18.6801 13.32 20.8501 16 20.8501C16.6369 20.8501 17.2676 20.7246 17.856 20.4809C18.4444 20.2371 18.9791 19.8799 19.4295 19.4295C19.8798 18.9792 20.2371 18.4445 20.4808 17.8561C20.7246 17.2676 20.85 16.637 20.85 16.0001C20.85 13.3201 18.68 11.1501 16 11.1501Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                    EVENT</button>
+                                <p>
+                                    Share event details in a professional way that includes the option for users to save
+                                    the
+                                    event information to their
+                                    digital calendar with a single tap, ensuring they never miss an important date.
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path
+                                            d="M20.999 3V15.5C20.999 16.4283 20.6303 17.3185 19.9739 17.9749C19.3175 18.6313 18.4273 19 17.499 19C16.5708 19 15.6805 18.6313 15.0241 17.9749C14.3678 17.3185 13.999 16.4283 13.999 15.5C13.999 14.5717 14.3678 13.6815 15.0241 13.0251C15.6805 12.3687 16.5708 12 17.499 12C18.039 12 18.549 12.12 18.999 12.34V6.47L8.99902 8.6V17.5C8.99902 18.4283 8.63027 19.3185 7.9739 19.9749C7.31752 20.6313 6.42728 21 5.49902 21C4.57077 21 3.68053 20.6313 3.02415 19.9749C2.36777 19.3185 1.99902 18.4283 1.99902 17.5C1.99902 16.5717 2.36777 15.6815 3.02415 15.0251C3.68053 14.3687 4.57077 14 5.49902 14C6.03902 14 6.54902 14.12 6.99902 14.34V6L20.999 3Z"
+                                            fill="currentColor" />
+                                    </svg>
+
+                                    MP3
+                                </button>
+                                <p>
+                                    Provide instant access to your sound file or song by allowing users to play it
+                                    directly
+                                    without requiring additional
+                                    software or apps, making your audio content more accessible.
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path
+                                            d="M3.99902 3.99997C3.46859 3.99997 2.95988 4.21068 2.58481 4.58576C2.20974 4.96083 1.99902 5.46954 1.99902 5.99997V9.99997C2.52946 9.99997 3.03816 10.2107 3.41324 10.5858C3.78831 10.9608 3.99902 11.4695 3.99902 12C3.99902 12.5304 3.78831 13.0391 3.41324 13.4142C3.03816 13.7893 2.52946 14 1.99902 14V18C1.99902 18.5304 2.20974 19.0391 2.58481 19.4142C2.95988 19.7893 3.46859 20 3.99902 20H19.999C20.5295 20 21.0382 19.7893 21.4132 19.4142C21.7883 19.0391 21.999 18.5304 21.999 18V14C21.4686 14 20.9599 13.7893 20.5848 13.4142C20.2097 13.0391 19.999 12.5304 19.999 12C19.999 11.4695 20.2097 10.9608 20.5848 10.5858C20.9599 10.2107 21.4686 9.99997 21.999 9.99997V5.99997C21.999 5.46954 21.7883 4.96083 21.4132 4.58576C21.0382 4.21068 20.5295 3.99997 19.999 3.99997H3.99902ZM15.499 6.99997L16.999 8.49997L8.49902 17L6.99902 15.5L15.499 6.99997ZM8.80902 7.03997C9.78902 7.03997 10.579 7.82997 10.579 8.80997C10.579 9.2794 10.3925 9.72961 10.0606 10.0615C9.72866 10.3935 9.27846 10.58 8.80902 10.58C7.82902 10.58 7.03902 9.78997 7.03902 8.80997C7.03902 8.34054 7.22551 7.89033 7.55745 7.55839C7.88938 7.22645 8.33959 7.03997 8.80902 7.03997ZM15.189 13.42C16.169 13.42 16.959 14.21 16.959 15.19C16.959 15.6594 16.7725 16.1096 16.4406 16.4415C16.1087 16.7735 15.6585 16.96 15.189 16.96C14.209 16.96 13.419 16.17 13.419 15.19C13.419 14.7205 13.6055 14.2703 13.9374 13.9384C14.2694 13.6065 14.7196 13.42 15.189 13.42Z"
+                                            fill="currentColor" />
+                                    </svg>
+
+                                    COUPON
+                                </button>
+                                <p>
+                                    Digitize your promotional codes or coupons, enabling users to easily access, redeem,
+                                    and
+                                    share your offers, boosting
+                                    customer engagement and sales.
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path
+                                            d="M3.00007 5.99997H16.0001C16.5501 5.99997 17.0001 5.54997 17.0001 4.99997C17.0001 4.44997 16.5501 3.99997 16.0001 3.99997H3.00007C2.45007 3.99997 2.00007 4.44997 2.00007 4.99997C2.00007 5.54997 2.45007 5.99997 3.00007 5.99997ZM15.0001 17H17.0001V14H17.1801C17.8101 14 18.2801 13.42 18.1601 12.8L17.1601 7.79997C17.0701 7.33997 16.6601 6.99997 16.1801 6.99997H2.82007C2.34007 6.99997 1.93007 7.33997 1.84007 7.79997L0.840074 12.8C0.720074 13.42 1.19007 14 1.82007 14H2.00007V19C2.00007 19.55 2.45007 20 3.00007 20H10.0001C10.5501 20 11.0001 19.55 11.0001 19V14H15.0001V17ZM9.00007 18H4.00007V14H9.00007V18Z"
+                                            fill="currentColor" />
+                                        <path
+                                            d="M22 18H20V16C20 15.45 19.55 15 19 15C18.45 15 18 15.45 18 16V18H16C15.45 18 15 18.45 15 19C15 19.55 15.45 20 16 20H18V22C18 22.55 18.45 23 19 23C19.55 23 20 22.55 20 22V20H22C22.55 20 23 19.55 23 19C23 18.45 22.55 18 22 18Z"
+                                            fill="currentColor" />
+                                    </svg>
+
+
+                                    BUSINESS PAGE
+                                </button>
+                                <p>
+                                    Showcase comprehensive details about your business, including services, products,
+                                    and
+                                    contact information, in an
+                                    appealing and easy-to-navigate format.
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path
+                                            d="M22.5 10H15.75C15.13 10 14.6 10.38 14.37 10.91L12.11 16.2C12.04 16.37 12 16.56 12 16.75V18C12 18.2652 12.1054 18.5196 12.2929 18.7071C12.4804 18.8946 12.7348 19 13 19H18.18L17.5 22.18V22.42C17.5 22.73 17.63 23 17.83 23.22L18.62 24L23.56 19.06C23.83 18.79 24 18.41 24 18V11.5C24 11.1022 23.842 10.7206 23.5607 10.4393C23.2794 10.158 22.8978 10 22.5 10ZM12 6C12 5.73478 11.8946 5.48043 11.7071 5.29289C11.5196 5.10536 11.2652 5 11 5H5.82L6.5 1.82V1.59C6.5 1.28 6.37 1 6.17 0.79L5.38 0L0.44 4.94C0.17 5.21 0 5.59 0 6V12.5C0 12.8978 0.158035 13.2794 0.43934 13.5607C0.720644 13.842 1.10218 14 1.5 14H8.25C8.87 14 9.4 13.62 9.63 13.09L11.89 7.8C11.96 7.63 12 7.44 12 7.25V6Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                    RATING
+                                </button>
+                                <p>
+                                    Collect feedback or ratings from your audience with minimal effort by using a simple
+                                    and
+                                    user-friendly rating system,
+                                    helping you gather valuable insights.
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path
+                                            d="M1.99902 22V3.99998C1.99902 3.44998 2.19502 2.97932 2.58702 2.58798C2.97902 2.19665 3.44969 2.00065 3.99902 1.99998H19.999C20.549 1.99998 21.02 2.19598 21.412 2.58798C21.804 2.97998 21.9997 3.45065 21.999 3.99998V16C21.999 16.55 21.8034 17.021 21.412 17.413C21.0207 17.805 20.5497 18.0007 19.999 18H5.99902L1.99902 22ZM7.99902 11C8.28236 11 8.52002 10.904 8.71202 10.712C8.90402 10.52 8.99969 10.2827 8.99902 9.99999C8.99836 9.71732 8.90236 9.47999 8.71102 9.28799C8.51969 9.09599 8.28236 8.99999 7.99902 8.99999C7.71569 8.99999 7.47836 9.09599 7.28702 9.28799C7.09569 9.47999 6.99969 9.71732 6.99902 9.99999C6.99836 10.2827 7.09436 10.5203 7.28702 10.713C7.47969 10.9057 7.71702 11.0013 7.99902 11ZM11.999 11C12.2824 11 12.52 10.904 12.712 10.712C12.904 10.52 12.9997 10.2827 12.999 9.99999C12.9984 9.71732 12.9024 9.47999 12.711 9.28799C12.5197 9.09599 12.2824 8.99999 11.999 8.99999C11.7157 8.99999 11.4784 9.09599 11.287 9.28799C11.0957 9.47999 10.9997 9.71732 10.999 9.99999C10.9984 10.2827 11.0944 10.5203 11.287 10.713C11.4797 10.9057 11.717 11.0013 11.999 11ZM15.999 11C16.2824 11 16.52 10.904 16.712 10.712C16.904 10.52 16.9997 10.2827 16.999 9.99999C16.9984 9.71732 16.9024 9.47999 16.711 9.28799C16.5197 9.09599 16.2824 8.99999 15.999 8.99999C15.7157 8.99999 15.4784 9.09599 15.287 9.28799C15.0957 9.47999 14.9997 9.71732 14.999 9.99999C14.9984 10.2827 15.0944 10.5203 15.287 10.713C15.4797 10.9057 15.717 11.0013 15.999 11Z"
+                                            fill="currentColor" />
+                                    </svg>
+
+                                    FEEDBACK
+                                </button>
+                                <p>
+                                    Utilize a fully customizable form to collect feedback, inquiries, or suggestions
+                                    from
+                                    your customers, allowing you to
+                                    improve and adapt your services based on their needs.
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M13.001 3.5V9H18.501L13.001 3.5ZM4.00098 4C4.00098 2.89 4.89098 2 6.00098 2H14.001L20.001 8V20C20.001 20.5304 19.7903 21.0391 19.4152 21.4142C19.0401 21.7893 18.5314 22 18.001 22H6.00098C5.47054 22 4.96184 21.7893 4.58676 21.4142C4.21169 21.0391 4.00098 20.5304 4.00098 20V4ZM10.1854 16.5485C9.81687 16.1151 9.61501 15.5666 9.61559 15C9.61547 14.4841 9.78321 13.982 10.0939 13.5679C10.4047 13.1539 10.8419 12.85 11.3407 12.7013C11.8396 12.5526 12.3735 12.5671 12.8634 12.7425C13.3533 12.9179 13.7731 13.245 14.0605 13.6752L15.3846 12.7572C15.0147 12.2157 14.5163 11.7722 13.933 11.4659C13.3497 11.1595 12.6995 10.9995 12.0392 11C9.80827 11 7.99984 12.7908 7.99984 15C7.99984 17.2092 9.80827 19 12.0392 19C13.9935 19 15.6234 17.6256 15.9978 15.8H15.9998V14.2H12.0392V15.8H14.3251C14.135 16.3344 13.76 16.7849 13.2667 17.0719C12.7733 17.3588 12.1934 17.4637 11.6295 17.3679C11.0655 17.2721 10.554 16.9818 10.1854 16.5485Z"
+                                            fill="currentColor" />
+                                    </svg>
+
+
+                                    GOOGLE FORMS
+                                </button>
+                                <p>
+                                    Direct users to an online survey or questionnaire, such as a Google Form, instantly
+                                    by
+                                    integrating it with a QR Code or
+                                    link, streamlining the data collection process.
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path
+                                            d="M8.00098 21H4.00098C3.73576 21 3.48141 20.8946 3.29387 20.7071C3.10633 20.5196 3.00098 20.2652 3.00098 20V16C3.00098 15.7348 2.89562 15.4804 2.70808 15.2929C2.52055 15.1053 2.26619 15 2.00098 15C1.73576 15 1.48141 15.1053 1.29387 15.2929C1.10633 15.4804 1.00098 15.7348 1.00098 16V20C1.00098 20.7956 1.31705 21.5587 1.87966 22.1213C2.44227 22.6839 3.20533 23 4.00098 23H8.00098C8.26619 23 8.52055 22.8946 8.70808 22.7071C8.89562 22.5196 9.00098 22.2652 9.00098 22C9.00098 21.7348 8.89562 21.4804 8.70808 21.2929C8.52055 21.1053 8.26619 21 8.00098 21ZM22.001 15C21.7358 15 21.4814 15.1053 21.2939 15.2929C21.1063 15.4804 21.001 15.7348 21.001 16V20C21.001 20.2652 20.8956 20.5196 20.7081 20.7071C20.5205 20.8946 20.2662 21 20.001 21H16.001C15.7358 21 15.4814 21.1053 15.2939 21.2929C15.1063 21.4804 15.001 21.7348 15.001 22C15.001 22.2652 15.1063 22.5196 15.2939 22.7071C15.4814 22.8946 15.7358 23 16.001 23H20.001C20.7966 23 21.5597 22.6839 22.1223 22.1213C22.6849 21.5587 23.001 20.7956 23.001 20V16C23.001 15.7348 22.8956 15.4804 22.7081 15.2929C22.5205 15.1053 22.2662 15 22.001 15ZM20.001 0.999992H16.001C15.7358 0.999992 15.4814 1.10535 15.2939 1.29289C15.1063 1.48042 15.001 1.73478 15.001 1.99999C15.001 2.26521 15.1063 2.51956 15.2939 2.7071C15.4814 2.89464 15.7358 2.99999 16.001 2.99999H20.001C20.2662 2.99999 20.5205 3.10535 20.7081 3.29289C20.8956 3.48042 21.001 3.73478 21.001 3.99999V7.99999C21.001 8.26521 21.1063 8.51956 21.2939 8.7071C21.4814 8.89463 21.7358 8.99999 22.001 8.99999C22.2662 8.99999 22.5205 8.89463 22.7081 8.7071C22.8956 8.51956 23.001 8.26521 23.001 7.99999V3.99999C23.001 3.20434 22.6849 2.44128 22.1223 1.87867C21.5597 1.31606 20.7966 0.999992 20.001 0.999992ZM2.00098 8.99999C2.26619 8.99999 2.52055 8.89463 2.70808 8.7071C2.89562 8.51956 3.00098 8.26521 3.00098 7.99999V3.99999C3.00098 3.73478 3.10633 3.48042 3.29387 3.29289C3.48141 3.10535 3.73576 2.99999 4.00098 2.99999H8.00098C8.26619 2.99999 8.52055 2.89464 8.70808 2.7071C8.89562 2.51956 9.00098 2.26521 9.00098 1.99999C9.00098 1.73478 8.89562 1.48042 8.70808 1.29289C8.52055 1.10535 8.26619 0.999992 8.00098 0.999992H4.00098C3.20533 0.999992 2.44227 1.31606 1.87966 1.87867C1.31705 2.44128 1.00098 3.20434 1.00098 3.99999V7.99999C1.00098 8.26521 1.10633 8.51956 1.29387 8.7071C1.48141 8.89463 1.73576 8.99999 2.00098 8.99999ZM10.001 4.99999H6.00098C5.73576 4.99999 5.48141 5.10535 5.29387 5.29289C5.10633 5.48042 5.00098 5.73478 5.00098 5.99999V9.99999C5.00098 10.2652 5.10633 10.5196 5.29387 10.7071C5.48141 10.8946 5.73576 11 6.00098 11H10.001C10.2662 11 10.5205 10.8946 10.7081 10.7071C10.8956 10.5196 11.001 10.2652 11.001 9.99999V5.99999C11.001 5.73478 10.8956 5.48042 10.7081 5.29289C10.5205 5.10535 10.2662 4.99999 10.001 4.99999ZM9.00098 8.99999H7.00098V6.99999H9.00098V8.99999ZM14.001 11H18.001C18.2662 11 18.5205 10.8946 18.7081 10.7071C18.8956 10.5196 19.001 10.2652 19.001 9.99999V5.99999C19.001 5.73478 18.8956 5.48042 18.7081 5.29289C18.5205 5.10535 18.2662 4.99999 18.001 4.99999H14.001C13.7358 4.99999 13.4814 5.10535 13.2939 5.29289C13.1063 5.48042 13.001 5.73478 13.001 5.99999V9.99999C13.001 10.2652 13.1063 10.5196 13.2939 10.7071C13.4814 10.8946 13.7358 11 14.001 11ZM15.001 6.99999H17.001V8.99999H15.001V6.99999ZM10.001 13H6.00098C5.73576 13 5.48141 13.1053 5.29387 13.2929C5.10633 13.4804 5.00098 13.7348 5.00098 14V18C5.00098 18.2652 5.10633 18.5196 5.29387 18.7071C5.48141 18.8946 5.73576 19 6.00098 19H10.001C10.2662 19 10.5205 18.8946 10.7081 18.7071C10.8956 18.5196 11.001 18.2652 11.001 18V14C11.001 13.7348 10.8956 13.4804 10.7081 13.2929C10.5205 13.1053 10.2662 13 10.001 13ZM9.00098 17H7.00098V15H9.00098V17ZM14.001 16C14.2662 16 14.5205 15.8946 14.7081 15.7071C14.8956 15.5196 15.001 15.2652 15.001 15C15.2662 15 15.5205 14.8946 15.7081 14.7071C15.8956 14.5196 16.001 14.2652 16.001 14C16.001 13.7348 15.8956 13.4804 15.7081 13.2929C15.5205 13.1053 15.2662 13 15.001 13H14.001C13.7358 13 13.4814 13.1053 13.2939 13.2929C13.1063 13.4804 13.001 13.7348 13.001 14V15C13.001 15.2652 13.1063 15.5196 13.2939 15.7071C13.4814 15.8946 13.7358 16 14.001 16ZM18.001 13C17.7358 13 17.4814 13.1053 17.2939 13.2929C17.1063 13.4804 17.001 13.7348 17.001 14V17C16.7358 17 16.4814 17.1053 16.2939 17.2929C16.1063 17.4804 16.001 17.7348 16.001 18C16.001 18.2652 16.1063 18.5196 16.2939 18.7071C16.4814 18.8946 16.7358 19 17.001 19H18.001C18.2662 19 18.5205 18.8946 18.7081 18.7071C18.8956 18.5196 19.001 18.2652 19.001 18V14C19.001 13.7348 18.8956 13.4804 18.7081 13.2929C18.5205 13.1053 18.2662 13 18.001 13ZM14.001 17C13.8032 17 13.6099 17.0586 13.4454 17.1685C13.281 17.2784 13.1528 17.4346 13.0771 17.6173C13.0014 17.8 12.9816 18.0011 13.0202 18.1951C13.0588 18.3891 13.154 18.5672 13.2939 18.7071C13.4337 18.847 13.6119 18.9422 13.8059 18.9808C13.9999 19.0194 14.2009 18.9996 14.3837 18.9239C14.5664 18.8482 14.7226 18.72 14.8324 18.5556C14.9423 18.3911 15.001 18.1978 15.001 18C15.001 17.7348 14.8956 17.4804 14.7081 17.2929C14.5205 17.1053 14.2662 17 14.001 17Z"
+                                            fill="currentColor" />
+                                    </svg>
+
+                                    2D BARCODE
+                                </button>
+                                <p>
+                                    Modernize traditional barcodes by incorporating advanced features that provide a
+                                    versatile solution for suppliers,
+                                    retailers, and consumers, ensuring efficiency and a better user experience.
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="min-h-screen relative mt-[150px]">
+                <!-- Split background -->
+                <div class="absolute inset-0">
+                    <div class="h-[65%] bg-white dark:bg-darkBlack"></div>
+                    <div class="h-[35%] bg-card_background-light dark:bg-neutral_3-night"></div>
+                </div>
+
+                <!-- Content -->
+                <div class="relative solutions_article">
+                    <div class="my_container solutions_article-wrapper">
+                        <h2>
+                            What is a QR code?
+                        </h2>
+
+                        <p>
+                            A QR code (Quick Response Code) is a two-dimensional barcode, composed of a grid of black
+                            and
+                            white squares arranged in
+                            a specific pattern. It was developed by Denso Wave, a subsidiary of the Toyota supplier
+                            Denso,
+                            to streamline logistics
+                            in automobile production by marking components. Over time, it has evolved and become widely
+                            used
+                            in mobile marketing,
+                            especially with the rise of smartphones. The term "QR" signifies the ability to access
+                            information quickly by scanning
+                            the code, providing instant access to the embedded data.
+                        </p>
+                    </div>
+
+                    <div class="card_container">
+                        <!-- Repeat this card 12 times -->
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path
+                                            d="M13.6771 10.6522L20.2343 3.19385H18.6807L12.9844 9.66852L8.43815 3.19385H3.19336L10.0698 12.9856L3.19336 20.8062H4.74702L10.7587 13.9671L15.5609 20.8062H20.8057L13.6771 10.6522ZM11.5484 13.0715L10.8506 12.0959L5.30731 4.33994H7.69404L12.169 10.6016L12.8638 11.5772L18.68 19.7159H16.2932L11.5484 13.0715Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </button>
+                                <p>
+                                    Enable users to share a location or Google Maps link with precise coordinates via a
+                                    QR
+                                    Code or link, helping others find
+                                    specific places easily. This can be particularly useful for events, meet-ups, or
+                                    businesses with physical locations.
+                                </p>
+                            </a>
+                        </div>
+                        <!-- Repeat the above div 11 more times -->
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M6.85746 3C5.83466 3 4.85372 3.40621 4.13035 4.1293C3.40698 4.85239 3.00039 5.83317 3 6.85598V17.1425C3 18.1656 3.40641 19.1468 4.12982 19.8702C4.85324 20.5936 5.8344 21 6.85746 21H17.144C18.1668 20.9996 19.1476 20.593 19.8707 19.8697C20.5938 19.1463 21 18.1653 21 17.1425V6.85598C20.9996 5.83343 20.5932 4.85287 19.8702 4.12982C19.1471 3.40677 18.1666 3.00039 17.144 3H6.85746ZM18.2536 6.8619C18.2536 7.15657 18.1365 7.43916 17.9281 7.64751C17.7198 7.85587 17.4372 7.97292 17.1425 7.97292C16.8479 7.97292 16.5653 7.85587 16.3569 7.64751C16.1486 7.43916 16.0315 7.15657 16.0315 6.8619C16.0315 6.56724 16.1486 6.28465 16.3569 6.07629C16.5653 5.86794 16.8479 5.75088 17.1425 5.75088C17.4372 5.75088 17.7198 5.86794 17.9281 6.07629C18.1365 6.28465 18.2536 6.56724 18.2536 6.8619ZM12.0022 8.91803C11.185 8.91803 10.4013 9.24266 9.82347 9.8205C9.24562 10.3983 8.92099 11.1821 8.92099 11.9993C8.92099 12.8165 9.24562 13.6002 9.82347 14.178C10.4013 14.7559 11.185 15.0805 12.0022 15.0805C12.8194 15.0805 13.6031 14.7559 14.181 14.178C14.7588 13.6002 15.0834 12.8165 15.0834 11.9993C15.0834 11.1821 14.7588 10.3983 14.181 9.8205C13.6031 9.24266 12.8194 8.91803 12.0022 8.91803ZM7.43815 11.9993C7.43815 10.7892 7.91885 9.62867 8.7745 8.77302C9.63016 7.91737 10.7907 7.43667 12.0007 7.43667C13.2108 7.43667 14.3713 7.91737 15.227 8.77302C16.0826 9.62867 16.5633 10.7892 16.5633 11.9993C16.5633 13.2093 16.0826 14.3698 15.227 15.2255C14.3713 16.0811 13.2108 16.5618 12.0007 16.5618C10.7907 16.5618 9.63016 16.0811 8.7745 15.2255C7.91885 14.3698 7.43815 13.2093 7.43815 11.9993Z"
+                                            fill="currentColor" />
+                                    </svg>
+
+                                    INSTAGRAM</button>
+                                <p>
+                                    Seamlessly guide users to any Instagram page of your choice, whether it’s your
+                                    personal
+                                    profile, business account, or a
+                                    specific post, allowing you to highlight curated content and grow your audience.
+                                    With
+                                    this tool, you can also redirect
+                                    users to Instagram Stories or Reels for a more dynamic experience.
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path
+                                            d="M18.857 3H5.143C4.5748 3.00053 4.03003 3.22648 3.62826 3.62826C3.22648 4.03003 3.00053 4.5748 3 5.143V18.857C3 20.04 3.961 21 5.143 21H18.857C19.4252 20.9995 19.97 20.7735 20.3717 20.3717C20.7735 19.97 20.9995 19.4252 21 18.857V5.143C20.9995 4.5748 20.7735 4.03003 20.3717 3.62826C19.97 3.22648 19.4252 3.00053 18.857 3ZM17.145 10.853C16.5142 10.9142 15.8796 10.785 15.323 10.482C14.8535 10.2289 14.4548 9.86245 14.163 9.416V14.36C14.163 15.0827 13.9487 15.7892 13.5472 16.3901C13.1457 16.9909 12.575 17.4593 11.9073 17.7359C11.2396 18.0124 10.5049 18.0848 9.79614 17.9438C9.08733 17.8028 8.43625 17.4548 7.92523 16.9438C7.41421 16.4327 7.0662 15.7817 6.92521 15.0729C6.78422 14.3641 6.85658 13.6294 7.13314 12.9617C7.40971 12.294 7.87805 11.7233 8.47895 11.3218C9.07984 10.9203 9.78631 10.706 10.509 10.706C10.585 10.706 10.659 10.713 10.734 10.717V12.518C10.659 12.509 10.586 12.495 10.509 12.495C10.0144 12.495 9.54 12.6915 9.19025 13.0412C8.84049 13.391 8.644 13.8654 8.644 14.36C8.644 14.8546 8.84049 15.329 9.19025 15.6788C9.54 16.0285 10.0144 16.225 10.509 16.225C11.539 16.225 12.449 15.414 12.449 14.384L12.467 5.986H14.19C14.2689 6.73443 14.6082 7.43136 15.1487 7.95503C15.6892 8.4787 16.3965 8.79583 17.147 8.851V10.853"
+                                            fill="currentColor" />
+                                    </svg>
+                                    TIKTOK</button>
+                                <p>
+                                    Amplify your TikTok presence by sharing a highly shareable QR Code that leads
+                                    directly
+                                    to your profile, making it simple
+                                    for users to follow you and engage with your viral videos. This feature is ideal for
+                                    creators and businesses looking to
+                                    maximize their reach on one of the world’s fastest-growing platforms.
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path
+                                            d="M20.625 2.625H3.375C2.96016 2.625 2.625 2.96016 2.625 3.375V20.625C2.625 21.0398 2.96016 21.375 3.375 21.375H20.625C21.0398 21.375 21.375 21.0398 21.375 20.625V3.375C21.375 2.96016 21.0398 2.625 20.625 2.625ZM8.18672 18.6023H5.40469V9.65391H8.18672V18.6023ZM6.79688 8.43047C6.47795 8.43047 6.16619 8.3359 5.90102 8.15871C5.63584 7.98153 5.42917 7.72969 5.30712 7.43505C5.18507 7.1404 5.15314 6.81618 5.21536 6.50339C5.27758 6.19059 5.43115 5.90327 5.65667 5.67776C5.88218 5.45225 6.1695 5.29867 6.48229 5.23645C6.79509 5.17423 7.11931 5.20617 7.41395 5.32821C7.7086 5.45026 7.96044 5.65694 8.13762 5.92211C8.3148 6.18729 8.40937 6.49905 8.40937 6.81797C8.40703 7.70859 7.68516 8.43047 6.79688 8.43047ZM18.6023 18.6023H15.8227V14.25C15.8227 13.2117 15.8039 11.8781 14.3766 11.8781C12.9305 11.8781 12.7078 13.0078 12.7078 14.175V18.6023H9.93047V9.65391H12.5977V10.8773H12.6352C13.0055 10.1742 13.9125 9.43125 15.2672 9.43125C18.0844 9.43125 18.6023 11.2852 18.6023 13.6945V18.6023Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                    LINKEDIN</button>
+                                <p>
+                                    Streamline your networking and job search by creating a professional QR Code or
+                                    digital
+                                    tool that links to your LinkedIn
+                                    profile, portfolio, or resume, ensuring potential employers or connections can
+                                    access
+                                    your credentials with ease. This
+                                    functionality is perfect for career fairs, conferences, or personal branding.
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path
+                                            d="M15.899 8.90012C12.699 7.00012 7.34902 6.80012 4.29902 7.75012C3.79902 7.90012 3.29902 7.60012 3.14902 7.15012C2.99902 6.65012 3.29902 6.15012 3.74902 6.00012C7.29902 4.95012 13.149 5.15012 16.849 7.35012C17.299 7.60012 17.449 8.20012 17.199 8.65012C16.949 9.00012 16.349 9.15012 15.899 8.90012ZM15.799 11.7001C15.549 12.0501 15.099 12.2001 14.749 11.9501C12.049 10.3001 7.94902 9.80012 4.79902 10.8001C4.39902 10.9001 3.94902 10.7001 3.84902 10.3001C3.74902 9.90012 3.94902 9.45012 4.34902 9.35012C7.99902 8.25012 12.499 8.80012 15.599 10.7001C15.899 10.8501 16.049 11.3501 15.799 11.7001ZM14.599 14.4501C14.399 14.7501 14.049 14.8501 13.749 14.6501C11.399 13.2001 8.44902 12.9001 4.94902 13.7001C4.59902 13.8001 4.29902 13.5501 4.19902 13.2501C4.09902 12.9001 4.34902 12.6001 4.64902 12.5001C8.44902 11.6501 11.749 12.0001 14.349 13.6001C14.699 13.7501 14.749 14.1501 14.599 14.4501ZM9.99902 0.00012207C8.68581 0.00012207 7.38545 0.25878 6.17219 0.761327C4.95893 1.26387 3.85654 2.00047 2.92796 2.92905C1.05259 4.80442 -0.000976562 7.34796 -0.000976562 10.0001C-0.000976562 12.6523 1.05259 15.1958 2.92796 17.0712C3.85654 17.9998 4.95893 18.7364 6.17219 19.2389C7.38545 19.7415 8.68581 20.0001 9.99902 20.0001C12.6512 20.0001 15.1947 18.9466 17.0701 17.0712C18.9455 15.1958 19.999 12.6523 19.999 10.0001C19.999 8.6869 19.7404 7.38654 19.2378 6.17329C18.7353 4.96003 17.9987 3.85764 17.0701 2.92905C16.1415 2.00047 15.0391 1.26387 13.8259 0.761327C12.6126 0.25878 11.3122 0.00012207 9.99902 0.00012207Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                    SPOTIFY</button>
+                                <p>
+                                    Reach a wider audience by creating a QR Code for your artist page, playlist, song,
+                                    or
+                                    album on popular music platforms.
+                                    This tool makes it easier for listeners to discover and enjoy your music, helping
+                                    you
+                                    build a loyal fanbase. You can
+                                    also include previews or exclusive content to make your offering even more engaging.
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path
+                                            d="M12 1.5C5.37188 1.5 0 5.86406 0 11.25C0 13.575 1.00313 15.7031 2.67188 17.3766C2.08594 19.7391 0.126563 21.8438 0.103125 21.8672C0 21.975 -0.028125 22.1344 0.0328125 22.275C0.09375 22.4156 0.225 22.5 0.375 22.5C3.48281 22.5 5.8125 21.0094 6.96563 20.0906C8.49844 20.6672 10.2 21 12 21C18.6281 21 24 16.6359 24 11.25C24 5.86406 18.6281 1.5 12 1.5ZM6.00937 14.25H5.4375C5.23125 14.25 5.0625 14.0813 5.0625 13.875V13.125C5.0625 12.9187 5.23125 12.75 5.4375 12.75H6.01406C6.29531 12.75 6.50156 12.5859 6.50156 12.4406C6.50156 12.3797 6.46406 12.3141 6.40313 12.2625L5.37656 11.3813C4.97812 11.0438 4.75313 10.5609 4.75313 10.0641C4.75313 9.06562 5.64375 8.25469 6.74063 8.25469H7.3125C7.51875 8.25469 7.6875 8.42344 7.6875 8.62969V9.37969C7.6875 9.58594 7.51875 9.75469 7.3125 9.75469H6.73594C6.45469 9.75469 6.24844 9.91875 6.24844 10.0641C6.24844 10.125 6.28594 10.1906 6.34687 10.2422L7.37344 11.1234C7.77188 11.4609 7.99688 11.9437 7.99688 12.4406C8.00156 13.4391 7.10625 14.25 6.00937 14.25ZM15 13.875C15 14.0813 14.8313 14.25 14.625 14.25H13.875C13.6687 14.25 13.5 14.0813 13.5 13.875V10.6781L12.3375 13.2938C12.2016 13.5703 11.8031 13.5703 11.6672 13.2938L10.5 10.6781V13.875C10.5 14.0813 10.3313 14.25 10.125 14.25H9.375C9.16875 14.25 9 14.0813 9 13.875V9C9 8.5875 9.3375 8.25 9.75 8.25H10.5C10.7859 8.25 11.0438 8.40938 11.1703 8.6625L12 10.3219L12.8297 8.6625C12.9563 8.40938 13.2188 8.25 13.5 8.25H14.25C14.6625 8.25 15 8.5875 15 9V13.875ZM17.2641 14.25H16.6875C16.4812 14.25 16.3125 14.0813 16.3125 13.875V13.125C16.3125 12.9187 16.4812 12.75 16.6875 12.75H17.2641C17.5453 12.75 17.7516 12.5859 17.7516 12.4406C17.7516 12.3797 17.7141 12.3141 17.6531 12.2625L16.6266 11.3813C16.2281 11.0438 16.0031 10.5609 16.0031 10.0641C16.0031 9.06562 16.8937 8.25469 17.9906 8.25469H18.5625C18.7688 8.25469 18.9375 8.42344 18.9375 8.62969V9.37969C18.9375 9.58594 18.7688 9.75469 18.5625 9.75469H17.9859C17.7047 9.75469 17.4984 9.91875 17.4984 10.0641C17.4984 10.125 17.5359 10.1906 17.5969 10.2422L18.6234 11.1234C19.0219 11.4609 19.2469 11.9437 19.2469 12.4406C19.2516 13.4391 18.3609 14.25 17.2641 14.25Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                    SMS </button>
+                                <p>
+                                    Create a customized SMS that includes a target phone number and a prewritten
+                                    message, enabling users to send it
+                                    instantly with minimal effort. This feature is ideal for promotions, event
+                                    registrations, or customer support. Add a
+                                    touch of personalization by allowing users to modify the message before sending.
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path
+                                            d="M18.001 22.0001C18.5314 22.0001 19.0401 21.7894 19.4152 21.4143C19.7903 21.0393 20.001 20.5306 20.001 20.0001V8.00012L14.001 2.00012H6.00098C5.47054 2.00012 4.96184 2.21084 4.58676 2.58591C4.21169 2.96098 4.00098 3.46969 4.00098 4.00012V20.0001C4.00098 20.5306 4.21169 21.0393 4.58676 21.4143C4.96184 21.7894 5.47054 22.0001 6.00098 22.0001H18.001ZM13.001 4.00012L18.001 9.00012H13.001V4.00012ZM7.00098 8.00012H10.001V10.0001H7.00098V8.00012ZM7.00098 12.0001H17.001V14.0001H7.00098V12.0001ZM7.00098 16.0001H17.001V18.0001H7.00098V16.0001Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                    PLAIN TEXT</button>
+                                <p>
+                                    Display a concise yet impactful text message of up to 300 characters, perfect for
+                                    announcements, quotes, or short
+                                    instructions. Use this feature to share key details or call-to-action messages that
+                                    grab
+                                    attention and communicate
+                                    effectively.
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path
+                                            d="M3.49902 6.75C3.49902 6.55109 3.57804 6.36032 3.71869 6.21967C3.85935 6.07902 4.05011 6 4.24902 6H19.75C19.9489 6 20.1397 6.07902 20.2804 6.21967C20.421 6.36032 20.5 6.55109 20.5 6.75V15.513L22 16.609V6.75C22 6.15326 21.763 5.58097 21.341 5.15901C20.9191 4.73705 20.3468 4.5 19.75 4.5H4.24902C3.65229 4.5 3.07999 4.73705 2.65803 5.15901C2.23608 5.58097 1.99902 6.15326 1.99902 6.75V17.25C1.99902 17.8467 2.23608 18.419 2.65803 18.841C3.07999 19.2629 3.65229 19.5 4.24902 19.5H13.653L13.491 18H4.24902C4.05011 18 3.85935 17.921 3.71869 17.7803C3.57804 17.6397 3.49902 17.4489 3.49902 17.25V6.75Z"
+                                            fill='currentColor' />
+                                        <path
+                                            d="M18.7008 14.114H18.5878L17.4788 13.304L17.1968 11.958C17.1928 11.946 17.1868 11.94 17.1788 11.94C17.1708 11.94 17.1648 11.946 17.1608 11.958L16.9808 12.94L16.7128 12.745C16.2692 12.4205 15.7221 12.2697 15.1748 12.321L14.5978 10.37L13.9438 12.834C13.5488 13.164 13.2808 13.616 13.1798 14.114H12.5608C12.5048 14.114 12.4708 14.088 12.4588 14.036L12.0238 11.958C12.0198 11.946 12.0138 11.94 12.0058 11.94C11.9978 11.94 11.9915 11.946 11.9868 11.958L11.6068 14.03C11.5948 14.086 11.5625 14.114 11.5098 14.114H10.6098C10.5866 14.114 10.5638 14.1078 10.5438 14.096C10.525 14.081 10.5122 14.0597 10.5078 14.036L9.42384 10.37L8.44984 14.036C8.43784 14.088 8.40584 14.114 8.35384 14.114H7.38684C7.33084 14.114 7.29684 14.088 7.28484 14.036L6.84984 11.958C6.84584 11.946 6.83984 11.94 6.83184 11.94C6.82384 11.94 6.81784 11.946 6.81384 11.958L6.43384 14.03C6.42117 14.086 6.3885 14.114 6.33584 14.114H5.43584C5.41262 14.114 5.38983 14.1078 5.36984 14.096C5.351 14.081 5.33822 14.0597 5.33384 14.036L4.13784 9.98899C4.13431 9.97935 4.13229 9.96923 4.13184 9.95899C4.13184 9.91032 4.15984 9.88599 4.21584 9.88599H5.24284C5.29617 9.88599 5.3285 9.91232 5.33984 9.96499L5.85284 11.934C5.85684 11.946 5.86284 11.954 5.87084 11.958C5.87884 11.958 5.88484 11.95 5.88884 11.934L6.29384 9.96399C6.30584 9.91199 6.34017 9.88599 6.39684 9.88599H7.27884C7.33084 9.88599 7.36284 9.91232 7.37484 9.96499L7.82784 11.934C7.83184 11.95 7.83784 11.958 7.84584 11.958C7.8545 11.958 7.86084 11.95 7.86484 11.934L8.31784 9.96399C8.32984 9.91199 8.36184 9.88599 8.41384 9.88599H10.4168C10.4695 9.88599 10.5018 9.91232 10.5138 9.96499L11.0268 11.934C11.0308 11.946 11.0368 11.954 11.0448 11.958C11.0528 11.958 11.0588 11.95 11.0628 11.934L11.4678 9.96399C11.4798 9.91199 11.5142 9.88599 11.5708 9.88599H12.4518C12.5052 9.88599 12.5375 9.91232 12.5488 9.96499L13.0018 11.934C13.0058 11.95 13.0118 11.958 13.0198 11.958C13.0278 11.958 13.0338 11.95 13.0378 11.934L13.4908 9.96399C13.5035 9.91199 13.5358 9.88599 13.5878 9.88599H15.5908C15.6428 9.88599 15.6752 9.91232 15.6878 9.96499L16.2008 11.934C16.2048 11.946 16.2108 11.954 16.2188 11.958C16.2268 11.958 16.2328 11.95 16.2368 11.934L16.6418 9.96399C16.6538 9.91199 16.6882 9.88599 16.7448 9.88599H17.6258C17.6792 9.88599 17.7115 9.91232 17.7228 9.96499L18.1758 11.934C18.1798 11.95 18.1858 11.958 18.1938 11.958C18.2018 11.958 18.2078 11.95 18.2118 11.934L18.6648 9.96399C18.6768 9.91199 18.7092 9.88599 18.7618 9.88599H19.7948C19.8268 9.88599 19.8488 9.89599 19.8608 9.91599C19.8768 9.93199 19.8808 9.95632 19.8728 9.98899L18.7978 14.036C18.7858 14.088 18.7528 14.114 18.7008 14.114Z"
+                                            fill='currentColor' />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M15.0072 13.995C15.133 13.9224 15.2772 13.8879 15.4222 13.8957C15.5673 13.9035 15.7069 13.9533 15.8242 14.039L20.6802 17.587C20.7985 17.6734 20.8889 17.7926 20.9402 17.9298C20.9915 18.067 21.0015 18.2163 20.9689 18.3591C20.9364 18.5019 20.8627 18.6321 20.757 18.7336C20.6513 18.835 20.5183 18.9033 20.3742 18.93L18.8822 19.207L19.6832 20.595C19.7811 20.7671 19.8069 20.971 19.755 21.1622C19.7031 21.3533 19.5777 21.5161 19.4062 21.6152C19.2347 21.7142 19.031 21.7414 18.8395 21.6907C18.648 21.6401 18.4844 21.5158 18.3842 21.345L17.5822 19.956L16.5962 21.111C16.501 21.2224 16.3753 21.3035 16.2346 21.3442C16.0939 21.385 15.9443 21.3837 15.8043 21.3404C15.6643 21.2971 15.5401 21.2137 15.447 21.1006C15.3538 20.9875 15.2959 20.8496 15.2802 20.704L14.6362 14.725C14.6205 14.5805 14.6472 14.4346 14.7129 14.305C14.7785 14.1754 14.8805 14.0677 15.0062 13.995M16.5842 18.815L16.7852 18.579C17.1199 18.1875 17.5788 17.9228 18.0852 17.829L18.3902 17.772L16.3082 16.252L16.5842 18.815Z"
+                                            fill='currentColor' />
+                                    </svg>
+                                    STATIC URL</button>
+                                <p>
+                                    Provide a flexible solution to link to any webpage, giving you the freedom to
+                                    redirect
+                                    users to product pages, articles,
+                                    or any online resource. You can also track user engagement and update the
+                                    destination as
+                                    needed to keep the content
+                                    relevant.
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path
+                                            d="M19.999 3.99988H3.99902C2.89902 3.99988 2.00902 4.89988 2.00902 5.99988L1.99902 17.9999C1.99902 19.0999 2.89902 19.9999 3.99902 19.9999H19.999C21.099 19.9999 21.999 19.0999 21.999 17.9999V5.99988C21.999 4.89988 21.099 3.99988 19.999 3.99988ZM19.599 8.24988L12.529 12.6699C12.209 12.8699 11.789 12.8699 11.469 12.6699L4.39902 8.24988C4.29875 8.19359 4.21094 8.11754 4.14091 8.02633C4.07088 7.93512 4.02009 7.83066 3.9916 7.71925C3.96311 7.60784 3.95753 7.49181 3.97518 7.37818C3.99283 7.26456 4.03336 7.15569 4.09431 7.05818C4.15525 6.96067 4.23535 6.87653 4.32975 6.81087C4.42415 6.74521 4.5309 6.69939 4.64352 6.67618C4.75614 6.65296 4.87231 6.65284 4.98498 6.67583C5.09765 6.69881 5.20449 6.74441 5.29902 6.80988L11.999 10.9999L18.699 6.80988C18.7936 6.74441 18.9004 6.69881 19.0131 6.67583C19.1257 6.65284 19.2419 6.65296 19.3545 6.67618C19.4672 6.69939 19.5739 6.74521 19.6683 6.81087C19.7627 6.87653 19.8428 6.96067 19.9037 7.05818C19.9647 7.15569 20.0052 7.26456 20.0229 7.37818C20.0405 7.49181 20.0349 7.60784 20.0065 7.71925C19.978 7.83066 19.9272 7.93512 19.8571 8.02633C19.7871 8.11754 19.6993 8.19359 19.599 8.24988Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                    EMAIL</button>
+                                <p>
+                                    Create a prewritten email with a target email address, subject line, and message
+                                    body,
+                                    making it easy for users to send
+                                    inquiries, feedback, or support requests. Add personalization options to ensure the
+                                    message resonates with the recipient
+                                    and strengthens communication.
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path
+                                            d="M12.0003 21.0001C11.3003 21.0001 10.7087 20.7585 10.2253 20.2751C9.74201 19.7918 9.50034 19.2001 9.50034 18.5001C9.50034 17.8001 9.74201 17.2085 10.2253 16.7251C10.7087 16.2418 11.3003 16.0001 12.0003 16.0001C12.7003 16.0001 13.292 16.2418 13.7753 16.7251C14.2587 17.2085 14.5003 17.8001 14.5003 18.5001C14.5003 19.2001 14.2587 19.7918 13.7753 20.2751C13.292 20.7585 12.7003 21.0001 12.0003 21.0001ZM12.0003 10.0001C13.2503 10.0001 14.438 10.2001 15.5633 10.6001C16.6887 11.0001 17.7093 11.5501 18.6253 12.2501C18.9587 12.5001 19.1297 12.8295 19.1383 13.2381C19.147 13.6468 19.001 14.0008 18.7003 14.3001C18.417 14.5835 18.067 14.7295 17.6503 14.7381C17.2337 14.7468 16.8587 14.6341 16.5253 14.4001C15.892 13.9668 15.192 13.6251 14.4253 13.3751C13.6587 13.1251 12.8503 13.0001 12.0003 13.0001C11.1503 13.0001 10.342 13.1251 9.57534 13.3751C8.80867 13.6251 8.10867 13.9668 7.47534 14.4001C7.14201 14.6335 6.76701 14.7418 6.35034 14.7251C5.93367 14.7085 5.58367 14.5585 5.30034 14.2751C5.01701 13.9751 4.87534 13.6211 4.87534 13.2131C4.87534 12.8051 5.04201 12.4758 5.37534 12.2251C6.29201 11.5251 7.31301 10.9791 8.43834 10.5871C9.56367 10.1951 10.751 9.99946 12.0003 10.0001ZM12.0003 4.00012C14.0837 4.00012 16.0463 4.34179 17.8883 5.02512C19.7303 5.70846 21.3843 6.67512 22.8503 7.92512C23.1837 8.20846 23.3587 8.55846 23.3753 8.97512C23.392 9.39179 23.2503 9.75012 22.9503 10.0501C22.667 10.3335 22.317 10.4795 21.9003 10.4881C21.4837 10.4968 21.1087 10.3675 20.7753 10.1001C19.5753 9.11679 18.2297 8.35446 16.7383 7.81312C15.247 7.27179 13.6677 7.00079 12.0003 7.00012C10.333 6.99946 8.75401 7.27046 7.26334 7.81312C5.77267 8.35579 4.42667 9.11812 3.22534 10.1001C2.89201 10.3668 2.51701 10.4961 2.10034 10.4881C1.68367 10.4801 1.33367 10.3341 1.05034 10.0501C0.750339 9.75012 0.608673 9.39179 0.625339 8.97512C0.642006 8.55846 0.817006 8.20846 1.15034 7.92512C2.61701 6.67512 4.27134 5.70846 6.11334 5.02512C7.95534 4.34179 9.91767 4.00012 12.0003 4.00012Z"
+                                            fill="currentColor" />
+                                    </svg>
+
+                                    WIFI</button>
+                                <p>
+                                    Simplify WiFi sharing by generating a QR Code that lets users connect to your
+                                    network
+                                    without entering a password. This
+                                    feature is perfect for public spaces, events, or guest use, ensuring hassle-free
+                                    connectivity while maintaining
+                                    security.
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="card_item">
+                            <a href="#">
+                                <button>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card_icon">
+                                        <path
+                                            d="M0 6C0 5.20435 0.316071 4.44129 0.87868 3.87868C1.44129 3.31607 2.20435 3 3 3H21C21.7956 3 22.5587 3.31607 23.1213 3.87868C23.6839 4.44129 24 5.20435 24 6V18C24 18.7956 23.6839 19.5587 23.1213 20.1213C22.5587 20.6839 21.7956 21 21 21H3C2.20435 21 1.44129 20.6839 0.87868 20.1213C0.316071 19.5587 0 18.7956 0 18V6ZM13.5 8.25C13.5 8.44891 13.579 8.63968 13.7197 8.78033C13.8603 8.92098 14.0511 9 14.25 9H20.25C20.4489 9 20.6397 8.92098 20.7803 8.78033C20.921 8.63968 21 8.44891 21 8.25C21 8.05109 20.921 7.86032 20.7803 7.71967C20.6397 7.57902 20.4489 7.5 20.25 7.5H14.25C14.0511 7.5 13.8603 7.57902 13.7197 7.71967C13.579 7.86032 13.5 8.05109 13.5 8.25ZM13.5 12C13.5 12.1989 13.579 12.3897 13.7197 12.5303C13.8603 12.671 14.0511 12.75 14.25 12.75H20.25C20.4489 12.75 20.6397 12.671 20.7803 12.5303C20.921 12.3897 21 12.1989 21 12C21 11.8011 20.921 11.6103 20.7803 11.4697C20.6397 11.329 20.4489 11.25 20.25 11.25H14.25C14.0511 11.25 13.8603 11.329 13.7197 11.4697C13.579 11.6103 13.5 11.8011 13.5 12ZM15 15.75C15 15.9489 15.079 16.1397 15.2197 16.2803C15.3603 16.421 15.5511 16.5 15.75 16.5H20.25C20.4489 16.5 20.6397 16.421 20.7803 16.2803C20.921 16.1397 21 15.9489 21 15.75C21 15.5511 20.921 15.3603 20.7803 15.2197C20.6397 15.079 20.4489 15 20.25 15H15.75C15.5511 15 15.3603 15.079 15.2197 15.2197C15.079 15.3603 15 15.5511 15 15.75ZM13.5 18.75C13.5 15.8505 10.815 13.5 7.5 13.5C4.371 13.5 1.8 15.597 1.524 18.2715C1.58751 18.6166 1.76997 18.9285 2.03964 19.1529C2.30931 19.3774 2.64914 19.5002 3 19.5H13.44C13.48 19.255 13.5 19.005 13.5 18.75ZM10.5 9C10.5 8.20435 10.1839 7.44129 9.62132 6.87868C9.05871 6.31607 8.29565 6 7.5 6C6.70435 6 5.94129 6.31607 5.37868 6.87868C4.81607 7.44129 4.5 8.20435 4.5 9C4.5 9.79565 4.81607 10.5587 5.37868 11.1213C5.94129 11.6839 6.70435 12 7.5 12C8.29565 12 9.05871 11.6839 9.62132 11.1213C10.1839 10.5587 10.5 9.79565 10.5 9Z"
+                                            fill="currentColor" />
+                                    </svg>
+
+
+                                    VCARD</button>
+                                <p>
+                                    Design a professional electronic business card that can be saved to a device with a
+                                    single tap, providing a convenient
+                                    way to share your contact details. You can also include links to your social
+                                    profiles,
+                                    portfolio, or website, making it
+                                    a versatile tool for networking and branding.
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="solutions_article">
+                <div class="my_container solutions_article-wrapper">
+                    <h2>
+                        Why dynamic QR codes require a subscription?
+                    </h2>
+
+                    <p>
+                        Dynamic QR Codes come with advanced features that are unlocked through a subscription. These
+                        features include the
+                        ability to edit the QR code’s content at any time, making it ideal for businesses that need
+                        flexibility without
+                        reprinting </p>
+
+                    <ul>
+                        <li>
+                            Dynamic QR Codes come with advanced features that are unlocked through a subscription. These
+                            features include the
+                            ability to edit the QR code’s content at any time, making it ideal for businesses that need
+                            flexibility without
+                            reprinting
+                        </li>
+
+                        <li>
+                            Content Flexibility: One of the major benefits of Dynamic QR Codes is the ability to change
+                            the content anytime, even
+                            after the code has been printed. This flexibility allows businesses to update the QR Code’s
+                            destination without needing
+                            to reprint new materials. Whether it’s adjusting campaign details or correcting mistakes,
+                            users can make these changes
+                            without any additional costs, making Dynamic QR Codes a practical choice for ongoing or
+                            evolving marketing efforts.
+                        </li>
+
+                        <li>
+                            Real-Time Scan Tracking: Dynamic QR Codes come equipped with real-time tracking
+                            capabilities. This means businesses can
+                            monitor how many times their code has been scanned, where the scans occurred, what time they
+                            happened, and even the type
+                            of device used. With this data, businesses can analyze the effectiveness of their campaigns
+                            and gain insights into
+                            customer behavior, which can inform future marketing strategies and decisions.
+                        </li>
+
+                        <li>
+                            Customizable Landing Pages: Each Dynamic QR Code can have its own dedicated landing page,
+                            which can be fully customized
+                            to match a business’s branding and design preferences. This gives companies the ability to
+                            create a seamless user
+                            experience from scan to interaction, ensuring that users are directed to a visually
+                            appealing and relevant page that
+                            aligns with the brand’s message or campaign.
+                        </li>
+
+                        <li>
+                            Personalized Short URLs: With Dynamic QR Codes, the URL that the QR code links to can be
+                            shortened and customized.
+                            Instead of using a generic URL like "qrco.de/Xc0j5", businesses can personalize the link to
+                            something more memorable and
+                            on-brand, such as "qrco.de/springpromo". This feature not only enhances brand visibility but
+                            also improves the user
+                            experience by making the URL easier to recall and trust.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class='benefit_container'>
+                <h3>Other benefits you’ll enjoy as an member of us</h3>
+
+                <div class="benefit_items">
+                    <div class="benefit_item">
+                        <div class="benefit_img">
+                            <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                                alt="benefit">
+                        </div>
+                        <h5>Curated content</h5>
+                        <p>
+                            We have hundreds of QR Code ideas created specifically to help inspire you.
+                        </p>
+                    </div>
+
+                    <div class="benefit_item">
+                        <img src="https://via.placeholder.com/115x115" alt="benefit" class="benefit_img">
+                        <h5>Edgy styles</h5>
+                        <p>
+                            Use brand colors and company logo to stand out from your competition.
+                        </p>
+                    </div>
+
+                    <div class="benefit_item">
+                        <img src="https://via.placeholder.com/115x115" alt="benefit" class="benefit_img">
+                        <h5>Secure collaborations</h5>
+                        <p>
+                            Invite your team members complete with their own logins. No extra fees.
+                        </p>
+                    </div>
+
+                    <div class="benefit_item">
+                        <img src="https://via.placeholder.com/115x115" alt="benefit" class="benefit_img">
+                        <h5>Helpful support</h5>
+                        <p>
+                            Our customer success team is here to help. If not, our help center is open 24/7.
+                        </p>
+                    </div>
+
+                    <div class="benefit_item">
+                        <img src="https://via.placeholder.com/115x115" alt="benefit" class="benefit_img">
+                        <h5>High-quality files</h5>
+                        <p>
+                            Your QR Codes stay in high-resolution no matter what they’re printed on.
+                        </p>
+                    </div>
+
+                    <div class="benefit_item">
+                        <img src="https://via.placeholder.com/115x115" alt="benefit" class="benefit_img">
+                        <h5>Perfectly organized</h5>
+                        <p>
+                            Label your QR Codes, create folders, and add campaign info to keep them nice and tidy.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="solutions_article mt-[90px]">
+                <div class="my_container solutions_article-wrapper">
+                    <h2>
+                        What are some of the best QR Code examples and use cases?
+                    </h2>
+
+                    <p>
+                        QR codes have become versatile tools across industries. Retailers use them for discounts and AR
+                        features, restaurants
+                        for touchless menus, and education for quick access to resources. In healthcare, they link to
+                        patient records, while
+                        real estate employs them for virtual tours. QR codes seamlessly bridge physical and digital
+                        experiences.
+                    </p>
+                </div>
+
+                <!-- Image Left -->
+                <div class="example_container">
+                    <div class="example_image">
+                        <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                            alt="qr code">
+                    </div>
+
+                    <div class="example_text-container">
+                        <div class="example_text">
+                            <h3>For Restaurants</h3>
+                            <h6>
+                                Enhance the dining experience by integrating QR codes for feedback, dish galleries, and
+                                seamless connectivity.
+                            </h6>
+                        </div>
+                        <ul>
+                            <li>
+                                Feedback QR Code: Add to tables or menus to encourage diners to rate their experience
+                                easily.
+                            </li>
+                            <li>
+                                Photo Gallery QR Code: Showcase high-quality images of dishes to entice customers.
+                            </li>
+                            <li>
+                                Wi-Fi QR Code: Allow guests to connect to your Wi-Fi network instantly without typing in
+                                a password.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Image Right -->
+                <div class="example_container">
+                    <div class="example_text-container">
+                        <div class="example_text">
+                            <h3>For Hotels and Resorts</h3>
+                            <h6>
+                                Provide convenience and improve operations by using QR codes for guest information,
+                                promotions, and inventory
+                                management.
+                            </h6>
+                        </div>
+                        <ul>
+                            <li>
+                                QR Code on Key Cards: Provide guests with access to information about events,
+                                promotions, or menus directly from their
+                                room.
+                            </li>
+                            <li>
+                                Inventory Management QR Codes: Help staff track stock levels by scanning codes attached
+                                to products with purchase dates
+                                and stock counts.
+                            </li>
+                            <li>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna
+                                aliqua
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="example_image">
+                        <img src="https://via.placeholder.com/550x414" alt="qr code">
+                    </div>
+                </div>
+
+                <!-- Image Left -->
+                <div class="example_container">
+                    <div class="example_image">
+                        <img src="https://via.placeholder.com/550x414" alt="qr code">
+                    </div>
+
+                    <div class="example_text-container">
+                        <div class="example_text">
+                            <h3>Non-Profits</h3>
+                            <h6>
+                                Simplify engagement and donations while promoting events and gathering feedback through
+                                dynamic QR codes.
+                            </h6>
+                        </div>
+                        <ul>
+                            <li>
+                                Donation QR Code: Place on brochures or posters to allow easy donations via smartphones.
+                            </li>
+                            <li>
+                                Social Media QR Code: Swap with a link to your social media pages to encourage
+                                followers.
+                            </li>
+                            <li>
+                                Event QR Code: Promote events by changing the QR Code to direct people to event details.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Image Right -->
+                <div class="example_container">
+                    <div class="example_text-container">
+                        <div class="example_text">
+                            <h3>For Business Consultants</h3>
+                            <h6>
+                                Boost professionalism and accessibility by using QR codes for contact sharing,
+                                multimedia content, and easy appointment
+                                booking.
+                            </h6>
+                        </div>
+                        <ul>
+                            <li>
+                                vCard QR Code: Include on business cards for easy contact saving.
+                            </li>
+                            <li>
+                                Multimedia QR Code: Use video or audio links in print ads to offer dynamic content.
+                            </li>
+                            <li>
+                                Consultation Booking QR Code: Place on office windows or promotional materials to allow
+                                people to schedule consultations
+                                easily.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="example_image">
+                        <img src="https://via.placeholder.com/550x414" alt="qr code">
+                    </div>
+                </div>
+
+                <!-- Image Left -->
+                <div class="example_container">
+                    <div class="example_image">
+                        <img src="https://via.placeholder.com/550x414" alt="qr code">
+                    </div>
+
+                    <div class="example_text-container">
+                        <div class="example_text">
+                            <h3>For Personal Use</h3>
+                            <h6>
+                                Add convenience and creativity to everyday tasks with QR codes for Wi-Fi access,
+                                resumes, and event RSVPs.
+                            </h6>
+                        </div>
+                        <ul>
+                            <li>
+                                Wi-Fi QR Code: Use at home for guests to connect to your Wi-Fi without needing the
+                                password.
+                            </li>
+                            <li>
+                                Resume QR Code: Add to resumes to link to your online portfolio or LinkedIn profile.
+                            </li>
+                            <li>
+                                Event QR Code: Use on invitations to make it easy for guests to RSVP and save the date
+                                to their calendars.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about_container">
+                <div class="about_text">
+                    <h3>Learn about QR codes?</h3>
+
+                    <div class="accordion_container">
+                        <!-- Accordion Item -->
+                        <div x-data="{ open: false }">
+                            <!-- Title -->
+                            <button @click="open = !open" class="accordion_button">
+                                <span class="accordion_title">Who use the QR code?</span>
+                                <!-- Icon -->
+                                <svg class="accordion_icon" :class="open ? 'rotate-180 ' : 'rotate-0'"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <!-- Nội dung -->
+                            <div x-show="open" x-collapse class="accordion_content">
+                                QR codes are incredibly versatile and can be utilized by anyone aiming to enhance their
+                                marketing efforts or simplify
+                                personal tasks. Whether you’re an individual creating QR codes for convenience or a
+                                business seeking innovative ways to
+                                engage customers, a QR code generator can be the perfect tool. These codes are suitable
+                                for both commercial and
+                                non-commercial purposes, making them accessible to a wide range of users.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion_container">
+                        <!-- Accordion Item -->
+                        <div x-data="{ open: false }">
+                            <!-- Title -->
+                            <button @click="open = !open" class="accordion_button">
+                                <span class="accordion_title">Why choose this QR code solution?</span>
+                                <!-- Icon -->
+                                <svg class="accordion_icon" :class="open ? 'rotate-180 ' : 'rotate-0'"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <!-- Nội dung -->
+                            <div x-show="open" x-collapse class="accordion_content">
+                                Our QR Code Generator stands out as one of the most effective marketing tools available
+                                today. With its diverse range of
+                                features and user-friendly interface, it offers unmatched value for businesses and
+                                individuals alike. Still not
+                                convinced? You can explore all its features risk-free with a 14-day free trial, allowing
+                                you to experience the benefits
+                                firsthand.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion_container">
+                        <!-- Accordion Item -->
+                        <div x-data="{ open: false }">
+                            <!-- Title -->
+                            <button @click="open = !open" class="accordion_button">
+                                <span class="accordion_title">How to Create a QR Code?</span>
+                                <!-- Icon -->
+                                <svg class="accordion_icon" :class="open ? 'rotate-180 ' : 'rotate-0'"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <!-- Nội dung -->
+                            <div x-show="open" x-collapse class="accordion_content">
+                                Creating a QR code is simple and straightforward. For specific instructions tailored to
+                                various QR code applications,
+                                you can click on the links provided for each solution listed above. Alternatively, if
+                                you’re looking for a general
+                                guide, visit our comprehensive “How to Create a QR Code” page to get started quickly and
+                                efficiently.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="accordion_image">
+                    <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        alt="qr code">
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

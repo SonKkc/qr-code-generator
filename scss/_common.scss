@@ -1,25 +1,27 @@
-[x-cloak] { display: none !important; }
+[x-cloak] {
+    display: none !important;
+}
 
-*{
+* {
     font-family: "Inter", sans-serif;
 }
 
-body{
+body {
     @apply bg-white dark:bg-grayy;
 }
 
-.test{
-    @apply bg-white dark:bg-grayy ;
+.test {
+    @apply bg-white dark:bg-grayy;
 }
 
-.my_container{
+.my_container {
     @apply max-w-[1200px] mx-auto px-4;
 }
 
-.itemActive{
+.itemActive {
     @apply text-white bg-greenn;
 }
 
-.itemInactive{
+.itemInactive {
     @apply text-greenn bg-white;
 }
