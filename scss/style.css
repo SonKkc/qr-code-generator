@@ -21,10 +21,6 @@ body {
   @apply max-w-[1200px] mx-auto px-4;
 }
 
-.card_container {
-  @apply max-w-[1400px] mx-auto px-4 grid grid-cols-3 gap-[20px];
-}
-
 .itemActive {
   @apply text-white bg-greenn;
 }
@@ -164,97 +160,115 @@ body {
 }
 
 .slt_page .solutions_container {
-  @apply bg-grayy w-full;
+  @apply bg-white w-full dark:bg-darkBlack;
 }
 .slt_page .hero_container {
-  @apply grid grid-cols-2 md:grid-cols-2 gap-24 pt-[170px] pb-[150px];
+  @apply flex sm:flex-col md:flex-col gap-[98px] pt-[170px] pb-[150px];
 }
 .slt_page .hero_container h4 {
-  @apply text-white text-3xl font-semibold;
+  @apply text-neutral_11 sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-3xl font-semibold dark:text-white;
 }
 .slt_page .hero_container h3 {
-  @apply text-white text-4xl font-bold;
+  @apply text-neutral_11 sm:text-4xl md:text-[40px] lg:text-5xl xl:text-5xl 2xl:text-5xl font-extrabold dark:text-white;
 }
 .slt_page .hero_container p {
-  @apply text-white text-lg font-semibold;
+  @apply text-neutral_11 text-lg font-semibold dark:text-white;
 }
 .slt_page .hero_text {
   @apply flex flex-col flex-1 justify-center gap-8;
 }
 .slt_page .hero_img {
-  @apply max-w-[550px] max-h-[414px] object-cover shrink-0;
+  @apply h-[414px] sm:w-full md:w-full lg:max-w-[550px];
+}
+.slt_page .hero_img img {
+  @apply h-full w-full object-cover shrink-0;
 }
 .slt_page .solutions_article {
   @apply py-[60px];
 }
 .slt_page .solutions_article div h2 {
-  @apply text-5xl font-bold text-center;
+  @apply sm:text-[32px] md:text-[32px] lg:text-4xl xl:text-4xl 2xl:text-4xl font-bold text-center text-neutral_10 dark:text-neutral_10-night;
 }
 .slt_page .solutions_article div p {
-  @apply text-lg font-semibold text-start;
+  @apply text-lg font-semibold text-start text-neutral_10 dark:text-neutral_10-night;
 }
 .slt_page .solutions_article div ul {
-  @apply text-lg font-semibold flex flex-col gap-4 list-disc;
+  @apply text-lg font-semibold flex flex-col gap-4 list-disc pl-8 text-neutral_10 dark:text-neutral_10-night;
 }
 .slt_page .solutions_article-wrapper {
   @apply space-y-[30px];
 }
+.slt_page .card_container {
+  @apply max-w-[1400px] mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] xl:grid-cols-3 2xl:grid-cols-3 bg-card_background-light mt-[90px] p-[30px] rounded-3xl dark:bg-neutral_3-night;
+}
+.slt_page .card_wrapper {
+  @apply h-full;
+}
 .slt_page .solutions_article .card_item {
-  @apply bg-article_card space-y-2 p-5 rounded-xl;
+  @apply bg-card_item_background-light p-5 rounded-xl group-hover:border-[3px] border-greenn drop-shadow-lg dark:bg-darkBlack;
+}
+.slt_page .solutions_article .card_item a {
+  @apply space-y-2;
 }
 .slt_page .solutions_article .card_item button {
-  @apply flex gap-[10px] items-center bg-article_card border-2 border-greenn text-white text-base uppercase font-medium px-[15px] py-[10px] rounded-3xl hover:bg-greenn hover:text-white;
+  @apply flex gap-[10px] items-center bg-card_item_background-light border-2 border-greenn text-greenn text-base uppercase font-medium px-[15px] py-[10px] rounded-3xl hover:bg-greenn hover:text-white dark:bg-darkBlack dark:hover:bg-greenn;
 }
 .slt_page .solutions_article .card_item p {
-  @apply text-white text-base font-medium text-start line-clamp-5;
+  @apply text-neutral_10 sm:text-sm md:text-sm lg:text-xl xl:text-xl 2xl:text-xl font-medium text-start line-clamp-5 dark:text-neutral_10-night;
 }
 .slt_page .card_icon {
   @apply w-[24px] h-[24px];
 }
 .slt_page .benefit_container {
-  @apply px-[120px] py-[100px] bg-benefits_background rounded-t-xl;
+  @apply px-[120px] py-[100px] bg-benefits_background-light rounded-t-xl dark:bg-neutral_10;
 }
 .slt_page .benefit_container h3 {
-  @apply text-4xl text-white font-bold text-center;
+  @apply text-4xl text-neutral_10 font-bold text-center;
 }
 .slt_page .benefit_items {
-  @apply mt-[90px] grid grid-cols-3 gap-[70px];
-}
-.slt_page .benefit_item img {
-  @apply object-cover shrink-0 mb-[30px];
+  @apply mt-[90px] grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-[70px];
 }
 .slt_page .benefit_item h5 {
-  @apply text-2xl text-greenn font-bold mb-[15px];
+  @apply text-2xl text-neutral_10 font-semibold mb-[15px] dark:text-neutral_10-night;
 }
 .slt_page .benefit_item p {
-  @apply text-[22px] text-white font-medium;
+  @apply text-[22px] text-neutral_10 font-normal line-clamp-3 dark:text-neutral_10-night;
+}
+.slt_page .benefit_img {
+  @apply max-w-[115px] max-h-[115px] aspect-square mb-[30px] sm:mx-auto;
+}
+.slt_page .benefit_img img {
+  @apply w-full h-full object-cover shrink-0;
 }
 .slt_page .example_container {
-  @apply flex max-w-[1300px] mx-auto gap-10 mt-[90px];
+  @apply flex sm:flex-col md:flex-col max-w-[1300px] mx-auto gap-10 mt-[90px] px-4;
+}
+.slt_page .example_image {
+  @apply sm:order-first md:order-first sm:w-full md:w-full lg:max-w-[552px] xl:max-w-[552px] 2xl:max-w-[552px] h-[414px];
 }
 .slt_page .example_image img {
   @apply w-full h-full object-cover shrink-0;
 }
 .slt_page .example_text-container {
-  @apply flex flex-col justify-center flex-1 text-white;
+  @apply flex flex-col justify-center flex-1 text-neutral_10 dark:text-neutral_10-night;
 }
 .slt_page .example_text-container ul {
   @apply list-disc mt-5 px-4;
 }
 .slt_page .example_text-container ul li {
-  @apply text-base font-semibold;
+  @apply text-base font-medium;
 }
 .slt_page .example_text {
   @apply border-b;
 }
 .slt_page .example_text h3 {
-  @apply text-4xl font-bold mb-5;
+  @apply sm:text-[32px] md:text-[32px] lg:text-4xl xl:text-4xl 2xl:text-4xl font-bold mb-5;
 }
 .slt_page .example_text h6 {
-  @apply text-xl font-semibold mb-5;
+  @apply text-xl font-medium mb-5;
 }
 .slt_page .about_container {
-  @apply flex max-w-[1300px] items-center mx-auto text-white gap-[116px] pt-[90px] pb-[150px];
+  @apply flex sm:flex-col md:flex-col max-w-[1300px] items-center mx-auto text-neutral_10 sm:gap-9 md:gap-9 lg:gap-[116px] xl:gap-[116px] 2xl:gap-[116px] pt-[90px] pb-[170px] px-4 dark:text-neutral_10-night;
 }
 .slt_page .about_text {
   @apply max-w-3xl w-full flex-1;
@@ -272,14 +286,17 @@ body {
   @apply w-full text-left flex justify-between items-center;
 }
 .slt_page .accordion_title {
-  @apply text-lg font-semibold text-white;
+  @apply text-lg font-semibold text-neutral_10 dark:text-neutral_10-night;
 }
 .slt_page .accordion_icon {
   @apply h-6 w-6 transition-transform duration-300;
 }
 .slt_page .accordion_content {
-  @apply text-white text-base font-[150];
+  @apply text-neutral_10 text-base font-normal dark:text-neutral_10-night;
 }
 .slt_page .accordion_image {
-  @apply flex justify-self-end;
+  @apply sm:order-first md:order-first sm:w-full md:w-full flex justify-self-end lg:max-w-[455px] xl:max-w-[455px] 2xl:max-w-[455px] h-[448px];
+}
+.slt_page .accordion_image img {
+  @apply w-full h-full object-cover shrink-0;
 }/*# sourceMappingURL=style.css.map */

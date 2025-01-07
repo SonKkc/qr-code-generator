@@ -22,6 +22,8 @@ export default {
     extend: {
       backgroundSize: {
         'custom-height': 'auto 50%',
+        backgroundColor: ['group-hover'],
+        textColor: ['group-hover'],
       },
       colors: {
         'black': '#000000',
@@ -38,9 +40,16 @@ export default {
         'gray80': '#343434',
         'article_gray': '#f6f6f6',
         'article_card': '#272727',
-        'card_background': '#A0A1A3',
+        'card_background-light': '#D0D0D1',
+        'card_background-dark': '#272727',
+        'card_item_background-light': '#FFFFFF',
         'card_container': '#0b0f19',
+        'benefits_background-light': '#F5F5F5',
         'benefits_background': '#272727',
+        'neutral_10': '#292C30',
+        'neutral_11': '#121519',
+        'neutral_3-night': '#414447',
+        'neutral_10-night': '#F5F5F5',
         'brading': '#47997e',
       },
     },
