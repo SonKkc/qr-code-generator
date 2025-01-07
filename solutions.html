@@ -14,18 +14,18 @@
 <body class="dark">
     <header class="navbar" x-data="{dropDown: false}">
         <div class="bg-nav">
-            <div class="_container">
+            <div class="_container nav_container">
                 <!-- logo -->
                 <div class="logo">
-                    <span class="dark:text-white text-black">Logo</span>
+                    <img src="images/Logo.png" alt="Logo" class="">
                 </div>
 
                 <!-- nav -->
                 <nav class="nav">
                     <ul class="-list">
                         <li @mouseenter="dropDown = true" @mouseleave="dropDown = false" @click="dropDown =! dropDown">
-                            <a href="#" class="">Product</a><svg
-                                :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}"
+                            <a href="#" class="">Product</a>
+                            <svg :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}"
                                 aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
                                 viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -1237,6 +1237,68 @@
             </div>
         </section>
     </div>
+
+    <footer>
+        <div class="_top">
+            <div class="_container nav_container">
+                <div class="-column">
+                    <div class="Logo">
+                        <img src="images/Logo.png" alt="Logo" class="">
+                    </div>
+                    <span class="-desc">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut odio rerum necessitatibus eius
+                        doloribus ad exercitationem ea, explicabo nobis dolor porro hic dicta doloremque a veniam cumque
+                        animi sed. Mollitia!
+                    </span>
+                </div>
+                <div class="-column">
+                    <div class="-title">Menu Column</div>
+                    <div class="-list">
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
+                    </div>
+                </div>
+                <div class="-column">
+                    <div class="-title">Menu Column</div>
+                    <div class="-list">
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
+                    </div>
+                </div>
+                <div class="-column">
+                    <div class="-title">Menu Column</div>
+                    <div class="-list">
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
+                    </div>
+                </div>
+                <div class="-column">
+                    <div class="-title">Menu Column</div>
+                    <div class="-list">
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
+                        <a href="#">Menu item</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="_bottom">
+            <div class=" my_container _container">
+                <span class="text-lg font-semibold text-white">© 2024. All Rights Reserved by <a href="#"
+                        class="">FreeQR</a></span>
+                <span class="text-lg font-semibold text-white">
+                    <a href="#" class="">Privacy Policy</a> • <a href="#" class="">Terms and Conditions</a></span>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
