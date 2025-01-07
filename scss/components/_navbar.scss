@@ -16,68 +16,71 @@
             }
         }
 
-        .nav{
+        .nav {
             @apply flex items-center sm:hidden;
-            .-list{
-                @apply flex items-center;
 
+            .-list {
+                @apply flex items-center;
+              
                 li{
                     @apply py-[31px] px-[15px] text-lg font-semibold text-white flex items-center gap-[5px] hover:cursor-pointer;
 
-                    svg{
+                    svg {
                         @apply w-5 h-5 text-white font-semibold;
                     }
                 }
 
-                li:hover{
+                li:hover {
                     @apply cursor-pointer;
 
-                    a{
+                    a {
                         @apply text-greenn;
                     }
 
-                    svg{
+                    svg {
                         @apply text-greenn transition-all duration-300;
                     }
                 }
             }
 
-            .user{
+            .user {
                 @apply flex items-center gap-[15px] ps-[15px];
-                ._login{
+
+                ._login {
                     @apply text-white text-lg font-semibold underline underline-offset-[3px];
                 }
 
-                ._signUp{
+                ._signUp {
                     @apply rounded-full text-lg font-semibold text-black bg-white px-3 py-1;
                 }
             }
         }
     }
-    .nav_dropdown{
+
+    .nav_dropdown {
         @apply absolute top-[100%] left-0 right-0 w-full rounded-[10px];
 
-        .-list{
+        .-list {
             @apply flex flex-row-reverse;
 
             a{
                 @apply text-white bg-darkBlack py-[18px] px-[10px] w-[250px] flex flex-col gap-[20px];
 
-                p{
+                p {
                     @apply text-base font-medium uppercase;
                 }
 
-                span{
+                span {
                     @apply text-sm pb-[20px];
                 }
             }
 
-            a:hover{
-                p{
+            a:hover {
+                p {
                     @apply text-greenn;
                 }
 
-                span{
+                span {
                     @apply text-greenn;
                 }
             }

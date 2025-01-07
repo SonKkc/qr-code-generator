@@ -1,8 +1,11 @@
-[x-cloak] { display: none !important; }
+[x-cloak] {
+    display: none !important;
+}
 
-*{
+* {
     font-family: "Inter", sans-serif;
 }
+
 
 body{
     @apply bg-white dark:bg-grayy text-black;
@@ -10,13 +13,12 @@ body{
 
 .main{
     @apply mt-[90px] py-[170px] dark:bg-grayy
+
+.test {
+    @apply bg-white dark:bg-grayy;
 }
 
-.test{
-    @apply bg-white dark:bg-grayy ;
-}
-
-.my_container{
+.my_container {
     @apply max-w-[1200px] mx-auto px-4;
 }
 

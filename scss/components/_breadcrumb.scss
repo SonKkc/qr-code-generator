@@ -1,0 +1,8 @@
+.breadcrumb_container {
+
+    @apply inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse mt-4;
+
+    li {
+        @apply text-[14px] text-white font-medium last:text-greenn hover:text-greenn;
+    }
+}
