@@ -3,14 +3,14 @@
     ._grid{
         @apply flex gap-[50px] pb-[170px];
 
-        .-left{
+        ._left{
             @apply flex flex-col justify-center gap-[45px];
 
             ._container{
                 @apply flex flex-col gap-[15px] justify-center;
 
                 h2{
-                    @apply text-[64px] leading-none font-bold dark:text-white;
+                    @apply text-[64px] leading-none font-bold text-yelloww;
     
                 }
     
@@ -19,7 +19,7 @@
                 }
     
                 p{
-                    @apply text-[24px] pt-[30px] font-semibold text-grayy dark:text-white;
+                    @apply text-[24px]  font-semibold text-grayy dark:text-white;
                 }
             }
 
@@ -29,7 +29,7 @@
         }
 
         ._right{
-            @apply flex flex-row-reverse;
+            @apply flex flex-row-reverse max-w-[434px] max-h-[428px];
 
             img{
                 @apply w-full h-full object-cover;
@@ -45,7 +45,7 @@
         @apply flex flex-col gap-[30px];
 
         ._selection{
-            @apply border border-grayy rounded-lg dark:border-white flex;
+            @apply border border-grayy rounded-lg bg-grayy flex;
 
             .over-flow{
                 @apply flex overflow-x-auto relative mx-[15px];
@@ -53,7 +53,15 @@
                     @apply relative flex flex-nowrap gap-[10px] py-[15px] dark:bg-grayy;
     
                     .sl_list-item{
-                        @apply font-semibold border border-greenn rounded-lg w-[60px] h-[60px] flex justify-center items-center;
+                        @apply font-semibold rounded-lg px-[20px] py-[10px] w-max flex flex-col justify-center items-center;
+
+                        span{
+                            @apply text-base font-medium;
+                        }
+
+                        svg{
+                            @apply w-6 h-6 stroke-none;
+                        }
                     }
                 }
             }
@@ -266,7 +274,7 @@
             @apply flex items-center gap-[10px];
 
             .swiper-btn-prev, .swiper-btn-next{
-                @apply w-[50px] h-[50px] bg-greenn flex items-center justify-center rounded-full cursor-pointer;
+                @apply w-[50px] h-[50px] flex items-center justify-center rounded-full cursor-pointer;
             }
         }
 
@@ -274,8 +282,12 @@
             .-slide{
                 @apply flex items-center justify-between;
                  
-                div{
-                    @apply w-[380px] h-[230px] bg-red-500;
+                .folder{        
+                    width: 380px;
+                    height: 229px;
+                    background-color: rgba(255, 255, 255, 0.05); /* Giống màu SVG */
+                    clip-path: path('M188.969 4.453C187.114 1.67101 183.992 0 180.648 0H10C4.47715 0 0 4.47716 0 10V219C0 224.523 4.47716 229 10 229H370C375.523 229 380 224.523 380 219V45C380 39.4772 375.523 35 370 35H214.685C211.342 35 208.219 33.329 206.365 30.547L188.969 4.453Z');
+                    transition: all 0.3s ease; /* Hiệu ứng chuyển đổi */
                 }
             }
 

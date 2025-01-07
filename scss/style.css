@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import "tailwindcss/base.css";
 @import "tailwindcss/components.css";
 @import "tailwindcss/utilities.css";
@@ -30,11 +31,11 @@ body {
 }
 
 .itemActive {
-  @apply text-white bg-greenn;
+  @apply text-white bg-greenn stroke-white;
 }
 
 .itemInactive {
-  @apply text-greenn bg-white;
+  @apply text-white bg-gray-400 stroke-greenn;
 }
 
 .flex-justify-center {
@@ -164,26 +165,26 @@ footer ._bottom ._container span a {
 .hero ._grid {
   @apply flex gap-[50px] pb-[170px];
 }
-.hero ._grid .-left {
+.hero ._grid ._left {
   @apply flex flex-col justify-center gap-[45px];
 }
-.hero ._grid .-left ._container {
+.hero ._grid ._left ._container {
   @apply flex flex-col gap-[15px] justify-center;
 }
-.hero ._grid .-left ._container h2 {
-  @apply text-[64px] leading-none font-bold dark:text-white;
+.hero ._grid ._left ._container h2 {
+  @apply text-[64px] leading-none font-bold text-yelloww;
 }
-.hero ._grid .-left ._container span {
+.hero ._grid ._left ._container span {
   @apply text-[18px] font-normal text-grayy dark:text-white;
 }
-.hero ._grid .-left ._container p {
-  @apply text-[24px] pt-[30px] font-semibold text-grayy dark:text-white;
+.hero ._grid ._left ._container p {
+  @apply text-[24px]  font-semibold text-grayy dark:text-white;
 }
-.hero ._grid .-left button {
+.hero ._grid ._left button {
   @apply w-fit bg-greenn text-white text-[18px] font-semibold px-[20px] py-[12px] rounded-full hover:bg-darkGreenn hover:text-white transition-all duration-300;
 }
 .hero ._grid ._right {
-  @apply flex flex-row-reverse;
+  @apply flex flex-row-reverse max-w-[434px] max-h-[428px];
 }
 .hero ._grid ._right img {
   @apply w-full h-full object-cover;
@@ -196,7 +197,7 @@ footer ._bottom ._container span a {
   @apply flex flex-col gap-[30px];
 }
 .QrForm ._container ._selection {
-  @apply border border-grayy rounded-lg dark:border-white flex;
+  @apply border border-grayy rounded-lg bg-grayy flex;
 }
 .QrForm ._container ._selection .over-flow {
   @apply flex overflow-x-auto relative mx-[15px];
@@ -205,7 +206,13 @@ footer ._bottom ._container span a {
   @apply relative flex flex-nowrap gap-[10px] py-[15px] dark:bg-grayy;
 }
 .QrForm ._container ._selection .over-flow .-list .sl_list-item {
-  @apply font-semibold border border-greenn rounded-lg w-[60px] h-[60px] flex justify-center items-center;
+  @apply font-semibold rounded-lg px-[20px] py-[10px] w-max flex flex-col justify-center items-center;
+}
+.QrForm ._container ._selection .over-flow .-list .sl_list-item span {
+  @apply text-base font-medium;
+}
+.QrForm ._container ._selection .over-flow .-list .sl_list-item svg {
+  @apply w-6 h-6 stroke-none;
 }
 .QrForm ._container ._selection .over-flow::-webkit-scrollbar {
   display: none;
@@ -357,13 +364,18 @@ footer ._bottom ._container span a {
   @apply flex items-center gap-[10px];
 }
 .section5 ._container ._right .swiper-btn-prev, .section5 ._container ._right .swiper-btn-next {
-  @apply w-[50px] h-[50px] bg-greenn flex items-center justify-center rounded-full cursor-pointer;
+  @apply w-[50px] h-[50px] flex items-center justify-center rounded-full cursor-pointer;
 }
 .section5 ._container .swiper2 .-slide {
   @apply flex items-center justify-between;
 }
-.section5 ._container .swiper2 .-slide div {
-  @apply w-[380px] h-[230px] bg-red-500;
+.section5 ._container .swiper2 .-slide .folder {
+  width: 380px;
+  height: 229px;
+  background-color: rgba(255, 255, 255, 0.05); /* Giống màu SVG */
+  -webkit-clip-path: path("M188.969 4.453C187.114 1.67101 183.992 0 180.648 0H10C4.47715 0 0 4.47716 0 10V219C0 224.523 4.47716 229 10 229H370C375.523 229 380 224.523 380 219V45C380 39.4772 375.523 35 370 35H214.685C211.342 35 208.219 33.329 206.365 30.547L188.969 4.453Z");
+          clip-path: path("M188.969 4.453C187.114 1.67101 183.992 0 180.648 0H10C4.47715 0 0 4.47716 0 10V219C0 224.523 4.47716 229 10 229H370C375.523 229 380 224.523 380 219V45C380 39.4772 375.523 35 370 35H214.685C211.342 35 208.219 33.329 206.365 30.547L188.969 4.453Z");
+  transition: all 0.3s ease; /* Hiệu ứng chuyển đổi */
 }
 
 .FAQ {

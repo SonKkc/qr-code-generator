@@ -30,12 +30,93 @@
         }
 
         .folder-top {
-            clip-path: polygon(0 0, 20% 0, 25% 40%, 100% 40%, 100% 100%, 0% 100%);
+          clip-path: path('M 0 100 L 20,100 Q 30,50 80,50 L 100,50 Q 110,50 120,100 L 400,100 L 400,200 L 0,200 Z');
+        }
+
+        .folder {
+          width: 400px;
+          height: 250px;
+          background-color: #1a1a1a; /* Màu xám tối */
+          clip-path: path('M 20 0 L 180 0 Q 185 0 240 70 Q 0 40 200 40 L 380 40 Q 400 40 400 56 L 400 250 Q 400 270 380 270 L 20 270 Q 0 270 0 250 L 0 20 Q 0 0 20 0 Z');
+          border-radius: 10px;
+        }
+
+        .folder2 {
+          width: 380px;
+          height: 229px;
+          background-color: rgba(255, 255, 255, 0.05); /* Giống màu SVG */
+          clip-path: path('M0 87.34% L0 4.36% A3.28% 3.28% 0 0 1 39.47% 4.36% L49.72% 87.34% L100% 87.34% L100% 100% L0 100% Z');          transition: all 0.3s ease; /* Hiệu ứng chuyển đổi */
+        }
+    
+        .folder2:hover {
+          background-color: rgba(255, 255, 255, 0.15); /* Đổi màu khi hover */
+          transform: scale(1.05); /* Phóng to nhẹ */
+        }
+    
+        /* Thiết lập kích thước linh hoạt */
+        @media (max-width: 768px) {
+          .folder2 {
+            width: 280px;
+            height: 170px;
           }
-      
-    </style>
+        }
+    
+        @media (max-width: 480px) {
+          .folder2 {
+            width: 200px;
+            height: 120px;
+          }
+        }    
+      </style>
 </head>
 <body class="">
+  <div class="bg-gray-900 flex items-center justify-center min-h-screen">
+    <div class="folder2"></div>
+  </div>
+  
+
+  <div class="flex">
+    <style title="s1"></style>
+
+    <svg width="380" height="229" viewBox="0 0 380 229" fill="black" xmlns="http://www.w3.org/2000/svg">
+      <path id="path" d="M188.969 4.453C187.114 1.67101 183.992 0 180.648 0H10C4.47715 0 0 4.47716 0 10V219C0 224.523 4.47716 229 10 229H370C375.523 229 380 224.523 380 219V45C380 39.4772 375.523 35 370 35H214.685C211.342 35 208.219 33.329 206.365 30.547L188.969 4.453Z" fill="black" fill-opacity="1"/>
+    </svg>
+    
+    <div class="clipped" style="background-color: orange; width:380px;height:229px"></div>
+  </div>
+  <script>
+        let path = document.getElementById('path');
+
+    let pathLength = Math.floor(path.getTotalLength());
+    let steps = 10;
+    let scaled = Math.floor(pathLength / steps);
+    let bbox = path.getBBox();
+
+    let points = Object.keys([...new Array(scaled)]).map(num => {
+      let point = path.getPointAtLength(num * steps);
+      let x = (point.x / bbox.width * 100).toFixed(2);
+      let y = (point.y / bbox.height * 100).toFixed(2);
+      return `${x}% ${y}%`;
+    }).join(',');
+
+    document.querySelector('style[title="s1"]').innerHTML = `.clipped
+    {clip-path: polygon(${points});}`;
+  </script>
+
+  <div class="flex items-center justify-center min-h-screen">
+    <div class="folder">
+      <div class="flex flex-col gap-[25px] px-[10px]">
+        <div class="text-white text-[24px] font-semibold py-[10px] ">Link</div>
+        <div class="text-white text-lg font-semibold">adawdawdawdawdawd</div>
+      </div>
+    </div>
+    <div class="test-convert w-[380px] h-[229px] bg-black">
+      <div class="flex flex-col gap-[25px] px-[10px]"></div>
+        <div class="text-white text-[24px] font-semibold py-[10px] ">Link</div>
+        <div class="text-white text-lg font-semibold">adawdawdawdawdawd</div>
+      </div>
+    </div>
+  </div>
     <div class="bg-gray-100 flex items-center justify-center min-h-screen">
         <!-- Folder Container -->
         <div class="max-w-sm shadow-lg rounded-lg overflow-hidden">

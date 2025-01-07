@@ -27,6 +27,7 @@ export default {
         'darkBlack': '#121519',
         'greenn': '#47997E',
         'darkGreenn': '#37715d',
+        'yelloww': '#edcb50',
         'footerGrayy': '#292c30',
         'primary': '#333B7C',
         'secondary': '#EF8041',

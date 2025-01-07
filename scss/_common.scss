@@ -24,14 +24,12 @@ body{
     @apply max-w-[1440px] mx-auto;
 }
 
-
-
 .itemActive{
-    @apply text-white bg-greenn;
+    @apply text-white bg-greenn stroke-white;
 }
 
 .itemInactive{
-    @apply text-greenn bg-white;
+    @apply text-white bg-gray-400 stroke-greenn;
 }
 
 .flex-justify-center{
