@@ -64,18 +64,24 @@
     }
 
     .solutions_article .card_item {
-        @apply bg-card_item_background-light p-5 rounded-xl group-hover:border-[3px] border-greenn drop-shadow-lg dark:bg-darkBlack;
+        @apply bg-card_item_background-light p-5 rounded-xl dark:bg-darkBlack hover:drop-shadow-lg border-[3px] border-transparent hover:border-greenn;
 
         a {
             @apply space-y-2;
         }
 
         button {
-            @apply flex gap-[10px] items-center bg-card_item_background-light border-2 border-greenn text-greenn text-base uppercase font-medium px-[15px] py-[10px] rounded-3xl hover:bg-greenn hover:text-white dark:bg-darkBlack dark:hover:bg-greenn;
+            @apply flex gap-[10px] items-center bg-card_item_background-light border-2 border-greenn text-greenn text-base uppercase font-medium px-[15px] py-[10px] rounded-3xl dark:bg-darkBlack dark:hover:bg-greenn;
         }
 
         p {
             @apply text-neutral_10 sm:text-sm md:text-sm lg:text-xl xl:text-xl 2xl:text-xl font-medium text-start line-clamp-5 dark:text-neutral_10-night;
+        }
+    }
+
+    .solutions_article .card_item:hover {
+        button {
+            @apply bg-greenn text-white;
         }
     }
 

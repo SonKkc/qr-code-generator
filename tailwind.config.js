@@ -24,6 +24,7 @@ export default {
         'custom-height': 'auto 50%',
         backgroundColor: ['group-hover'],
         textColor: ['group-hover'],
+        borderColor: ['group-hover'],
       },
       colors: {
         'black': '#000000',
