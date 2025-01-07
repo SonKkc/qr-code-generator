@@ -35,7 +35,7 @@ body {
 }
 
 .itemInactive {
-  @apply text-white bg-gray-400 stroke-greenn;
+  @apply text-white bg-gray-500 stroke-greenn;
 }
 
 .flex-justify-center {
@@ -44,6 +44,37 @@ body {
 
 .flex-justify-between {
   @apply flex justify-between;
+}
+
+.switch {
+  @apply relative inline-block w-[56px] h-[30px];
+}
+.switch input {
+  @apply opacity-0 w-[0] h-[0];
+}
+.switch .slider {
+  @apply absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-[#ccc];
+  transition: 0.4s;
+}
+.switch .slider::before {
+  @apply absolute content-[""] w-[22px] h-[22px] left-[4px] bottom-[4px] bg-white;
+  transition: 0.4s;
+}
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+.switch input:checked + .slider {
+  @apply bg-greenn;
+}
+.switch input:checked + .slider::before {
+  -webkit-tranform: translateX(26px);
+  transform: translateX(26px);
+}
+.switch .slider.round {
+  @apply rounded-full;
+}
+.switch .slider.round::before {
+  @apply rounded-full;
 }
 
 .navbar {
@@ -197,13 +228,13 @@ footer ._bottom ._container span a {
   @apply flex flex-col gap-[30px];
 }
 .QrForm ._container ._selection {
-  @apply border border-grayy rounded-lg bg-grayy flex;
+  @apply rounded-lg bg-gray-400 flex;
 }
 .QrForm ._container ._selection .over-flow {
   @apply flex overflow-x-auto relative mx-[15px];
 }
 .QrForm ._container ._selection .over-flow .-list {
-  @apply relative flex flex-nowrap gap-[10px] py-[15px] dark:bg-grayy;
+  @apply relative flex flex-nowrap gap-[10px] py-[15px] bg-gray-400;
 }
 .QrForm ._container ._selection .over-flow .-list .sl_list-item {
   @apply font-semibold rounded-lg px-[20px] py-[10px] w-max flex flex-col justify-center items-center;
@@ -218,16 +249,73 @@ footer ._bottom ._container span a {
   display: none;
 }
 .QrForm ._container ._selection .arrow-start {
-  @apply flex items-center justify-center w-[50px] font-semibold cursor-pointer ps-[10px];
+  @apply flex items-center justify-center w-[50px] font-semibold cursor-pointer ps-[10px] select-none;
 }
 .QrForm ._container ._selection .arrow-start svg {
   @apply text-black dark:text-white;
 }
 .QrForm ._container ._selection .arrow-end {
-  @apply flex items-center justify-center w-[50px] font-semibold cursor-pointer pe-[10px];
+  @apply flex items-center justify-center w-[50px] font-semibold cursor-pointer pe-[10px] select-none;
 }
 .QrForm ._container ._selection .arrow-end svg {
   @apply text-black dark:text-white;
+}
+.QrForm ._container ._fillTable {
+  @apply w-full bg-gray-400 rounded-lg p-[20px];
+}
+.QrForm ._container ._fillTable .content-box .box_cont {
+  @apply flex flex-col gap-[10px];
+}
+.QrForm ._container ._fillTable .content-box .box_cont .-title {
+  @apply text-2xl font-bold;
+}
+.QrForm ._container ._fillTable .content-box .box_cont .-des {
+  @apply text-xl font-semibold;
+}
+.QrForm ._container ._fillTable .content-box .box_cont input {
+  @apply w-full px-[15px] py-[10px] border-0 border-transparent outline-0 outline-transparent text-black;
+}
+.QrForm ._container ._mainForm {
+  @apply flex gap-[30px];
+}
+.QrForm ._container ._mainForm ._selectBox {
+  @apply p-[5px] bg-gray-500 rounded-lg;
+}
+.QrForm ._container ._mainForm ._selectBox .-list {
+  @apply flex flex-col gap-[15px];
+}
+.QrForm ._container ._mainForm ._selectBox .-list .-item {
+  @apply flex flex-col items-center gap-[5px] px-[12px] py-[10px] h-max bg-gray-400 rounded-lg;
+}
+.QrForm ._container ._mainForm ._selectBox .-list .-item span {
+  @apply text-lg font-semibold text-white;
+}
+.QrForm ._container ._mainForm ._editTable {
+  @apply max-w-[662px] w-full bg-gray-400 rounded-lg p-[20px];
+}
+.QrForm ._container ._mainForm ._editTable ._cont {
+  @apply flex flex-col gap-[15px];
+}
+.QrForm ._container ._mainForm ._editTable ._cont .-item {
+  @apply flex flex-col gap-[10px];
+}
+.QrForm ._container ._mainForm ._editTable ._cont .-item span {
+  @apply text-lg font-semibold text-white;
+}
+.QrForm ._container ._mainForm ._editTable ._cont .-item input {
+  @apply w-full px-[15px] py-[10px] border-0 border-transparent outline-0 outline-transparent;
+}
+.QrForm ._container ._mainForm ._editTable ._cont .-item2 {
+  @apply flex items-center gap-[10px] text-white text-base;
+}
+.QrForm ._container ._mainForm ._qrDownload {
+  @apply max-w-[388px] w-full bg-gray-400 rounded-lg flex flex-col items-center p-[20px] gap-[30px];
+}
+.QrForm ._container ._mainForm ._qrDownload img {
+  @apply w-full h-full object-cover;
+}
+.QrForm ._container ._mainForm ._qrDownload button {
+  @apply px-[20px] py-[10px] rounded-full bg-greenn w-max text-white text-lg font-semibold flex items-center gap-[10px];
 }
 
 .section1 {
@@ -236,17 +324,20 @@ footer ._bottom ._container span a {
 .section1 ._container {
   @apply flex gap-[105px];
 }
+.section1 ._container ._left {
+  @apply max-w-[480px] max-h-[472px];
+}
 .section1 ._container ._left img {
-  @apply w-[480px] h-[472px] object-cover;
+  @apply w-full h-full object-cover;
 }
 .section1 ._container ._right {
   @apply flex flex-col justify-center flex-1;
 }
 .section1 ._container ._right ._container {
-  @apply flex flex-col justify-center;
+  @apply flex flex-col justify-center gap-[35px];
 }
 .section1 ._container ._right ._container h2 {
-  @apply text-[64px] font-bold dark:text-white;
+  @apply text-[64px] font-bold dark:text-white leading-none;
 }
 .section1 ._container ._right ._container p {
   @apply text-[18px] font-semibold dark:text-white;
@@ -279,6 +370,9 @@ footer ._bottom ._container span a {
 .section2 ._container .-box ._left ._flex-col button {
   @apply p-[12px] rounded-full bg-greenn text-sm w-fit text-white hover:bg-darkGreenn transition-all duration-300;
 }
+.section2 ._container .-box ._right {
+  @apply max-w-[390px] max-h-[340px];
+}
 .section2 ._container .-box ._right img {
   @apply w-full h-full object-cover;
 }
@@ -288,6 +382,9 @@ footer ._bottom ._container span a {
 }
 .section3 ._container {
   @apply flex gap-[116px];
+}
+.section3 ._container ._left {
+  @apply max-w-[455px] max-h-[448px];
 }
 .section3 ._container ._left img {
   @apply w-full h-full object-cover;
@@ -322,6 +419,9 @@ footer ._bottom ._container span a {
 }
 .section4 .swiper1 .-slide {
   @apply p-[50px] bg-white flex justify-between gap-[207px];
+}
+.section4 .swiper1 .-slide ._left {
+  @apply max-w-[346px] max-h-[340px];
 }
 .section4 .swiper1 .-slide ._left img {
   @apply w-full h-full object-cover;
@@ -358,7 +458,7 @@ footer ._bottom ._container span a {
   @apply text-5xl font-bold dark:text-white;
 }
 .section5 ._container ._left .-desc {
-  @apply text-lg font-semibold dark:text-white;
+  @apply text-lg font-medium dark:text-white;
 }
 .section5 ._container ._right {
   @apply flex items-center gap-[10px];
@@ -372,10 +472,36 @@ footer ._bottom ._container span a {
 .section5 ._container .swiper2 .-slide .folder {
   width: 380px;
   height: 229px;
+  transform: scale(0.95);
   background-color: rgba(255, 255, 255, 0.05); /* Giống màu SVG */
   -webkit-clip-path: path("M188.969 4.453C187.114 1.67101 183.992 0 180.648 0H10C4.47715 0 0 4.47716 0 10V219C0 224.523 4.47716 229 10 229H370C375.523 229 380 224.523 380 219V45C380 39.4772 375.523 35 370 35H214.685C211.342 35 208.219 33.329 206.365 30.547L188.969 4.453Z");
           clip-path: path("M188.969 4.453C187.114 1.67101 183.992 0 180.648 0H10C4.47715 0 0 4.47716 0 10V219C0 224.523 4.47716 229 10 229H370C375.523 229 380 224.523 380 219V45C380 39.4772 375.523 35 370 35H214.685C211.342 35 208.219 33.329 206.365 30.547L188.969 4.453Z");
   transition: all 0.3s ease; /* Hiệu ứng chuyển đổi */
+}
+.section5 ._container .swiper2 .-slide .folder:hover {
+  @apply bg-greenn;
+  transform: scale(1);
+}
+.section5 ._container .swiper2 .-slide .folder {
+  @apply flex flex-col gap-[10px] px-[20px] pt-[10px] pb-[15px];
+}
+.section5 ._container .swiper2 .-slide .folder .-title {
+  @apply flex items-center gap-[10px];
+}
+.section5 ._container .swiper2 .-slide .folder .-title span {
+  @apply text-2xl font-semibold text-white;
+}
+.section5 ._container .swiper2 .-slide .folder .-title svg {
+  @apply w-6 h-6;
+}
+.section5 ._container .swiper2 .-slide .folder .-desc {
+  @apply flex flex-col justify-between h-full pt-[10px];
+}
+.section5 ._container .swiper2 .-slide .folder .-desc p {
+  @apply text-lg text-white font-semibold;
+}
+.section5 ._container .swiper2 .-slide .folder .-desc .-explore {
+  @apply flex items-center gap-[5px] text-yelloww text-base;
 }
 
 .FAQ {
@@ -388,7 +514,7 @@ footer ._bottom ._container span a {
   @apply w-full;
 }
 .FAQ ._container .-header ._title {
-  @apply text-[64px] font-bold dark:text-white text-center pb-[50px];
+  @apply text-[64px] font-bold text-yelloww text-center pb-[50px];
 }
 .FAQ ._container .-header ._btom {
   @apply flex items-center justify-between w-[560px];
