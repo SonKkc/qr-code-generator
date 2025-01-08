@@ -7,12 +7,13 @@
 }
 
 
-body{
+body {
     @apply bg-white dark:bg-grayy text-black;
 }
 
-.main{
-    @apply mt-[90px] py-[170px] dark:bg-grayy
+.main {
+    @apply mt-[90px] py-[170px] dark:bg-grayy;
+}
 
 .test {
     @apply bg-white dark:bg-grayy;
@@ -22,22 +23,22 @@ body{
     @apply max-w-[1200px] mx-auto px-4;
 }
 
-.nav_container{
+.nav_container {
     @apply max-w-[1440px] mx-auto;
 }
 
-.itemActive{
+.itemActive {
     @apply text-white bg-greenn stroke-white;
 }
 
-.itemInactive{
+.itemInactive {
     @apply text-white bg-gray-400 stroke-greenn;
 }
 
-.flex-justify-center{
+.flex-justify-center {
     @apply flex justify-center;
 }
 
-.flex-justify-between{
+.flex-justify-between {
     @apply flex justify-between;
 }

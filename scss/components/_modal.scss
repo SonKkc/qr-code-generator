@@ -1,0 +1,43 @@
+.modal {
+
+    &_container {
+        @apply flex items-center justify-center;
+    }
+
+    &_button {
+        @apply px-6 py-3 text-contact_text text-2xl bg-white rounded-3xl font-normal;
+    }
+
+    &_wrapper {
+        @apply fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50;
+    }
+
+    &_content {
+        @apply bg-white rounded-lg shadow-lg w-[90%] max-w-xl p-6 relative;
+    }
+
+    &_header {
+        @apply flex w-full justify-between;
+
+        h4 {
+            @apply text-3xl font-semibold text-enterprise_text;
+        }
+    }
+
+    &_body {
+        @apply flex flex-col gap-4 my-4;
+    }
+
+    &_input {
+        @apply w-full px-4 py-3 border border-enterprise_input-border rounded-lg placeholder:text-enterprise_text placeholder:text-sm placeholder:font-normal text-enterprise_text;
+    }
+
+    &_select {
+
+        @apply w-full px-4 py-3 bg-white border border-enterprise_input-border rounded-lg text-left focus:outline-none flex justify-between;
+
+        &-icon {
+            @apply size-6
+        }
+    }
+}
