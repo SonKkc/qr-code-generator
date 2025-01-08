@@ -4,19 +4,23 @@
         @apply bg-white w-full dark:bg-darkBlack;
     }
 
+    .hero {
+        @apply bg-solution_hero_bg bg-cover bg-center;
+    }
+
     .hero_container {
         @apply flex sm:flex-col md:flex-col gap-[98px] pt-[170px] pb-[150px];
 
         h4 {
-            @apply text-neutral_11 sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-3xl font-semibold dark:text-white;
+            @apply text-solution_text_white sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-3xl font-semibold dark:text-white;
         }
 
         h3 {
-            @apply text-neutral_11 sm:text-4xl md:text-[40px] lg:text-5xl xl:text-5xl 2xl:text-5xl font-extrabold dark:text-white;
+            @apply text-solution_text_white sm:text-4xl md:text-[40px] lg:text-5xl xl:text-5xl 2xl:text-5xl font-extrabold dark:text-white;
         }
 
         p {
-            @apply text-neutral_11 text-lg font-semibold dark:text-white;
+            @apply text-solution_text_white text-lg font-semibold dark:text-white;
         }
     }
 
@@ -33,20 +37,20 @@
     }
 
     .solutions_article {
-        @apply py-[60px];
+        @apply py-[90px];
 
         div {
 
             h2 {
-                @apply sm:text-[32px] md:text-[32px] lg:text-4xl xl:text-4xl 2xl:text-4xl font-bold text-center text-neutral_10 dark:text-neutral_10-night;
+                @apply sm:text-[32px] md:text-[32px] lg:text-4xl xl:text-4xl 2xl:text-4xl font-bold text-center text-solution_text_black dark:text-neutral_10-night;
             }
 
             p {
-                @apply text-lg font-semibold text-start text-neutral_10 dark:text-neutral_10-night;
+                @apply text-lg font-semibold text-start text-solution_text_black dark:text-neutral_10-night;
             }
 
             ul {
-                @apply text-lg font-semibold flex flex-col gap-4 list-disc pl-8 text-neutral_10 dark:text-neutral_10-night;
+                @apply text-lg font-semibold flex flex-col gap-4 list-disc pl-8 text-solution_text_black dark:text-neutral_10-night;
             }
         }
     }
@@ -64,24 +68,24 @@
     }
 
     .solutions_article .card_item {
-        @apply bg-card_item_background-light p-5 rounded-xl dark:bg-darkBlack hover:drop-shadow-lg border-[3px] border-transparent hover:border-greenn;
+        @apply bg-solution_card-item_bg p-5 rounded-xl dark:bg-darkBlack hover:drop-shadow-lg border-[3px] border-transparent hover:border-solution_card_item_border;
 
         a {
             @apply space-y-2;
         }
 
         button {
-            @apply flex gap-[10px] items-center bg-card_item_background-light border-2 border-greenn text-greenn text-base uppercase font-medium px-[15px] py-[10px] rounded-3xl dark:bg-darkBlack dark:hover:bg-greenn;
+            @apply flex gap-[10px] items-center bg-card_item_background-light border-2 border-solution_card_item_border text-solution_card_item_border text-base uppercase font-medium px-[15px] py-[10px] rounded-3xl dark:bg-darkBlack dark:hover:bg-solution_card_item_border;
         }
 
         p {
-            @apply text-neutral_10 sm:text-sm md:text-sm lg:text-xl xl:text-xl 2xl:text-xl font-medium text-start line-clamp-5 dark:text-neutral_10-night;
+            @apply text-solution_text_black sm:text-sm md:text-sm lg:text-xl xl:text-xl 2xl:text-xl font-medium text-start line-clamp-5 dark:text-neutral_10-night;
         }
     }
 
     .solutions_article .card_item:hover {
         button {
-            @apply bg-greenn text-white;
+            @apply bg-greenn text-solution_text_white;
         }
     }
 
@@ -90,30 +94,31 @@
     }
 
     .benefit_container {
-        @apply px-[120px] py-[100px] bg-benefits_background-light rounded-t-xl dark:bg-neutral_10;
+        @apply px-[120px] py-[100px] bg-solution_benefits_bg bg-cover bg-center rounded-t-xl dark:bg-neutral_10;
 
         h3 {
-            @apply text-4xl text-neutral_10 font-bold text-center;
+            @apply text-4xl text-solution_text_white font-bold text-center;
         }
     }
 
     .benefit_items {
-        @apply mt-[90px] grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-[70px];
+        @apply mt-[90px] grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-[70px];
     }
 
     .benefit_item {
+        @apply flex gap-[30px];
 
         h5 {
-            @apply text-2xl text-neutral_10 font-semibold mb-[15px] dark:text-neutral_10-night;
+            @apply text-2xl text-solution_text_white font-semibold mb-[15px] dark:text-neutral_10-night;
         }
 
         p {
-            @apply text-[22px] text-neutral_10 font-normal line-clamp-3 dark:text-neutral_10-night;
+            @apply text-[22px] text-solution_text_white font-normal line-clamp-3 dark:text-neutral_10-night;
         }
     }
 
     .benefit_img {
-        @apply max-w-[115px] max-h-[115px] aspect-square mb-[30px] sm:mx-auto;
+        @apply max-w-[115px] max-h-[115px] aspect-square mb-[30px] sm:mx-auto shrink-0;
 
         img {
             @apply w-full h-full object-cover shrink-0;
@@ -134,7 +139,7 @@
     }
 
     .example_text-container {
-        @apply flex flex-col justify-center flex-1 text-neutral_10 dark:text-neutral_10-night;
+        @apply flex flex-col justify-center flex-1 text-solution_text_black dark:text-neutral_10-night;
 
         ul {
             @apply list-disc mt-5 px-4;
@@ -159,7 +164,7 @@
     }
 
     .about_container {
-        @apply flex sm:flex-col md:flex-col max-w-[1300px] items-center mx-auto text-neutral_10 sm:gap-9 md:gap-9 lg:gap-[116px] xl:gap-[116px] 2xl:gap-[116px] pt-[90px] pb-[170px] px-4 dark:text-neutral_10-night;
+        @apply flex sm:flex-col md:flex-col max-w-[1300px] items-center mx-auto text-solution_text_black sm:gap-9 md:gap-9 lg:gap-[116px] xl:gap-[116px] 2xl:gap-[116px] pt-[90px] pb-[170px] px-4 dark:text-neutral_10-night;
     }
 
     .about_text {
@@ -184,7 +189,7 @@
     }
 
     .accordion_title {
-        @apply text-lg font-semibold text-neutral_10 dark:text-neutral_10-night;
+        @apply text-lg font-semibold text-solution_text_black dark:text-neutral_10-night;
     }
 
     .accordion_icon {
@@ -192,7 +197,7 @@
     }
 
     .accordion_content {
-        @apply text-neutral_10 text-base font-normal dark:text-neutral_10-night;
+        @apply text-solution_text_black text-base font-normal dark:text-neutral_10-night;
     }
 
     .accordion_image {

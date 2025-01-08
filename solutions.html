@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 
-<body class="dark">
+<body class="">
     <header class="navbar" x-data="{dropDown: false}">
         <div class="bg-nav">
             <div class="_container nav_container">
@@ -112,25 +112,27 @@
                     </li>
                 </ol>
             </div> -->
+            <div class="hero">
+                <div class="hero_container my_container h-full">
+                    <div class="hero_text flex-1">
+                        <h4>QR CODE SOLUTIONS</h4>
 
-            <div class="hero_container my_container h-full">
-                <div class="hero_text flex-1">
-                    <h4>QR CODE SOLUTIONS</h4>
+                        <h3><span class="text-solution_text_hight-light">QR Code Solution</span> for <br /> Every
+                            Purpose</h3>
 
-                    <h3><span class="text-brading">QR Code Solution</span> for <br /> Every Purpose</h3>
+                        <p>From adding a downloadable PDF file to playable videos and audio, use any of our QR Code
+                            solutions to enrich your print
+                            materials</p>
+                    </div>
 
-                    <p>From adding a downloadable PDF file to playable videos and audio, use any of our QR Code
-                        solutions to enrich your print
-                        materials</p>
-                </div>
-
-                <div class="hero_img">
-                    <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                        alt="hero" />
+                    <div class="hero_img">
+                        <img src="./public/images/Solution-hero-image.png" alt="hero" />
+                    </div>
                 </div>
             </div>
 
-            <div class="solutions_article bg-white dark:bg-darkBlack">
+            <div
+                class="solutions_article bg-solution_qr-top_bg_color_light bg-solution_qr-top_bg_light bg-cover bg-center dark:bg-darkBlack">
                 <div class="my_container solutions_article-wrapper">
                     <h2>
                         What is a QR code?
@@ -150,7 +152,8 @@
                 </div>
             </div>
 
-            <div class="solutions_article bg-article_gray dark:bg-neutral_10">
+            <div
+                class="solutions_article bg-solution_qr-bottom_bg_color_light bg-solution_qr-bottom_bg_light bg-cover bg-center dark:bg-neutral_10">
                 <div class="my_container solutions_article-wrapper">
                     <h2>
                         What can a QR code do?
@@ -207,21 +210,21 @@
                 </div>
             </div>
 
-            <div class="min-h-screen relative mt-[150px]">
+            <div class="min-h-screen relative mt-[60px]">
                 <!-- Split background -->
                 <div class="absolute inset-0">
-                    <div class="h-[65%] bg-white dark:bg-darkBlack"></div>
-                    <div class="h-[35%] bg-card_background-light dark:bg-neutral_3-night"></div>
+                    <div class="h-[45%] bg-solution_dynamic-qr_bg bg-cover bg-center transform scale-x-[-1]"></div>
+                    <div class="h-[55%] bg-card_background-light dark:bg-neutral_3-night"></div>
                 </div>
 
                 <!-- Content -->
                 <div class="relative solutions_article">
                     <div class="my_container solutions_article-wrapper">
-                        <h2>
-                            List of Dynamic QR Code solutions
+                        <h2 class="!text-solution_text_white">
+                            List of <span class="text-solution_text_hight-light"> Dynamic QR Code </span> solutions
                         </h2>
 
-                        <p>
+                        <p class="!text-solution_text_white">
                             Dynamic QR Code solutions allow users to create QR Codes that can be edited even after
                             printing. Unlike static QR Codes,
                             they offer flexibility for real-time updates, tracking, and error correction. Ideal for
@@ -580,33 +583,26 @@
                 </div>
             </div>
 
-            <div class="min-h-screen relative mt-[150px]">
+            <div class="min-h-screen relative mt-[60px]">
                 <!-- Split background -->
                 <div class="absolute inset-0">
-                    <div class="h-[65%] bg-white dark:bg-darkBlack"></div>
+                    <div class="h-[65%] bg-solution_dynamic-qr_bg bg-cover bg-center"></div>
                     <div class="h-[35%] bg-card_background-light dark:bg-neutral_3-night"></div>
                 </div>
 
                 <!-- Content -->
                 <div class="relative solutions_article">
                     <div class="my_container solutions_article-wrapper">
-                        <h2>
-                            What is a QR code?
+                        <h2 class="!text-solution_text_white">
+                            List of <span class="text-solution_text_hight-light"> Static QR Code </span> solutions
                         </h2>
 
-                        <p>
-                            A QR code (Quick Response Code) is a two-dimensional barcode, composed of a grid of black
-                            and
-                            white squares arranged in
-                            a specific pattern. It was developed by Denso Wave, a subsidiary of the Toyota supplier
-                            Denso,
-                            to streamline logistics
-                            in automobile production by marking components. Over time, it has evolved and become widely
-                            used
-                            in mobile marketing,
-                            especially with the rise of smartphones. The term "QR" signifies the ability to access
-                            information quickly by scanning
-                            the code, providing instant access to the embedded data.
+                        <p class="!text-solution_text_white">
+                            Static QR Code solutions are tools that generate QR Codes with fixed, unchangeable content
+                            once created. They are
+                            typically used for storing information such as URLs, text, or contact details that don’t
+                            need to be updated after
+                            printing.
                         </p>
                     </div>
 
@@ -847,20 +843,16 @@
                 </div>
             </div>
 
-            <div class="solutions_article">
+            <div class="solutions_article bg-solution_qr-bottom_bg_light bg-cover bg-center">
                 <div class="my_container solutions_article-wrapper">
-                    <h2>
-                        Why dynamic QR codes require a subscription?
-                    </h2>
-
-                    <p>
+                    <p class="!text-center">
                         Dynamic QR Codes come with advanced features that are unlocked through a subscription. These
                         features include the
                         ability to edit the QR code’s content at any time, making it ideal for businesses that need
                         flexibility without
                         reprinting </p>
 
-                    <ul>
+                    <ul class="!px-2 !list-none !mt-[60px]">
                         <li>
                             Dynamic QR Codes come with advanced features that are unlocked through a subscription. These
                             features include the
@@ -919,53 +911,74 @@
                 <div class="benefit_items">
                     <div class="benefit_item">
                         <div class="benefit_img">
-                            <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                                alt="benefit">
+                            <img src="/public/images/Curated-content.png" alt="benefit">
                         </div>
-                        <h5>Curated content</h5>
-                        <p>
-                            We have hundreds of QR Code ideas created specifically to help inspire you.
-                        </p>
+                        <div>
+                            <h5>Curated content</h5>
+                            <p>
+                                We have hundreds of QR Code ideas created specifically to help inspire you.
+                            </p>
+                        </div>
                     </div>
 
                     <div class="benefit_item">
-                        <img src="https://via.placeholder.com/115x115" alt="benefit" class="benefit_img">
-                        <h5>Edgy styles</h5>
-                        <p>
-                            Use brand colors and company logo to stand out from your competition.
-                        </p>
+                        <div class="benefit_img">
+                            <img src="/public/images/Edgy-styles.png" alt="benefit" class="benefit_img">
+                        </div>
+                        <div>
+                            <h5>Edgy styles</h5>
+                            <p>
+                                Use brand colors and company logo to stand out from your competition.
+                            </p>
+                        </div>
                     </div>
 
                     <div class="benefit_item">
-                        <img src="https://via.placeholder.com/115x115" alt="benefit" class="benefit_img">
-                        <h5>Secure collaborations</h5>
-                        <p>
-                            Invite your team members complete with their own logins. No extra fees.
-                        </p>
+                        <div class="benefit_img">
+                            <img src="/public/images/Secure-collaborations.png" alt="benefit" class="benefit_img">
+                        </div>
+                        <div>
+                            <h5>Secure collaborations</h5>
+                            <p>
+                                Invite your team members complete with their own logins. No extra fees.
+                            </p>
+                        </div>
                     </div>
 
                     <div class="benefit_item">
-                        <img src="https://via.placeholder.com/115x115" alt="benefit" class="benefit_img">
-                        <h5>Helpful support</h5>
-                        <p>
-                            Our customer success team is here to help. If not, our help center is open 24/7.
-                        </p>
+                        <div class="benefit_img">
+                            <img src="/public/images/Helpful-support.png" alt="benefit" class="benefit_img">
+                        </div>
+                        <div>
+                            <h5>Helpful support</h5>
+                            <p>
+                                Our customer success team is here to help. If not, our help center is open 24/7.
+                            </p>
+                        </div>
                     </div>
 
                     <div class="benefit_item">
-                        <img src="https://via.placeholder.com/115x115" alt="benefit" class="benefit_img">
-                        <h5>High-quality files</h5>
-                        <p>
-                            Your QR Codes stay in high-resolution no matter what they’re printed on.
-                        </p>
+                        <div class="benefit_img">
+                            <img src="/public/images/High-quality-files.png" alt="benefit" class="benefit_img">
+                        </div>
+                        <div>
+                            <h5>High-quality files</h5>
+                            <p>
+                                Your QR Codes stay in high-resolution no matter what they’re printed on.
+                            </p>
+                        </div>
                     </div>
 
                     <div class="benefit_item">
-                        <img src="https://via.placeholder.com/115x115" alt="benefit" class="benefit_img">
-                        <h5>Perfectly organized</h5>
-                        <p>
-                            Label your QR Codes, create folders, and add campaign info to keep them nice and tidy.
-                        </p>
+                        <div class="benefit_img">
+                            <img src="/public/images/Perfectly-organized.png" alt="benefit" class="benefit_img">
+                        </div>
+                        <div>
+                            <h5>Perfectly organized</h5>
+                            <p>
+                                Label your QR Codes, create folders, and add campaign info to keep them nice and tidy.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
@@ -973,8 +986,10 @@
 
             <div class="solutions_article mt-[90px]">
                 <div class="my_container solutions_article-wrapper">
-                    <h2>
-                        What are some of the best QR Code examples and use cases?
+                    <h2 class="!text-center">
+                        What are some of the best QR Code <br /> <span class="text-solution_text_hight-light">examples
+                            and use
+                            cases?</span>
                     </h2>
 
                     <p>
@@ -990,8 +1005,7 @@
                 <!-- Image Left -->
                 <div class="example_container">
                     <div class="example_image">
-                        <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                            alt="qr code">
+                        <img src="/public/images/For-restaurants.png" alt="qr code">
                     </div>
 
                     <div class="example_text-container">
@@ -1049,14 +1063,14 @@
                     </div>
 
                     <div class="example_image">
-                        <img src="https://via.placeholder.com/550x414" alt="qr code">
+                        <img src="/public/images/For-hotels-and-resorts.png" alt="qr code">
                     </div>
                 </div>
 
                 <!-- Image Left -->
                 <div class="example_container">
                     <div class="example_image">
-                        <img src="https://via.placeholder.com/550x414" alt="qr code">
+                        <img src="/public/images/Non-profits.png" alt="qr code">
                     </div>
 
                     <div class="example_text-container">
@@ -1109,14 +1123,14 @@
                     </div>
 
                     <div class="example_image">
-                        <img src="https://via.placeholder.com/550x414" alt="qr code">
+                        <img src="/public/images/For-business-consultants.png" alt="qr code">
                     </div>
                 </div>
 
                 <!-- Image Left -->
                 <div class="example_container">
                     <div class="example_image">
-                        <img src="https://via.placeholder.com/550x414" alt="qr code">
+                        <img src="/public/images/For-personal-use.png" alt="qr code">
                     </div>
 
                     <div class="example_text-container">
@@ -1231,8 +1245,7 @@
                 </div>
 
                 <div class="accordion_image">
-                    <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                        alt="qr code">
+                    <img src="/public/images/Learn-about-QR-codes.png" alt="qr code">
                 </div>
             </div>
         </section>

@@ -26,6 +26,15 @@ export default {
         textColor: ['group-hover'],
         borderColor: ['group-hover'],
       },
+      backgroundImage: {
+        'solution_hero_bg': "url('/public/images/Solution-hero-bg.jpg')",
+        'solution_qr-top_bg_light': "url('/public/images/Solution-qr-top-bg.png')",
+        'solution_qr-bottom_bg_light': "url('/public/images/Solution-qr-bottom-bg.png')",
+        'solution_qr-top_bg_dark': "url('/public/images/Solution-qr-top-bg-dark.png')",
+        'solution_qr-bottom_bg_dark': "url('/public/images/Solution-qr-bottom-bg-dark.png')",
+        'solution_dynamic-qr_bg': "url('/public/images/Solution-dynamic-qr-bg.jpg')",
+        'solution_benefits_bg': "url('/public/images/Solution-benefits-bg.jpg')",
+      },
       colors: {
         'black': '#000000',
         'white': '#FFFFFF',
@@ -63,6 +72,17 @@ export default {
         'enterprise_text': '#272727',
         'enterprise_input-border': '#272727',
         'contact_text': '#1C1C1C',
+
+        // Solution page
+        'solution_text_white': '#FFFFFF',
+        'solution_text_black': '#292C30',
+        'solution_text_hight-light': '#EDCB50',
+        'solution_qr-top_bg_color_light': '#FFFFFF',
+        'solution_qr-bottom_bg_color_light': '#F5F5F5',
+        'solution_card_bg-light': '#F5F5F5',
+        'solution_card-item_bg': '#FFFFFF',
+        'solution_card_item_border': '#47997E',
+        'solution_card_item_hover': '#47997E',
       },
     },
   },
