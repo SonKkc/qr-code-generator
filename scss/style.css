@@ -520,7 +520,7 @@ footer ._bottom ._container span a {
   @apply w-[24px] h-[24px];
 }
 .slt_page .benefit_container {
-  @apply px-[120px] py-[100px] bg-solution_benefits_bg bg-cover bg-center rounded-t-xl dark:bg-neutral_10;
+  @apply sm:px-4 md:px-[60px] lg:px-[60px] px-[120px] py-[100px] bg-solution_benefits_bg bg-cover bg-center rounded-t-xl dark:bg-neutral_10;
 }
 .slt_page .benefit_container h3 {
   @apply text-4xl text-solution_text_white font-bold text-center;
@@ -529,7 +529,7 @@ footer ._bottom ._container span a {
   @apply mt-[90px] grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-[70px];
 }
 .slt_page .benefit_item {
-  @apply flex gap-[30px];
+  @apply flex sm:flex-col gap-[30px];
 }
 .slt_page .benefit_item h5 {
   @apply text-2xl text-solution_text_white font-semibold mb-[15px] dark:text-neutral_10-night;
