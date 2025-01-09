@@ -9,7 +9,7 @@ body{
 }
 
 .main{
-    @apply mt-[90px] py-[170px] dark:bg-grayy
+    @apply mt-[90px] pt-[170px] dark:bg-grayy
 }
 
 .test{
@@ -40,27 +40,27 @@ body{
     @apply flex justify-between;
 }
 
-.switch{
-    @apply relative inline-block w-[56px] h-[30px];
+.switch_editTable {
+    @apply relative inline-block w-[32px] h-[17px];
 
     input{
         @apply opacity-0 w-[0] h-[0];
     }
 
     .slider{
-        @apply absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-[#ccc];
+        @apply absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-white;
         -webkit-transition: .4s;
         transition: .4s;
 
         &::before{
-            @apply absolute content-[''] w-[22px] h-[22px] left-[4px] bottom-[4px] bg-white;
+            @apply absolute content-[''] w-[12px] h-[12px] left-[2px] bottom-[2.5px] bg-greenn;
             -webkit-transition: .4s;
             transition: .4s;
         }
     }
 
     input:focus + .slider{
-        box-shadow:0 0 1px #2196F3;
+       
     }
 
     input:checked + .slider{
@@ -68,9 +68,10 @@ body{
     }
 
     input:checked + .slider::before{
-        -webkit-tranform: translateX(26px);
-        -ms-transform: translateX(26px);
-        transform: translateX(26px);
+        -webkit-tranform: translateX(15px);
+        -ms-transform: translateX(15px);
+        transform: translateX(15px);
+        @apply bg-white;
     }
 
     .slider.round{
@@ -80,6 +81,4 @@ body{
     .slider.round::before{
         @apply rounded-full;
     }
-
-
 }

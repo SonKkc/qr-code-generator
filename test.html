@@ -33,45 +33,46 @@
           clip-path: path('M 0 100 L 20,100 Q 30,50 80,50 L 100,50 Q 110,50 120,100 L 400,100 L 400,200 L 0,200 Z');
         }
 
-        .folder {
-          width: 400px;
-          height: 250px;
-          background-color: #1a1a1a; /* Màu xám tối */
-          clip-path: path('M 20 0 L 180 0 Q 185 0 240 70 Q 0 40 200 40 L 380 40 Q 400 40 400 56 L 400 250 Q 400 270 380 270 L 20 270 Q 0 270 0 250 L 0 20 Q 0 0 20 0 Z');
-          border-radius: 10px;
-        }
-
-        .folder2 {
+        .folder-border {
           width: 380px;
           height: 229px;
-          background-color: rgba(255, 255, 255, 0.05); /* Giống màu SVG */
-          clip-path: path('M0 87.34% L0 4.36% A3.28% 3.28% 0 0 1 39.47% 4.36% L49.72% 87.34% L100% 87.34% L100% 100% L0 100% Z');          transition: all 0.3s ease; /* Hiệu ứng chuyển đổi */
+          position: relative;
+          background-color: rgba(255, 0, 0, 0.15); /* Màu viền */
+          clip-path: path('M10 0.5H180.648C183.825 0.5 186.791 2.08746 188.553 4.73035L205.949 30.8244C207.896 33.7454 211.174 35.5 214.685 35.5H370C375.247 35.5 379.5 39.7533 379.5 45V219C379.5 224.247 375.247 228.5 370 228.5H10C4.7533 228.5 0.5 224.247 0.5 219V10C0.5 4.7533 4.7533 0.5 10 0.5Z');
+          transition: transform 0.3s ease;
         }
-    
-        .folder2:hover {
-          background-color: rgba(255, 255, 255, 0.15); /* Đổi màu khi hover */
-          transform: scale(1.05); /* Phóng to nhẹ */
+        
+        /* Phần nội dung bên trong folder */
+        .folder {
+          position: absolute;
+          top: 5px; /* Dịch vào để tạo khoảng viền */
+          left: 5px;
+          right: 5px;
+          bottom: 5px;
+          background-color: rgba(0, 0, 0, 0.05); /* Màu nền */
+          clip-path: path('M10 0.5H180.648C183.825 0.5 186.791 2.08746 188.553 4.73035L205.949 30.8244C207.896 33.7454 211.174 35.5 214.685 35.5H370C375.247 35.5 379.5 39.7533 379.5 45V219C379.5 224.247 375.247 228.5 370 228.5H10C4.7533 228.5 0.5 224.247 0.5 219V10C0.5 4.7533 4.7533 0.5 10 0.5Z');
+          transition: transform 0.3s ease;
         }
-    
-        /* Thiết lập kích thước linh hoạt */
-        @media (max-width: 768px) {
-          .folder2 {
-            width: 280px;
-            height: 170px;
-          }
+        
+        /* Hiệu ứng hover */
+        .folder-border:hover {
+          transform: scale(1.05); /* Phóng to folder khi hover */
         }
-    
-        @media (max-width: 480px) {
-          .folder2 {
-            width: 200px;
-            height: 120px;
-          }
-        }    
+        
+        .folder-border:hover .folder {
+          transform: scale(1.02); /* Phóng to nhẹ nội dung */
+        }  
       </style>
 </head>
 <body class="">
-  <div class="bg-gray-900 flex items-center justify-center min-h-screen">
-    <div class="folder2"></div>
+  <div class="bg-gray-600 flex items-center justify-center min-h-screen">
+    <div class="folder-border">
+      <div class="folder"></div>
+    </div>
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2.5" y="2.69092" width="27" height="27" stroke="white" stroke-width="3.6" stroke-dasharray="8 4"/>
+      </svg>
+      
   </div>
   
 
@@ -103,70 +104,6 @@
     {clip-path: polygon(${points});}`;
   </script>
 
-  <div class="flex items-center justify-center min-h-screen">
-    <div class="folder">
-      <div class="flex flex-col gap-[25px] px-[10px]">
-        <div class="text-white text-[24px] font-semibold py-[10px] ">Link</div>
-        <div class="text-white text-lg font-semibold">adawdawdawdawdawd</div>
-      </div>
-    </div>
-    <div class="test-convert w-[380px] h-[229px] bg-black">
-      <div class="flex flex-col gap-[25px] px-[10px]"></div>
-        <div class="text-white text-[24px] font-semibold py-[10px] ">Link</div>
-        <div class="text-white text-lg font-semibold">adawdawdawdawdawd</div>
-      </div>
-    </div>
-  </div>
-    <div class="bg-gray-100 flex items-center justify-center min-h-screen">
-        <!-- Folder Container -->
-        <div class="max-w-sm shadow-lg rounded-lg overflow-hidden">
-          <!-- Folder Top (Tab Section) -->
-          <svg
-            class="w-full"
-            viewBox="0 0 400 150"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0 0 H80 Q100 0, 100 20 H400 V150 H0 Z"
-              fill="#e5e7eb" 
-            />
-          </svg>
-          <!-- Folder Bottom (Content Section) -->
-          <div class="p-6 bg-white">
-            <p class="text-gray-700 text-sm leading-relaxed mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-            </p>
-            <a href="#" class="text-blue-500 text-sm font-medium flex items-center">
-              Explore More
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    <div class="bg-gray-100 flex items-center justify-center min-h-screen">
-        <!-- Folder Container -->
-        <div class="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden">
-          <!-- Folder Top (Tab Section) -->
-          <div class="folder-top bg-gray-200 p-4">
-            <p class="text-sm font-medium text-gray-700 uppercase">Text</p>
-          </div>
-          <!-- Folder Bottom (Content Section) -->
-          <div class="p-6 bg-white">
-            <p class="text-gray-700 text-sm leading-relaxed mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-            </p>
-            <a href="#" class="text-blue-500 text-sm font-medium flex items-center">
-              Explore More
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
     <div class="min-h-screen bg-[#14161A] text-white p-8">
         <!-- Header Section -->
         <div class="max-w-7xl mx-auto relative">

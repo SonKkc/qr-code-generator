@@ -45,11 +45,11 @@
             .user{
                 @apply flex items-center gap-[15px] ps-[15px];
                 ._login{
-                    @apply text-white text-lg font-semibold underline underline-offset-[3px];
+                    @apply text-greenn text-lg font-semibold underline underline-offset-[3px];
                 }
 
                 ._signUp{
-                    @apply rounded-full text-lg font-semibold text-black bg-white px-3 py-1;
+                    @apply rounded-full text-lg font-semibold text-white bg-home-button-color px-3 py-1;
                 }
             }
         }

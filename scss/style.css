@@ -15,7 +15,7 @@ body {
 }
 
 .main {
-  @apply mt-[90px] py-[170px] dark:bg-grayy;
+  @apply mt-[90px] pt-[170px] dark:bg-grayy;
 }
 
 .test {
@@ -46,34 +46,32 @@ body {
   @apply flex justify-between;
 }
 
-.switch {
-  @apply relative inline-block w-[56px] h-[30px];
+.switch_editTable {
+  @apply relative inline-block w-[32px] h-[17px];
 }
-.switch input {
+.switch_editTable input {
   @apply opacity-0 w-[0] h-[0];
 }
-.switch .slider {
-  @apply absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-[#ccc];
+.switch_editTable .slider {
+  @apply absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-white;
   transition: 0.4s;
 }
-.switch .slider::before {
-  @apply absolute content-[""] w-[22px] h-[22px] left-[4px] bottom-[4px] bg-white;
+.switch_editTable .slider::before {
+  @apply absolute content-[""] w-[12px] h-[12px] left-[2px] bottom-[2.5px] bg-greenn;
   transition: 0.4s;
 }
-.switch input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-.switch input:checked + .slider {
+.switch_editTable input:checked + .slider {
   @apply bg-greenn;
 }
-.switch input:checked + .slider::before {
-  -webkit-tranform: translateX(26px);
-  transform: translateX(26px);
+.switch_editTable input:checked + .slider::before {
+  -webkit-tranform: translateX(15px);
+  transform: translateX(15px);
+  @apply bg-white;
 }
-.switch .slider.round {
+.switch_editTable .slider.round {
   @apply rounded-full;
 }
-.switch .slider.round::before {
+.switch_editTable .slider.round::before {
   @apply rounded-full;
 }
 
@@ -117,10 +115,10 @@ body {
   @apply flex items-center gap-[15px] ps-[15px];
 }
 .navbar ._container .nav .user ._login {
-  @apply text-white text-lg font-semibold underline underline-offset-[3px];
+  @apply text-greenn text-lg font-semibold underline underline-offset-[3px];
 }
 .navbar ._container .nav .user ._signUp {
-  @apply rounded-full text-lg font-semibold text-black bg-white px-3 py-1;
+  @apply rounded-full text-lg font-semibold text-white bg-home-button-color px-3 py-1;
 }
 .navbar .nav_dropdown {
   @apply absolute top-[100%] left-0 right-0 w-full rounded-[10px];
@@ -145,16 +143,16 @@ body {
 }
 
 footer {
-  @apply bg-footerGrayy;
+  @apply bg-darkBlack;
 }
 footer ._top {
-  @apply pt-[50px] pb-[80px] bg-footerGrayy;
+  @apply pt-[50px] pb-[80px] bg-darkBlack;
 }
 footer ._top ._container {
   @apply flex justify-between w-full;
 }
 footer ._top ._container .-column {
-  @apply flex-1 flex flex-col gap-[36px] w-fit text-white max-w-[140px];
+  @apply flex-1 flex flex-col gap-[36px] w-fit text-white max-w-[240px];
 }
 footer ._top ._container .-column .-title {
   @apply text-lg font-semibold uppercase;
@@ -178,7 +176,7 @@ footer ._top ._container .-column:nth-child(1) {
   @apply max-w-[300px];
 }
 footer ._bottom {
-  @apply bg-grayy border-t-[1px] border-white;
+  @apply bg-darkBlack border-t-[2px] border-white;
 }
 footer ._bottom ._container {
   @apply py-[60px] flex items-center justify-between;
@@ -188,6 +186,18 @@ footer ._bottom ._container span {
 }
 footer ._bottom ._container span a {
   @apply underline underline-offset-[3px];
+}
+
+.home-ss2-background {
+  @apply bg-gradient-to-l from-[#4F00A3] to-[#1D003D];
+}
+
+.home-ss4-background {
+  @apply bg-gradient-to-l from-[#3133AC] to-[#1F204E];
+}
+
+.home-folder-background {
+  @apply dark:bg-home-folder-background-dark bg-home-folder-background-light;
 }
 
 .hero {
@@ -225,16 +235,16 @@ footer ._bottom ._container span a {
   @apply dark:bg-grayy pb-[260px];
 }
 .QrForm ._container {
-  @apply flex flex-col gap-[30px];
+  @apply flex flex-col gap-[30px] p-[10px] bg-home-qrForm-background border border-home-qrForm-border rounded-3xl;
 }
 .QrForm ._container ._selection {
-  @apply rounded-lg bg-gray-400 flex;
+  @apply rounded-lg bg-home-qrForm-component flex;
 }
 .QrForm ._container ._selection .over-flow {
   @apply flex overflow-x-auto relative mx-[15px];
 }
 .QrForm ._container ._selection .over-flow .-list {
-  @apply relative flex flex-nowrap gap-[10px] py-[15px] bg-gray-400;
+  @apply relative flex flex-nowrap gap-[10px] py-[15px] bg-home-qrForm-component;
 }
 .QrForm ._container ._selection .over-flow .-list .sl_list-item {
   @apply font-semibold rounded-lg px-[20px] py-[10px] w-max flex flex-col justify-center items-center;
@@ -261,16 +271,16 @@ footer ._bottom ._container span a {
   @apply text-black dark:text-white;
 }
 .QrForm ._container ._fillTable {
-  @apply w-full bg-gray-400 rounded-lg p-[20px];
+  @apply w-full bg-home-qrForm-component rounded-lg p-[20px];
 }
 .QrForm ._container ._fillTable .content-box .box_cont {
   @apply flex flex-col gap-[10px];
 }
 .QrForm ._container ._fillTable .content-box .box_cont .-title {
-  @apply text-2xl font-bold;
+  @apply text-2xl font-bold text-white;
 }
 .QrForm ._container ._fillTable .content-box .box_cont .-des {
-  @apply text-xl font-semibold;
+  @apply text-xl font-semibold text-white;
 }
 .QrForm ._container ._fillTable .content-box .box_cont input {
   @apply w-full px-[15px] py-[10px] border-0 border-transparent outline-0 outline-transparent text-black;
@@ -279,19 +289,19 @@ footer ._bottom ._container span a {
   @apply flex gap-[30px];
 }
 .QrForm ._container ._mainForm ._selectBox {
-  @apply p-[5px] bg-gray-500 rounded-lg;
+  @apply p-[10px] bg-home-qrForm-component rounded-lg h-max;
 }
 .QrForm ._container ._mainForm ._selectBox .-list {
   @apply flex flex-col gap-[15px];
 }
 .QrForm ._container ._mainForm ._selectBox .-list .-item {
-  @apply flex flex-col items-center gap-[5px] px-[12px] py-[10px] h-max bg-gray-400 rounded-lg;
+  @apply flex flex-col items-center gap-[3px] px-[10px] py-[4px] h-max bg-gray-400 rounded-lg;
 }
 .QrForm ._container ._mainForm ._selectBox .-list .-item span {
-  @apply text-lg font-semibold text-white;
+  @apply text-lg text-white;
 }
 .QrForm ._container ._mainForm ._editTable {
-  @apply max-w-[662px] w-full bg-gray-400 rounded-lg p-[20px];
+  @apply max-w-[662px] w-full bg-home-qrForm-component rounded-xl p-[20px] flex flex-col justify-between;
 }
 .QrForm ._container ._mainForm ._editTable ._cont {
   @apply flex flex-col gap-[15px];
@@ -308,24 +318,63 @@ footer ._bottom ._container span a {
 .QrForm ._container ._mainForm ._editTable ._cont .-item2 {
   @apply flex items-center gap-[10px] text-white text-base;
 }
+.QrForm ._container ._mainForm ._editTable ._scan {
+  @apply flex flex-row-reverse;
+}
+.QrForm ._container ._mainForm ._editTable ._scan div {
+  @apply flex items-center gap-[10px];
+}
+.QrForm ._container ._mainForm ._editTable ._scan div span {
+  @apply text-white text-base;
+}
 .QrForm ._container ._mainForm ._qrDownload {
-  @apply max-w-[388px] w-full bg-gray-400 rounded-lg flex flex-col items-center p-[20px] gap-[30px];
+  @apply max-w-[388px] w-full bg-home-qrForm-component rounded-xl flex flex-col items-center p-[20px] gap-[30px];
 }
 .QrForm ._container ._mainForm ._qrDownload img {
   @apply w-full h-full object-cover;
 }
-.QrForm ._container ._mainForm ._qrDownload button {
-  @apply px-[20px] py-[10px] rounded-full bg-greenn w-max text-white text-lg font-semibold flex items-center gap-[10px];
+.QrForm ._container ._mainForm ._qrDownload ._button {
+  @apply flex items-center gap-[10px] w-full justify-center;
+}
+.QrForm ._container ._mainForm ._qrDownload ._button .-download {
+  @apply px-[15px] py-[6px] rounded-xl bg-greenn w-max text-white flex items-center gap-[10px];
+}
+.QrForm ._container ._mainForm ._qrDownload ._button .-download div {
+  @apply flex flex-col;
+}
+.QrForm ._container ._mainForm ._qrDownload ._button .-download div p {
+  @apply text-sm font-semibold uppercase;
+}
+.QrForm ._container ._mainForm ._qrDownload ._button .-download div span {
+  @apply text-xs font-medium uppercase;
+}
+.QrForm ._container ._mainForm ._qrDownload ._button .-download path {
+  @apply fill-white;
+}
+.QrForm ._container ._mainForm ._qrDownload ._button .-print {
+  @apply px-[15px] py-[6px] rounded-xl bg-white w-max text-greenn flex items-center gap-[10px] fill-greenn;
+}
+.QrForm ._container ._mainForm ._qrDownload ._button .-print div {
+  @apply flex flex-col;
+}
+.QrForm ._container ._mainForm ._qrDownload ._button .-print div p {
+  @apply text-sm font-semibold uppercase;
+}
+.QrForm ._container ._mainForm ._qrDownload ._button .-print div span {
+  @apply text-xs font-medium uppercase;
+}
+.QrForm ._container ._mainForm ._qrDownload ._button .-print path {
+  @apply fill-greenn;
 }
 
 .section1 {
   @apply dark:bg-grayy;
 }
 .section1 ._container {
-  @apply flex gap-[105px];
+  @apply flex justify-between gap-[50px] border-home-ss1-border-light dark:border-home-ss1-border-dark border-2 rounded-xl px-[50px] py-[20px];
 }
 .section1 ._container ._left {
-  @apply max-w-[480px] max-h-[472px];
+  @apply max-w-[400px] max-h-[390px] flex-1;
 }
 .section1 ._container ._left img {
   @apply w-full h-full object-cover;
@@ -333,21 +382,21 @@ footer ._bottom ._container span a {
 .section1 ._container ._right {
   @apply flex flex-col justify-center flex-1;
 }
-.section1 ._container ._right ._container {
+.section1 ._container ._right ._cont {
   @apply flex flex-col justify-center gap-[35px];
 }
-.section1 ._container ._right ._container h2 {
-  @apply text-[64px] font-bold dark:text-white leading-none;
+.section1 ._container ._right ._cont h2 {
+  @apply text-5xl font-bold dark:text-white leading-none;
 }
-.section1 ._container ._right ._container p {
-  @apply text-[18px] font-semibold dark:text-white;
+.section1 ._container ._right ._cont p {
+  @apply text-lg font-semibold dark:text-white;
 }
 
 .section2 {
   @apply dark:bg-grayy py-[150px];
 }
 .section2 ._container {
-  @apply p-[50px] bg-white;
+  @apply p-[50px] home-ss2-background rounded-lg;
 }
 .section2 ._container .-box {
   @apply flex gap-[90px];
@@ -359,7 +408,7 @@ footer ._bottom ._container span a {
   @apply flex flex-col gap-[35px];
 }
 .section2 ._container .-box ._left ._flex-col .-title {
-  @apply flex flex-col gap-[15px];
+  @apply flex flex-col gap-[15px] text-white;
 }
 .section2 ._container .-box ._left ._flex-col .-title h2 {
   @apply text-5xl font-bold;
@@ -415,13 +464,13 @@ footer ._bottom ._container span a {
   @apply dark:bg-grayy pt-[150px];
 }
 .section4 .swiper1 {
-  @apply w-full h-full;
+  @apply w-full h-full relative home-ss4-background rounded-lg;
 }
 .section4 .swiper1 .-slide {
-  @apply p-[50px] bg-white flex justify-between gap-[207px];
+  @apply p-[50px] flex justify-between gap-[207px];
 }
 .section4 .swiper1 .-slide ._left {
-  @apply max-w-[346px] max-h-[340px];
+  @apply w-[388px] h-[351px];
 }
 .section4 .swiper1 .-slide ._left img {
   @apply w-full h-full object-cover;
@@ -439,10 +488,20 @@ footer ._bottom ._container span a {
   @apply w-[80px] h-[80px] rounded-full bg-greenn flex items-center justify-center text-5xl font-bold text-white;
 }
 .section4 .swiper1 .-slide ._right ._content .-title p {
-  @apply text-black text-4xl font-bold;
+  @apply text-white text-4xl font-bold;
 }
 .section4 .swiper1 .-slide ._right ._content .-desc {
-  @apply text-base font-medium text-black;
+  @apply text-base font-medium text-white;
+}
+.section4 .swiper1 .-pagination {
+  @apply absolute bottom-[15%] left-[55%] transform flex;
+}
+.section4 .swiper1 .swiper-pagination-bullet {
+  @apply w-[32px] h-[7px] bg-white rounded-full cursor-pointer;
+  transition: all 0.3s ease;
+}
+.section4 .swiper1 .swiper-pagination-bullet-active {
+  @apply w-[62px] rounded-full bg-greenn;
 }
 
 .section5 {
@@ -466,14 +525,15 @@ footer ._bottom ._container span a {
 .section5 ._container ._right .swiper-btn-prev, .section5 ._container ._right .swiper-btn-next {
   @apply w-[50px] h-[50px] flex items-center justify-center rounded-full cursor-pointer;
 }
+.section5 ._container ._right .swiper-btn-prev path, .section5 ._container ._right .swiper-btn-next path {
+  @apply stroke-black dark:stroke-white;
+}
 .section5 ._container .swiper2 .-slide {
   @apply flex items-center justify-between;
 }
 .section5 ._container .swiper2 .-slide .folder {
-  width: 380px;
-  height: 229px;
+  @apply w-[383px] h-[231px] relative home-folder-background;
   transform: scale(0.95);
-  background-color: rgba(255, 255, 255, 0.05); /* Giống màu SVG */
   -webkit-clip-path: path("M188.969 4.453C187.114 1.67101 183.992 0 180.648 0H10C4.47715 0 0 4.47716 0 10V219C0 224.523 4.47716 229 10 229H370C375.523 229 380 224.523 380 219V45C380 39.4772 375.523 35 370 35H214.685C211.342 35 208.219 33.329 206.365 30.547L188.969 4.453Z");
           clip-path: path("M188.969 4.453C187.114 1.67101 183.992 0 180.648 0H10C4.47715 0 0 4.47716 0 10V219C0 224.523 4.47716 229 10 229H370C375.523 229 380 224.523 380 219V45C380 39.4772 375.523 35 370 35H214.685C211.342 35 208.219 33.329 206.365 30.547L188.969 4.453Z");
   transition: all 0.3s ease; /* Hiệu ứng chuyển đổi */
@@ -482,6 +542,18 @@ footer ._bottom ._container span a {
   @apply bg-greenn;
   transform: scale(1);
 }
+.section5 ._container .swiper2 .-slide .folder:hover .-title span {
+  @apply text-white;
+}
+.section5 ._container .swiper2 .-slide .folder:hover .-title svg path {
+  @apply stroke-white;
+}
+.section5 ._container .swiper2 .-slide .folder:hover .-desc p {
+  @apply text-white;
+}
+.section5 ._container .swiper2 .-slide .folder:hover .-desc .-explore {
+  @apply text-yelloww;
+}
 .section5 ._container .swiper2 .-slide .folder {
   @apply flex flex-col gap-[10px] px-[20px] pt-[10px] pb-[15px];
 }
@@ -489,23 +561,35 @@ footer ._bottom ._container span a {
   @apply flex items-center gap-[10px];
 }
 .section5 ._container .swiper2 .-slide .folder .-title span {
-  @apply text-2xl font-semibold text-white;
+  @apply text-2xl font-semibold text-black dark:text-white;
 }
 .section5 ._container .swiper2 .-slide .folder .-title svg {
-  @apply w-6 h-6;
+  @apply w-6 h-6 stroke-black;
+}
+.section5 ._container .swiper2 .-slide .folder .-title svg path {
+  @apply stroke-black dark:stroke-white;
 }
 .section5 ._container .swiper2 .-slide .folder .-desc {
   @apply flex flex-col justify-between h-full pt-[10px];
 }
 .section5 ._container .swiper2 .-slide .folder .-desc p {
-  @apply text-lg text-white font-semibold;
+  @apply text-lg text-black dark:text-white font-semibold;
 }
 .section5 ._container .swiper2 .-slide .folder .-desc .-explore {
-  @apply flex items-center gap-[5px] text-yelloww text-base;
+  @apply flex items-center gap-[5px] text-black dark:text-yelloww text-base hover:text-yelloww transition-all duration-300;
+}
+.section5 ._container .swiper2 .swiper-pagination-2 {
+  @apply flex items-center justify-center gap-[5px] mt-[20px];
+}
+.section5 ._container .swiper2 .swiper-pagination-bullet {
+  @apply dark:bg-white w-[8px] h-[8px] opacity-100;
+}
+.section5 ._container .swiper2 .swiper-pagination-bullet-active {
+  @apply border-2 border-greenn dark:bg-black bg-transparent w-[12px] h-[12px];
 }
 
 .FAQ {
-  @apply dark:bg-grayy pt-[150px] max-w-[1055px] mx-auto;
+  @apply bg-transparent pt-[150px] pb-[100px] max-w-[1055px] mx-auto;
 }
 .FAQ ._container {
   @apply flex flex-col items-center gap-[50px];
@@ -520,13 +604,15 @@ footer ._bottom ._container span a {
   @apply flex items-center justify-between w-[560px];
 }
 .FAQ ._container .-header ._btom span {
-  @apply text-xl dark:text-white hover:underline cursor-pointer select-none;
+  @apply text-xl dark:text-white hover:underline cursor-pointer select-none underline-offset-2;
 }
 .FAQ ._container .-questList {
   @apply w-full flex flex-col gap-[30px];
+  transition: max-height 0.3s ease-out;
 }
 .FAQ ._container .-questList ._questBlock {
-  @apply p-[20px] bg-grayy dark:bg-white dark:text-black text-white bg-grayy rounded-lg transition-all ease-out duration-300 cursor-pointer;
+  @apply p-[20px] bg-grayy dark:bg-home-FAQ-background-dark dark:text-black text-white bg-home-FAQ-background-light rounded-lg transition-all ease-out duration-300 cursor-pointer;
+  transition: max-height 0.3s ease-out;
 }
 .FAQ ._container .-questList ._questBlock .-title {
   @apply flex items-center justify-between select-none;

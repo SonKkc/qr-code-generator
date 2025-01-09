@@ -25,7 +25,7 @@
                 <nav class="nav">
                     <ul class="-list">
                         <li @mouseenter="dropDown = true" @mouseleave="dropDown = false" @click="dropDown =! dropDown">
-                            <a href="#" class="">Product</a>
+                            <a href="#"  :style="dropdown ? 'display: none;' : 'display: block;'">Product</a>
                             <svg
                                 :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}"
                                 aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
@@ -111,7 +111,7 @@
                     </div>
 
                     <div class="_right">
-                        <img src="images/QR-code.png" alt="">
+                        <img src="images/Welcome.png" alt="">
                     </div>
                 </div>
             </div>
@@ -127,7 +127,8 @@
                                 viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="m15 19-7-7 7-7" />
-                            </svg></div>
+                            </svg>
+                        </div>
                         <div id="selection_list" class="over-flow transition-all scroll-smooth">
                             <div id="list" class="-list">
                                 <button class="sl_list-item itemInactive">
@@ -299,8 +300,8 @@
                     </div>
 
                     <!-- main form-->
-                    <div class="_mainForm flex gap-[30px]">
-                        <div class="_selectBox p-[15px] border border-grayy">
+                    <div class="_mainForm">
+                        <div class="_selectBox">
 
                             <div class=" -list flex flex-col gap-[15px]">
                                 <div class="-item">
@@ -380,27 +381,38 @@
                                     <span class="">Foreground:</span>
                                     <input class="bg-black text-white" type="text" class="" style="box-shadow: none;">
                                 </div>
+                                <div class="flex-col flex gap-[2px]">
+                                    <div class="-item2">
+                                        <label class="switch_editTable">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                        <span class="">Transparent background</span>
+                                    </div>
+                                    <div class="-item2">
+                                        <label class="switch_editTable">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                        <span class="">Background image</span>
+                                    </div>
+                                    <div class="-item2">
+                                        <label class="switch_editTable">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                        <span class="">Gradient</span>
+                                    </div>
+                                </div>
+                            </div>
 
-                                <div class="-item2">
-                                    <label class="switch">
+                            <div class="_scan flex flex-row-reverse">
+                                <div>
+                                    <label class="switch_editTable">
                                         <input type="checkbox">
                                         <span class="slider round"></span>
                                     </label>
-                                    <span class="">Transparent background</span>
-                                </div>
-                                <div class="-item2">
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider round"></span>
-                                    </label>
-                                    <span class="">Background image</span>
-                                </div>
-                                <div class="-item2">
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider round"></span>
-                                    </label>
-                                    <span class="">Gradient</span>
+                                    <span class="">Scan tracking</span>
                                 </div>
                             </div>
                         </div>
@@ -408,11 +420,28 @@
                         <div class="_qrDownload">
                             <img src="images/QR-code.png" alt="" class="">
 
-                            <button class="">Download
-                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 15.7659C11.8667 15.7659 11.7417 15.7453 11.625 15.7039C11.5083 15.6626 11.4 15.5916 11.3 15.4909L7.7 11.8909C7.5 11.6909 7.404 11.4576 7.412 11.1909C7.42 10.9243 7.516 10.6909 7.7 10.4909C7.9 10.2909 8.13767 10.1869 8.413 10.1789C8.68833 10.1709 8.92567 10.2666 9.125 10.4659L11 12.3409V5.19092C11 4.90759 11.096 4.67025 11.288 4.47892C11.48 4.28759 11.7173 4.19159 12 4.19092C12.2827 4.19025 12.5203 4.28625 12.713 4.47892C12.9057 4.67159 13.0013 4.90892 13 5.19092V12.3409L14.875 10.4659C15.075 10.2659 15.3127 10.1699 15.588 10.1779C15.8633 10.1859 16.1007 10.2903 16.3 10.4909C16.4833 10.6909 16.5793 10.9243 16.588 11.1909C16.5967 11.4576 16.5007 11.6909 16.3 11.8909L12.7 15.4909C12.6 15.5909 12.4917 15.6619 12.375 15.7039C12.2583 15.7459 12.1333 15.7666 12 15.7659ZM6 20.1909C5.45 20.1909 4.97933 19.9953 4.588 19.6039C4.19667 19.2126 4.00067 18.7416 4 18.1909V16.1909C4 15.9076 4.096 15.6703 4.288 15.4789C4.48 15.2876 4.71733 15.1916 5 15.1909C5.28267 15.1903 5.52033 15.2863 5.713 15.4789C5.90567 15.6716 6.00133 15.9089 6 16.1909V18.1909H18V16.1909C18 15.9076 18.096 15.6703 18.288 15.4789C18.48 15.2876 18.7173 15.1916 19 15.1909C19.2827 15.1903 19.5203 15.2863 19.713 15.4789C19.9057 15.6716 20.0013 15.9089 20 16.1909V18.1909C20 18.7409 19.8043 19.2119 19.413 19.6039C19.0217 19.9959 18.5507 20.1916 18 20.1909H6Z" fill="white"/>
-                                </svg>
-                            </button>
+                            <div class="_button">
+                                <button class="-download">
+                                    <div>
+                                        <p>Download</p>
+                                        <span>JBG</span>
+                                    </div>
+                                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 15.7659C11.8667 15.7659 11.7417 15.7453 11.625 15.7039C11.5083 15.6626 11.4 15.5916 11.3 15.4909L7.7 11.8909C7.5 11.6909 7.404 11.4576 7.412 11.1909C7.42 10.9243 7.516 10.6909 7.7 10.4909C7.9 10.2909 8.13767 10.1869 8.413 10.1789C8.68833 10.1709 8.92567 10.2666 9.125 10.4659L11 12.3409V5.19092C11 4.90759 11.096 4.67025 11.288 4.47892C11.48 4.28759 11.7173 4.19159 12 4.19092C12.2827 4.19025 12.5203 4.28625 12.713 4.47892C12.9057 4.67159 13.0013 4.90892 13 5.19092V12.3409L14.875 10.4659C15.075 10.2659 15.3127 10.1699 15.588 10.1779C15.8633 10.1859 16.1007 10.2903 16.3 10.4909C16.4833 10.6909 16.5793 10.9243 16.588 11.1909C16.5967 11.4576 16.5007 11.6909 16.3 11.8909L12.7 15.4909C12.6 15.5909 12.4917 15.6619 12.375 15.7039C12.2583 15.7459 12.1333 15.7666 12 15.7659ZM6 20.1909C5.45 20.1909 4.97933 19.9953 4.588 19.6039C4.19667 19.2126 4.00067 18.7416 4 18.1909V16.1909C4 15.9076 4.096 15.6703 4.288 15.4789C4.48 15.2876 4.71733 15.1916 5 15.1909C5.28267 15.1903 5.52033 15.2863 5.713 15.4789C5.90567 15.6716 6.00133 15.9089 6 16.1909V18.1909H18V16.1909C18 15.9076 18.096 15.6703 18.288 15.4789C18.48 15.2876 18.7173 15.1916 19 15.1909C19.2827 15.1903 19.5203 15.2863 19.713 15.4789C19.9057 15.6716 20.0013 15.9089 20 16.1909V18.1909C20 18.7409 19.8043 19.2119 19.413 19.6039C19.0217 19.9959 18.5507 20.1916 18 20.1909H6Z" fill="none"/>
+                                    </svg>
+                                </button>
+
+                                <button class="-print">
+                                    <div>
+                                        <p>Print Quality</p>
+                                        <span>svg/eps</span>
+                                    </div>
+                                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 15.7659C11.8667 15.7659 11.7417 15.7453 11.625 15.7039C11.5083 15.6626 11.4 15.5916 11.3 15.4909L7.7 11.8909C7.5 11.6909 7.404 11.4576 7.412 11.1909C7.42 10.9243 7.516 10.6909 7.7 10.4909C7.9 10.2909 8.13767 10.1869 8.413 10.1789C8.68833 10.1709 8.92567 10.2666 9.125 10.4659L11 12.3409V5.19092C11 4.90759 11.096 4.67025 11.288 4.47892C11.48 4.28759 11.7173 4.19159 12 4.19092C12.2827 4.19025 12.5203 4.28625 12.713 4.47892C12.9057 4.67159 13.0013 4.90892 13 5.19092V12.3409L14.875 10.4659C15.075 10.2659 15.3127 10.1699 15.588 10.1779C15.8633 10.1859 16.1007 10.2903 16.3 10.4909C16.4833 10.6909 16.5793 10.9243 16.588 11.1909C16.5967 11.4576 16.5007 11.6909 16.3 11.8909L12.7 15.4909C12.6 15.5909 12.4917 15.6619 12.375 15.7039C12.2583 15.7459 12.1333 15.7666 12 15.7659ZM6 20.1909C5.45 20.1909 4.97933 19.9953 4.588 19.6039C4.19667 19.2126 4.00067 18.7416 4 18.1909V16.1909C4 15.9076 4.096 15.6703 4.288 15.4789C4.48 15.2876 4.71733 15.1916 5 15.1909C5.28267 15.1903 5.52033 15.2863 5.713 15.4789C5.90567 15.6716 6.00133 15.9089 6 16.1909V18.1909H18V16.1909C18 15.9076 18.096 15.6703 18.288 15.4789C18.48 15.2876 18.7173 15.1916 19 15.1909C19.2827 15.1903 19.5203 15.2863 19.713 15.4789C19.9057 15.6716 20.0013 15.9089 20 16.1909V18.1909C20 18.7409 19.8043 19.2119 19.413 19.6039C19.0217 19.9959 18.5507 20.1916 18 20.1909H6Z" fill="none"/>
+                                    </svg>
+                                </button>
+
+                            </div>
                         </div>
                     </div>
 
@@ -421,17 +450,19 @@
         </div>
 
         <div class="section1">
-            <div class="my_container _container">
-                <div class="_left">
-                    <img src="images/QR-code.png" alt="">
-                </div>
-
-                <div class="_right">
-                    <div class="_container">
-                        <h2 class="">what is the QR code?</h2>
-                        <p class="">
-                            A QR code (Quick Response Code) is a two-dimensional barcode, composed of a grid of black and white squares arranged in a specific pattern. It was developed by Denso Wave, a subsidiary of the Toyota supplier Denso, to streamline logistics in automobile production by marking components. Over time, it has evolved and become widely used in mobile marketing, especially with the rise of smartphones. The term "QR" signifies the ability to access information quickly by scanning the code, providing instant access to the embedded data.
-                        </p>
+            <div class="my_container">
+                <div class="_container">
+                    <div class="_left">
+                        <img src="images/ss1.png" alt="">
+                    </div>
+    
+                    <div class="_right">
+                        <div class="_cont">
+                            <h2 class="">what is the QR code?</h2>
+                            <p class="">
+                                A QR code (Quick Response Code) is a two-dimensional barcode, composed of a grid of black and white squares arranged in a specific pattern. It was developed by Denso Wave, a subsidiary of the Toyota supplier Denso, to streamline logistics in automobile production by marking components. Over time, it has evolved and become widely used in mobile marketing, especially with the rise of smartphones. The term "QR" signifies the ability to access information quickly by scanning the code, providing instant access to the embedded data.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -457,7 +488,7 @@
                     </div>
 
                     <div class="_right">
-                        <img src="images/QR-code.png" alt="" class="">
+                        <img src="images/ss2.png" alt="" class="">
                     </div>
                 </div>
             </div>
@@ -466,7 +497,7 @@
         <div class="section3 dark:bg-grayy">
             <div class="my_container _container">
                 <div class="_left">
-                    <img src="images/QR-code.png" alt="" class="">
+                    <img src="images/ss3.png" alt="" class="">
                 </div>
                 <div class="_right">
                     <div class="-flex-col">
@@ -520,7 +551,7 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide -slide ">
                             <div class="_left">
-                                <img src="images/QR-code.png" alt="" class="">
+                                <img src="images/ss4-1.png" alt="" class="">
                             </div>
                             <div class="_right flex flex-col gap-[45px] flex-1 max-w-[476px] me-[70px]">
                                 <div class="_content flex flex-col gap-[30px]">
@@ -534,7 +565,7 @@
                         </div>
                         <div class="swiper-slide -slide ">
                             <div class="_left">
-                                <img src="images/QR-code.png" alt="" class="">
+                                <img src="images/ss4-2.png" alt="" class="">
                             </div>
                             <div class="_right flex flex-col gap-[45px] flex-1 max-w-[476px] me-[70px]">
                                 <div class="_content flex flex-col gap-[30px]">
@@ -548,7 +579,7 @@
                         </div>
                         <div class="swiper-slide -slide ">
                             <div class="_left">
-                                <img src="images/QR-code.png" alt="" class="">
+                                <img src="images/ss4-3.png" alt="" class="">
                             </div>
                             <div class="_right flex flex-col gap-[45px] flex-1 max-w-[476px] me-[70px]">
                                 <div class="_content flex flex-col gap-[30px]">
@@ -562,7 +593,7 @@
                         </div>
                         <div class="swiper-slide -slide ">
                             <div class="_left">
-                                <img src="images/QR-code.png" alt="" class="">
+                                <img src="images/ss4-4.png" alt="" class="">
                             </div>
                             <div class="_right flex flex-col gap-[45px] flex-1 max-w-[476px] me-[70px]">
                                 <div class="_content flex flex-col gap-[30px]">
@@ -575,7 +606,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-pagination"></div>
+                    <div class="swiper-pagination -pagination"></div>
                 </div>
             </div>
         </div>
@@ -584,7 +615,9 @@
                 var swiper = new Swiper(".swiper1", {
                     pagination: {
                         el: ".swiper-pagination",
+                        clickable: true,
                     },
+                    
                 });
             });
         </script>
@@ -626,8 +659,8 @@
                                 <a href="#" class="folder">
                                     <div class="-title ">
                                         <svg class="w-6 h-6" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M12.5 16.9409C13.0368 17.6586 13.7217 18.2524 14.5082 18.6821C15.2947 19.1118 16.1644 19.3673 17.0583 19.4314C17.9522 19.4954 18.8495 19.3664 19.6892 19.0532C20.5289 18.7399 21.2914 18.2498 21.925 17.6159L25.675 13.8659C26.8135 12.6872 27.4435 11.1084 27.4292 9.46968C27.415 7.83095 26.7577 6.26337 25.5989 5.10457C24.4401 3.94577 22.8725 3.28846 21.2338 3.27422C19.595 3.25998 18.0163 3.88995 16.8375 5.02844L14.6875 7.16594" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M17.5 14.4409C16.9632 13.7232 16.2783 13.1294 15.4918 12.6997C14.7053 12.27 13.8356 12.0145 12.9417 11.9505C12.0478 11.8865 11.1505 12.0154 10.3108 12.3287C9.47113 12.6419 8.70861 13.1321 8.07501 13.7659L4.32501 17.5159C3.18652 18.6947 2.55655 20.2734 2.57079 21.9122C2.58503 23.5509 3.24234 25.1185 4.40114 26.2773C5.55994 27.4361 7.12752 28.0934 8.76625 28.1076C10.405 28.1218 11.9837 27.4919 13.1625 26.3534L15.3 24.2159" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12.5 16.9409C13.0368 17.6586 13.7217 18.2524 14.5082 18.6821C15.2947 19.1118 16.1644 19.3673 17.0583 19.4314C17.9522 19.4954 18.8495 19.3664 19.6892 19.0532C20.5289 18.7399 21.2914 18.2498 21.925 17.6159L25.675 13.8659C26.8135 12.6872 27.4435 11.1084 27.4292 9.46968C27.415 7.83095 26.7577 6.26337 25.5989 5.10457C24.4401 3.94577 22.8725 3.28846 21.2338 3.27422C19.595 3.25998 18.0163 3.88995 16.8375 5.02844L14.6875 7.16594" stroke="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M17.5 14.4409C16.9632 13.7232 16.2783 13.1294 15.4918 12.6997C14.7053 12.27 13.8356 12.0145 12.9417 11.9505C12.0478 11.8865 11.1505 12.0154 10.3108 12.3287C9.47113 12.6419 8.70861 13.1321 8.07501 13.7659L4.32501 17.5159C3.18652 18.6947 2.55655 20.2734 2.57079 21.9122C2.58503 23.5509 3.24234 25.1185 4.40114 26.2773C5.55994 27.4361 7.12752 28.0934 8.76625 28.1076C10.405 28.1218 11.9837 27.4919 13.1625 26.3534L15.3 24.2159" stroke="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg> 
                                         <span>URL</span>
                                     </div>
@@ -822,6 +855,7 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="swiper-pagination-2"></div>
                     </div>
                     <script>
                         document.addEventListener("DOMContentLoaded", function () {
@@ -831,6 +865,11 @@
                                     nextEl: ".swiper-btn-next",
                                     prevEl: ".swiper-btn-prev",
                                 },
+                                pagination:{
+                                    el: ".swiper-pagination-2",
+                                    clickable: true,
+                                }
+
                             });
                         });
                       </script>
@@ -838,312 +877,314 @@
             </div>
         </div>
         <!-- FAQ -->
-        <div class="FAQ section6">
-            <div class="my_container">
-                <div x-data="{basicCt: true, crtDesign: false, scanPrint: false}" class="_container">
-                    <div class="-header">
-                        <h2 class="_title">FAQ</h2>
-                        <div class="flex-justify-center">
-                            <div class="_btom">
-                                <span @click="basicCt = true, crtDesign = false, scanPrint = false">Basic</span>
-                                <span @click="basicCt = false, crtDesign = true, scanPrint = false" >Creating&Designing</span>
-                                <span @click="basicCt = false, crtDesign = false, scanPrint = true">Scanning&Printing</span>
+        <div class="section6">
+            <div class="FAQ">
+                <div class="my_container">
+                    <div x-data="{basicCt: true, crtDesign: false, scanPrint: false}" class="_container">
+                        <div class="-header">
+                            <h2 class="_title">FAQ</h2>
+                            <div class="flex-justify-center">
+                                <div class="_btom">
+                                    <span @click="basicCt = true, crtDesign = false, scanPrint = false" :class="{'underline' : basicCt}">Basic</span>
+                                    <span @click="basicCt = false, crtDesign = true, scanPrint = false" :class="{'underline' : crtDesign}">Creating&Designing</span>
+                                    <span @click="basicCt = false, crtDesign = false, scanPrint = true" :class="{'underline' : scanPrint}">Scanning&Printing</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!--Basic list-->
-                    <div x-show="basicCt" class="-questList">
-                        <div x-data="{dropDown: false}" class="_questBlock">
-                            <div @click="dropDown = !dropDown" class="-title">
-                                <span>What Kind of Information Can Be Stored in a QR Code?</span>
-                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
-                                </svg>
+                        <!--Basic list-->
+                        <div x-show="basicCt" class="-questList">
+                            <div x-data="{dropDown: false}" class="_questBlock">
+                                <div @click="dropDown = !dropDown" class="-title">
+                                    <span>What Kind of Information Can Be Stored in a QR Code?</span>
+                                    <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                    </svg>
+                                </div>
+    
+                                <div x-cloak x-show="dropDown" 
+                                    x-transition:enter="transition ease-out duration-300"
+                                    x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                                    x-transition:leave="transition ease-in duration-300"
+                                    x-transition:leave-start="opacity-100 transform translate-y-0"
+                                    x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                class="dropdown pt-[20px]">
+                                    <p class="">QR codes are incredibly versatile and can store a wide range of information. This includes URLs to open websites instantly, contact details like name, phone number, and email, as well as plain text messages. They can even store Wi-Fi credentials, making it easy for customers to connect to your network with a simple scan. The possibilities are endless for what can be embedded in a QR code.</p>
+                                </div>
                             </div>
-
-                            <div x-cloak x-show="dropDown" 
-                                x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="opacity-0 transform -translate-y-2"
-                                x-transition:enter-end="opacity-100 transform translate-y-0"
-                                x-transition:leave="transition ease-in duration-300"
-                                x-transition:leave-start="opacity-100 transform translate-y-0"
-                                x-transition:leave-end="opacity-0 transform -translate-y-2"
-                            class="dropdown pt-[20px]">
-                                <p class="">QR codes are incredibly versatile and can store a wide range of information. This includes URLs to open websites instantly, contact details like name, phone number, and email, as well as plain text messages. They can even store Wi-Fi credentials, making it easy for customers to connect to your network with a simple scan. The possibilities are endless for what can be embedded in a QR code.</p>
+                            <div x-data="{dropDown: false}" class="_questBlock">
+                                <div @click="dropDown = !dropDown" class="-title">
+                                    <span>Can QR Code Scans Be Tracked?</span>
+                                    <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                    </svg>
+                                </div>
+    
+                                <div x-cloak x-show="dropDown" 
+                                    x-transition:enter="transition ease-out duration-300"
+                                    x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                                    x-transition:leave="transition ease-in duration-300"
+                                    x-transition:leave-start="opacity-100 transform translate-y-0"
+                                    x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                class="dropdown pt-[20px]">
+                                    <p class="">Yes, it is possible to track QR code scans, including where, when, and how often they are scanned. Additionally, you can see which devices and operating systems were used for the scan. This data is valuable for measuring the success of marketing campaigns and understanding user behavior.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div x-data="{dropDown: false}" class="_questBlock">
-                            <div @click="dropDown = !dropDown" class="-title">
-                                <span>Can QR Code Scans Be Tracked?</span>
-                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
-                                </svg>
+                            <div x-data="{dropDown: false}" class="_questBlock">
+                                <div @click="dropDown = !dropDown" class="-title">
+                                    <span>Do QR Codes Expire?</span>
+                                    <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                    </svg>
+                                </div>
+    
+                                <div x-cloak x-show="dropDown" 
+                                    x-transition:enter="transition ease-out duration-300"
+                                    x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                                    x-transition:leave="transition ease-in duration-300"
+                                    x-transition:leave-start="opacity-100 transform translate-y-0"
+                                    x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                class="dropdown pt-[20px]">
+                                    <p class="">Static QR codes do not expire. They will remain functional indefinitely, as long as the information they contain (e.g., a URL) remains unchanged. If you want more flexibility, such as the ability to update content or track scans, you can opt for dynamic QR codes. These codes are also permanent but allow content to be modified after generation.</p>
+                                </div>
                             </div>
-
-                            <div x-cloak x-show="dropDown" 
-                                x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="opacity-0 transform -translate-y-2"
-                                x-transition:enter-end="opacity-100 transform translate-y-0"
-                                x-transition:leave="transition ease-in duration-300"
-                                x-transition:leave-start="opacity-100 transform translate-y-0"
-                                x-transition:leave-end="opacity-0 transform -translate-y-2"
-                            class="dropdown pt-[20px]">
-                                <p class="">Yes, it is possible to track QR code scans, including where, when, and how often they are scanned. Additionally, you can see which devices and operating systems were used for the scan. This data is valuable for measuring the success of marketing campaigns and understanding user behavior.</p>
+                            <div x-data="{dropDown: false}" class="_questBlock">
+                                <div @click="dropDown = !dropDown" class="-title">
+                                    <span>What is the Difference Between Static and Dynamic QR Codes?</span>
+                                    <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                    </svg>
+                                </div>
+    
+                                <div x-cloak x-show="dropDown" 
+                                    x-transition:enter="transition ease-out duration-300"
+                                    x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                                    x-transition:leave="transition ease-in duration-300"
+                                    x-transition:leave-start="opacity-100 transform translate-y-0"
+                                    x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                class="dropdown pt-[20px]">
+                                    <p class="">Static QR codes are fixed once created and cannot be edited or tracked. They are best for simple applications where the content doesn’t need to change. Dynamic QR codes, on the other hand, are more flexible and offer the ability to update the embedded content (such as links or text) after printing. Dynamic codes also allow for tracking and analytics, making them ideal for marketing campaigns.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div x-data="{dropDown: false}" class="_questBlock">
-                            <div @click="dropDown = !dropDown" class="-title">
-                                <span>Do QR Codes Expire?</span>
-                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
-                                </svg>
-                            </div>
-
-                            <div x-cloak x-show="dropDown" 
-                                x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="opacity-0 transform -translate-y-2"
-                                x-transition:enter-end="opacity-100 transform translate-y-0"
-                                x-transition:leave="transition ease-in duration-300"
-                                x-transition:leave-start="opacity-100 transform translate-y-0"
-                                x-transition:leave-end="opacity-0 transform -translate-y-2"
-                            class="dropdown pt-[20px]">
-                                <p class="">Static QR codes do not expire. They will remain functional indefinitely, as long as the information they contain (e.g., a URL) remains unchanged. If you want more flexibility, such as the ability to update content or track scans, you can opt for dynamic QR codes. These codes are also permanent but allow content to be modified after generation.</p>
-                            </div>
-                        </div>
-                        <div x-data="{dropDown: false}" class="_questBlock">
-                            <div @click="dropDown = !dropDown" class="-title">
-                                <span>What is the Difference Between Static and Dynamic QR Codes?</span>
-                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
-                                </svg>
-                            </div>
-
-                            <div x-cloak x-show="dropDown" 
-                                x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="opacity-0 transform -translate-y-2"
-                                x-transition:enter-end="opacity-100 transform translate-y-0"
-                                x-transition:leave="transition ease-in duration-300"
-                                x-transition:leave-start="opacity-100 transform translate-y-0"
-                                x-transition:leave-end="opacity-0 transform -translate-y-2"
-                            class="dropdown pt-[20px]">
-                                <p class="">Static QR codes are fixed once created and cannot be edited or tracked. They are best for simple applications where the content doesn’t need to change. Dynamic QR codes, on the other hand, are more flexible and offer the ability to update the embedded content (such as links or text) after printing. Dynamic codes also allow for tracking and analytics, making them ideal for marketing campaigns.</p>
-                            </div>
-                        </div>
-                        <div x-data="{dropDown: false}" class="_questBlock">
-                            <div @click="dropDown = !dropDown" class="-title">
-                                <span>How Do I Manage a QR Code with a QR Code Generator?</span>
-                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
-                                </svg>
-                            </div>
-
-                            <div x-cloak x-show="dropDown" 
-                                x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="opacity-0 transform -translate-y-2"
-                                x-transition:enter-end="opacity-100 transform translate-y-0"
-                                x-transition:leave="transition ease-in duration-300"
-                                x-transition:leave-start="opacity-100 transform translate-y-0"
-                                x-transition:leave-end="opacity-0 transform -translate-y-2"
-                            class="dropdown pt-[20px]">
-                                <p class="">After signing up for a QR code generator, you can use it to create and manage both static and dynamic QR codes. You can access features such as adding logos or branding to your codes, tracking scan statistics, and even setting up custom short URLs. The platform might offer a trial period to explore these features before committing to a paid version</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Creating&Designing list-->
-                    <div x-cloak x-show="crtDesign" class="-questList">
-                        <div x-data="{dropDown: false}" class="_questBlock">
-                            <div @click="dropDown = !dropDown" class="-title">
-                                <span>Is it Possible to Create Different QR Codes for the Same Content?</span>
-                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
-                                </svg>
-                            </div>
-
-                            <div x-cloak x-show="dropDown" 
-                                x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="opacity-0 transform -translate-y-2"
-                                x-transition:enter-end="opacity-100 transform translate-y-0"
-                                x-transition:leave="transition ease-in duration-300"
-                                x-transition:leave-start="opacity-100 transform translate-y-0"
-                                x-transition:leave-end="opacity-0 transform -translate-y-2"
-                            class="dropdown pt-[20px]">
-                                <p class="">Yes, QR codes are highly customizable, and there are numerous versions available for any given content. With 40 different QR code versions, four error correction levels, and eight possible mask designs, there are up to 1280 possible combinations for a single input. However, for marketing purposes, only versions 1-7 are commonly used.</p>
+                            <div x-data="{dropDown: false}" class="_questBlock">
+                                <div @click="dropDown = !dropDown" class="-title">
+                                    <span>How Do I Manage a QR Code with a QR Code Generator?</span>
+                                    <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                    </svg>
+                                </div>
+    
+                                <div x-cloak x-show="dropDown" 
+                                    x-transition:enter="transition ease-out duration-300"
+                                    x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                                    x-transition:leave="transition ease-in duration-300"
+                                    x-transition:leave-start="opacity-100 transform translate-y-0"
+                                    x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                class="dropdown pt-[20px]">
+                                    <p class="">After signing up for a QR code generator, you can use it to create and manage both static and dynamic QR codes. You can access features such as adding logos or branding to your codes, tracking scan statistics, and even setting up custom short URLs. The platform might offer a trial period to explore these features before committing to a paid version</p>
+                                </div>
                             </div>
                         </div>
-                        <div x-data="{dropDown: false}" class="_questBlock">
-                            <div @click="dropDown = !dropDown" class="-title">
-                                <span>Can I Customize a QR Code with My Company Logo or Icon?</span>
-                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
-                                </svg>
+    
+                        <!--Creating&Designing list-->
+                        <div x-cloak x-show="crtDesign" class="-questList">
+                            <div x-data="{dropDown: false}" class="_questBlock">
+                                <div @click="dropDown = !dropDown" class="-title">
+                                    <span>Is it Possible to Create Different QR Codes for the Same Content?</span>
+                                    <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                    </svg>
+                                </div>
+    
+                                <div x-cloak x-show="dropDown" 
+                                    x-transition:enter="transition ease-out duration-300"
+                                    x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                                    x-transition:leave="transition ease-in duration-300"
+                                    x-transition:leave-start="opacity-100 transform translate-y-0"
+                                    x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                class="dropdown pt-[20px]">
+                                    <p class="">Yes, QR codes are highly customizable, and there are numerous versions available for any given content. With 40 different QR code versions, four error correction levels, and eight possible mask designs, there are up to 1280 possible combinations for a single input. However, for marketing purposes, only versions 1-7 are commonly used.</p>
+                                </div>
                             </div>
-
-                            <div x-cloak x-show="dropDown" 
-                                x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="opacity-0 transform -translate-y-2"
-                                x-transition:enter-end="opacity-100 transform translate-y-0"
-                                x-transition:leave="transition ease-in duration-300"
-                                x-transition:leave-start="opacity-100 transform translate-y-0"
-                                x-transition:leave-end="opacity-0 transform -translate-y-2"
-                            class="dropdown pt-[20px]">
-                                <p class="">Yes, it is possible to incorporate your company’s logo or icon into the center of the QR code to make it more branded and visually appealing. This customization is often done for marketing purposes to make the QR code stand out.</p>
+                            <div x-data="{dropDown: false}" class="_questBlock">
+                                <div @click="dropDown = !dropDown" class="-title">
+                                    <span>Can I Customize a QR Code with My Company Logo or Icon?</span>
+                                    <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                    </svg>
+                                </div>
+    
+                                <div x-cloak x-show="dropDown" 
+                                    x-transition:enter="transition ease-out duration-300"
+                                    x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                                    x-transition:leave="transition ease-in duration-300"
+                                    x-transition:leave-start="opacity-100 transform translate-y-0"
+                                    x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                class="dropdown pt-[20px]">
+                                    <p class="">Yes, it is possible to incorporate your company’s logo or icon into the center of the QR code to make it more branded and visually appealing. This customization is often done for marketing purposes to make the QR code stand out.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div x-data="{dropDown: false}" class="_questBlock">
-                            <div @click="dropDown = !dropDown" class="-title">
-                                <span>Do QR Codes Have to Be Black and White?</span>
-                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
-                                </svg>
+                            <div x-data="{dropDown: false}" class="_questBlock">
+                                <div @click="dropDown = !dropDown" class="-title">
+                                    <span>Do QR Codes Have to Be Black and White?</span>
+                                    <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                    </svg>
+                                </div>
+    
+                                <div x-cloak x-show="dropDown" 
+                                    x-transition:enter="transition ease-out duration-300"
+                                    x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                                    x-transition:leave="transition ease-in duration-300"
+                                    x-transition:leave-start="opacity-100 transform translate-y-0"
+                                    x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                class="dropdown pt-[20px]">
+                                    <p class="">No, QR codes do not need to be black and white. You can customize the colors to match your brand's colors or choose any color scheme you prefer. There are over 16 million possible color combinations using RGB notation, allowing for vibrant and personalized designs.</p>
+                                </div>
                             </div>
-
-                            <div x-cloak x-show="dropDown" 
-                                x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="opacity-0 transform -translate-y-2"
-                                x-transition:enter-end="opacity-100 transform translate-y-0"
-                                x-transition:leave="transition ease-in duration-300"
-                                x-transition:leave-start="opacity-100 transform translate-y-0"
-                                x-transition:leave-end="opacity-0 transform -translate-y-2"
-                            class="dropdown pt-[20px]">
-                                <p class="">No, QR codes do not need to be black and white. You can customize the colors to match your brand's colors or choose any color scheme you prefer. There are over 16 million possible color combinations using RGB notation, allowing for vibrant and personalized designs.</p>
+                            <div x-data="{dropDown: false}" class="_questBlock">
+                                <div @click="dropDown = !dropDown" class="-title">
+                                    <span>Can a QR Code Be Edited or Changed?</span>
+                                    <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                    </svg>
+                                </div>
+    
+                                <div x-cloak x-show="dropDown" 
+                                    x-transition:enter="transition ease-out duration-300"
+                                    x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                                    x-transition:leave="transition ease-in duration-300"
+                                    x-transition:leave-start="opacity-100 transform translate-y-0"
+                                    x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                class="dropdown pt-[20px]">
+                                    <p class="">Yes, you can change the content of a dynamic QR code after it has been printed or distributed. For example, if you need to correct a typo or change the destination link, you can do so without reprinting the QR code. This flexibility is available with a pro version of a QR code generator.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div x-data="{dropDown: false}" class="_questBlock">
-                            <div @click="dropDown = !dropDown" class="-title">
-                                <span>Can a QR Code Be Edited or Changed?</span>
-                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
-                                </svg>
-                            </div>
-
-                            <div x-cloak x-show="dropDown" 
-                                x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="opacity-0 transform -translate-y-2"
-                                x-transition:enter-end="opacity-100 transform translate-y-0"
-                                x-transition:leave="transition ease-in duration-300"
-                                x-transition:leave-start="opacity-100 transform translate-y-0"
-                                x-transition:leave-end="opacity-0 transform -translate-y-2"
-                            class="dropdown pt-[20px]">
-                                <p class="">Yes, you can change the content of a dynamic QR code after it has been printed or distributed. For example, if you need to correct a typo or change the destination link, you can do so without reprinting the QR code. This flexibility is available with a pro version of a QR code generator.</p>
-                            </div>
-                        </div>
-                        <div x-data="{dropDown: false}" class="_questBlock">
-                            <div @click="dropDown = !dropDown" class="-title">
-                                <span>How Do I Generate a Large Batch of QR Codes?</span>
-                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
-                                </svg>
-                            </div>
-
-                            <div x-cloak x-show="dropDown" 
-                                x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="opacity-0 transform -translate-y-2"
-                                x-transition:enter-end="opacity-100 transform translate-y-0"
-                                x-transition:leave="transition ease-in duration-300"
-                                x-transition:leave-start="opacity-100 transform translate-y-0"
-                                x-transition:leave-end="opacity-0 transform -translate-y-2"
-                            class="dropdown pt-[20px]">
-                                <p class="">Some QR code generators allow you to create large batches of codes in one go. This is useful if you need to generate a series of QR codes for a specific campaign or event.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Scanning&Printing list-->
-                    <div x-cloak x-show="scanPrint" class="-questList">
-                        <div x-data="{dropDown: false}" class="_questBlock">
-                            <div @click="dropDown = !dropDown" class="-title">
-                                <span>What Graphic Formats Do the Generated QR Codes Support?</span>
-                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
-                                </svg>
-                            </div>
-
-                            <div x-cloak x-show="dropDown" 
-                                x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="opacity-0 transform -translate-y-2"
-                                x-transition:enter-end="opacity-100 transform translate-y-0"
-                                x-transition:leave="transition ease-in duration-300"
-                                x-transition:leave-start="opacity-100 transform translate-y-0"
-                                x-transition:leave-end="opacity-0 transform -translate-y-2"
-                            class="dropdown pt-[20px]">
-                                <p class="">QR codes can be downloaded in high-resolution JPG format. If you need other formats like PNG, SVG, or EPS, you will need to sign up for an account. Note that EPS formats are typically available in black and white only.</p>
-                            </div>
-                        </div>
-                        <div x-data="{dropDown: false}" class="_questBlock">
-                            <div @click="dropDown = !dropDown" class="-title">
-                                <span>What Should I Know Before Printing My QR Code?</span>
-                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
-                                </svg>
-                            </div>
-
-                            <div x-cloak x-show="dropDown" 
-                                x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="opacity-0 transform -translate-y-2"
-                                x-transition:enter-end="opacity-100 transform translate-y-0"
-                                x-transition:leave="transition ease-in duration-300"
-                                x-transition:leave-start="opacity-100 transform translate-y-0"
-                                x-transition:leave-end="opacity-0 transform -translate-y-2"
-                            class="dropdown pt-[20px]">
-                                <p class="">Before printing your QR code, it is important to consider factors such as the appropriate size, contrasting colors, and overall clarity. A blurry or poorly contrasted code might be unreadable. Always test your QR code thoroughly to ensure it works before printing it for distribution.</p>
+                            <div x-data="{dropDown: false}" class="_questBlock">
+                                <div @click="dropDown = !dropDown" class="-title">
+                                    <span>How Do I Generate a Large Batch of QR Codes?</span>
+                                    <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                    </svg>
+                                </div>
+    
+                                <div x-cloak x-show="dropDown" 
+                                    x-transition:enter="transition ease-out duration-300"
+                                    x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                                    x-transition:leave="transition ease-in duration-300"
+                                    x-transition:leave-start="opacity-100 transform translate-y-0"
+                                    x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                class="dropdown pt-[20px]">
+                                    <p class="">Some QR code generators allow you to create large batches of codes in one go. This is useful if you need to generate a series of QR codes for a specific campaign or event.</p>
+                                </div>
                             </div>
                         </div>
-                        <div x-data="{dropDown: false}" class="_questBlock">
-                            <div @click="dropDown = !dropDown" class="-title">
-                                <span>How Do I Read or Scan a QR Code?</span>
-                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
-                                </svg>
+    
+                        <!--Scanning&Printing list-->
+                        <div x-cloak x-show="scanPrint" class="-questList">
+                            <div x-data="{dropDown: false}" class="_questBlock">
+                                <div @click="dropDown = !dropDown" class="-title">
+                                    <span>What Graphic Formats Do the Generated QR Codes Support?</span>
+                                    <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                    </svg>
+                                </div>
+    
+                                <div x-cloak x-show="dropDown" 
+                                    x-transition:enter="transition ease-out duration-300"
+                                    x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                                    x-transition:leave="transition ease-in duration-300"
+                                    x-transition:leave-start="opacity-100 transform translate-y-0"
+                                    x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                class="dropdown pt-[20px]">
+                                    <p class="">QR codes can be downloaded in high-resolution JPG format. If you need other formats like PNG, SVG, or EPS, you will need to sign up for an account. Note that EPS formats are typically available in black and white only.</p>
+                                </div>
                             </div>
-
-                            <div x-cloak x-show="dropDown" 
-                                x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="opacity-0 transform -translate-y-2"
-                                x-transition:enter-end="opacity-100 transform translate-y-0"
-                                x-transition:leave="transition ease-in duration-300"
-                                x-transition:leave-start="opacity-100 transform translate-y-0"
-                                x-transition:leave-end="opacity-0 transform -translate-y-2"
-                            class="dropdown pt-[20px]">
-                                <p class="">On most smartphones, simply open the camera app and point it at the QR code. The phone will automatically recognize the code and show a notification. If the scan doesn’t trigger, check the settings to ensure QR code scanning is enabled. Alternatively, you can install a third-party QR code reader app from your app store.</p>
+                            <div x-data="{dropDown: false}" class="_questBlock">
+                                <div @click="dropDown = !dropDown" class="-title">
+                                    <span>What Should I Know Before Printing My QR Code?</span>
+                                    <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                    </svg>
+                                </div>
+    
+                                <div x-cloak x-show="dropDown" 
+                                    x-transition:enter="transition ease-out duration-300"
+                                    x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                                    x-transition:leave="transition ease-in duration-300"
+                                    x-transition:leave-start="opacity-100 transform translate-y-0"
+                                    x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                class="dropdown pt-[20px]">
+                                    <p class="">Before printing your QR code, it is important to consider factors such as the appropriate size, contrasting colors, and overall clarity. A blurry or poorly contrasted code might be unreadable. Always test your QR code thoroughly to ensure it works before printing it for distribution.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div x-data="{dropDown: false}" class="_questBlock">
-                            <div @click="dropDown = !dropDown" class="-title">
-                                <span>Can QR Codes Be Scanned Without an App?</span>
-                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
-                                </svg>
+                            <div x-data="{dropDown: false}" class="_questBlock">
+                                <div @click="dropDown = !dropDown" class="-title">
+                                    <span>How Do I Read or Scan a QR Code?</span>
+                                    <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                    </svg>
+                                </div>
+    
+                                <div x-cloak x-show="dropDown" 
+                                    x-transition:enter="transition ease-out duration-300"
+                                    x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                                    x-transition:leave="transition ease-in duration-300"
+                                    x-transition:leave-start="opacity-100 transform translate-y-0"
+                                    x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                class="dropdown pt-[20px]">
+                                    <p class="">On most smartphones, simply open the camera app and point it at the QR code. The phone will automatically recognize the code and show a notification. If the scan doesn’t trigger, check the settings to ensure QR code scanning is enabled. Alternatively, you can install a third-party QR code reader app from your app store.</p>
+                                </div>
                             </div>
-
-                            <div x-cloak x-show="dropDown" 
-                                x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="opacity-0 transform -translate-y-2"
-                                x-transition:enter-end="opacity-100 transform translate-y-0"
-                                x-transition:leave="transition ease-in duration-300"
-                                x-transition:leave-start="opacity-100 transform translate-y-0"
-                                x-transition:leave-end="opacity-0 transform -translate-y-2"
-                            class="dropdown pt-[20px]">
-                                <p class="">Yes, most iOS and Android smartphones now have QR code scanning functionality built directly into the camera app. You don't need to download a separate app to scan QR codes unless your phone doesn't have this feature.</p>
+                            <div x-data="{dropDown: false}" class="_questBlock">
+                                <div @click="dropDown = !dropDown" class="-title">
+                                    <span>Can QR Codes Be Scanned Without an App?</span>
+                                    <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                    </svg>
+                                </div>
+    
+                                <div x-cloak x-show="dropDown" 
+                                    x-transition:enter="transition ease-out duration-300"
+                                    x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                                    x-transition:leave="transition ease-in duration-300"
+                                    x-transition:leave-start="opacity-100 transform translate-y-0"
+                                    x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                class="dropdown pt-[20px]">
+                                    <p class="">Yes, most iOS and Android smartphones now have QR code scanning functionality built directly into the camera app. You don't need to download a separate app to scan QR codes unless your phone doesn't have this feature.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div x-data="{dropDown: false}" class="_questBlock">
-                            <div @click="dropDown = !dropDown" class="-title">
-                                <span>Is There a Scan Limit for QR Codes?</span>
-                                <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
-                                </svg>
-                            </div>
-
-                            <div x-cloak x-show="dropDown" 
-                                x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="opacity-0 transform -translate-y-2"
-                                x-transition:enter-end="opacity-100 transform translate-y-0"
-                                x-transition:leave="transition ease-in duration-300"
-                                x-transition:leave-start="opacity-100 transform translate-y-0"
-                                x-transition:leave-end="opacity-0 transform -translate-y-2"
-                            class="dropdown pt-[20px]">
-                                <p class="">No, there is no scan limit for QR codes. They can be scanned an unlimited number of times, making them perfect for widespread use in marketing and customer engagement.</p>
+                            <div x-data="{dropDown: false}" class="_questBlock">
+                                <div @click="dropDown = !dropDown" class="-title">
+                                    <span>Is There a Scan Limit for QR Codes?</span>
+                                    <svg class="w-6 h-6" :class="{'rotate-180': dropDown, 'rotate-0 transition-all duration-300': !dropDown}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                    </svg>
+                                </div>
+    
+                                <div x-cloak x-show="dropDown" 
+                                    x-transition:enter="transition ease-out duration-300"
+                                    x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                                    x-transition:leave="transition ease-in duration-300"
+                                    x-transition:leave-start="opacity-100 transform translate-y-0"
+                                    x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                class="dropdown pt-[20px]">
+                                    <p class="">No, there is no scan limit for QR codes. They can be scanned an unlimited number of times, making them perfect for widespread use in marketing and customer engagement.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1160,38 +1201,41 @@
                         <img src="images/Logo.png" alt="Logo" class="">
                     </div>
                     <span class="-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut odio rerum necessitatibus eius doloribus ad exercitationem ea, explicabo nobis dolor porro hic dicta doloremque a veniam cumque animi sed. Mollitia!
+                        The QR Code Generator allows you to design personalized, trackable QR Codes  to create impactful marketing campaigns. 
                     </span>
                 </div>
                 <div class="-column">
-                    <div class="-title">Menu Column</div>
+                    <div class="-title">Product</div>
                     <div class="-list">
+                        <a href="#">QR code solutions</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">Guides</a>
                         <a href="#">Menu item</a>
+                    </div>
+                </div>
+                <div class="-column">
+                    <div class="-title">Resources</div>
+                    <div class="-list">
+                        <a href="#">QR Codes in Marketing</a>
+                        <a href="#">QR Codes on Materials</a>
+                        <a href="#">QR Codes for Business</a>
+                        <a href="#">QR Codes for Education</a>
+                        <a href="#">QR Codes for Nonprofits</a>
+                        <a href="#">QR Codes for Personal Use</a>
+                        <a href="#">QR Codes for Holiday&Occasions</a>
+                    </div>
+                </div>
+                <div class="-column">
+                    <div class="-title">Support</div>
+                    <div class="-list">
+                        <a href="#">Help Center</a>
                         <a href="#">Menu item</a>
                         <a href="#">Menu item</a>
                         <a href="#">Menu item</a>
                     </div>
                 </div>
                 <div class="-column">
-                    <div class="-title">Menu Column</div>
-                    <div class="-list">
-                        <a href="#">Menu item</a>
-                        <a href="#">Menu item</a>
-                        <a href="#">Menu item</a>
-                        <a href="#">Menu item</a>
-                    </div>
-                </div>
-                <div class="-column">
-                    <div class="-title">Menu Column</div>
-                    <div class="-list">
-                        <a href="#">Menu item</a>
-                        <a href="#">Menu item</a>
-                        <a href="#">Menu item</a>
-                        <a href="#">Menu item</a>
-                    </div>
-                </div>
-                <div class="-column">
-                    <div class="-title">Menu Column</div>
+                    <div class="-title">About</div>
                     <div class="-list">
                         <a href="#">Menu item</a>
                         <a href="#">Menu item</a>
