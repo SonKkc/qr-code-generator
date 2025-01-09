@@ -60,7 +60,7 @@
     }
 
     .card_container {
-        @apply max-w-[1400px] mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] xl:grid-cols-3 2xl:grid-cols-3 bg-card_background-light mt-[90px] p-[30px] rounded-3xl dark:bg-neutral_3-night;
+        @apply max-w-[1400px] mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] xl:grid-cols-3 2xl:grid-cols-3 bg-card_background-light mt-[90px] p-[30px] rounded-3xl dark:bg-solution_card_bg-dark;
     }
 
     .card_wrapper {
@@ -68,7 +68,7 @@
     }
 
     .solutions_article .card_item {
-        @apply bg-solution_card-item_bg p-5 rounded-xl dark:bg-darkBlack hover:drop-shadow-lg border-[3px] border-transparent hover:border-solution_card_item_border;
+        @apply bg-solution_card-item_bg p-5 rounded-xl dark:bg-solution_card-item_bg-dark hover:drop-shadow-lg border-[3px] border-transparent hover:border-solution_card_item_border;
 
         a {
             @apply space-y-2;
@@ -139,7 +139,7 @@
     }
 
     .example_text-container {
-        @apply flex flex-col justify-center flex-1 text-solution_text_black dark:text-neutral_10-night;
+        @apply flex flex-col justify-center flex-1 text-solution_text_black dark:text-solution_text_white-dark;
 
         ul {
             @apply list-disc mt-5 px-4;
@@ -164,7 +164,7 @@
     }
 
     .about_container {
-        @apply flex sm:flex-col md:flex-col max-w-[1300px] items-center mx-auto text-solution_text_black sm:gap-9 md:gap-9 lg:gap-[116px] xl:gap-[116px] 2xl:gap-[116px] pt-[90px] pb-[170px] px-4 dark:text-neutral_10-night;
+        @apply flex sm:flex-col md:flex-col max-w-[1300px] items-center mx-auto text-solution_text_black sm:gap-9 md:gap-9 lg:gap-[116px] xl:gap-[116px] 2xl:gap-[116px] pt-[90px] pb-[170px] px-4 dark:text-solution_text_white-dark;
     }
 
     .about_text {
@@ -189,7 +189,7 @@
     }
 
     .accordion_title {
-        @apply text-lg font-semibold text-solution_text_black dark:text-neutral_10-night;
+        @apply text-lg font-semibold text-solution_text_black dark:text-solution_text_white-dark;
     }
 
     .accordion_icon {
@@ -197,7 +197,7 @@
     }
 
     .accordion_content {
-        @apply text-solution_text_black text-base font-normal dark:text-neutral_10-night;
+        @apply text-solution_text_black text-base font-normal dark:text-solution_text_white-dark;
     }
 
     .accordion_image {
