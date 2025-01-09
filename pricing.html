@@ -1076,31 +1076,26 @@
                         <div x-show="isOpen" class="modal_wrapper">
                             <!-- Modal Content -->
                             <div class="modal_content">
-
                                 <div class="modal_header">
-                                    <h4>Enterprise Sales Request
-                                    </h4>
+                                    <h4>Enterprise Sales Request</h4>
                                     <button @click="isOpen = false">✖</button>
                                 </div>
 
                                 <form class="modal_body">
                                     <input type="text" placeholder="Name" class="modal_input">
-
-                                    <input type="text" placeholder="Name" class="modal_input">
-
-                                    <input type="text" placeholder="Name" class="modal_input">
-
                                     <input type="text" placeholder="Email" class="modal_input">
-
                                     <input type="text" placeholder="Type of business" class="modal_input">
-
                                     <input type="text" placeholder="Phone with country code" class="modal_input">
 
-                                    <div x-data="{ open: false, selected: 'Select one' }" class="relative w-full">
+                                    <!-- Dropdown -->
+                                    <div x-data="{  selectOpen: false, selected: 'How many QR codes would you like to create (per year)?' }"
+                                        class="relative w-full">
                                         <!-- Dropdown Header -->
-                                        <button @click="open = !open" class="modal_select">
+                                        <button @click.stop="selectOpen = !selectOpen" class="modal_select"
+                                            type="button">
                                             <span x-text="selected"></span>
-                                            <svg class="modal_select-icon" :class="open ? 'rotate-180 ' : 'rotate-0'"
+                                            <svg class="modal_select-icon"
+                                                :class="selectOpen ? 'rotate-180' : 'rotate-0'"
                                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                 stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1109,43 +1104,84 @@
                                         </button>
 
                                         <!-- Dropdown Options -->
-                                        <ul x-show="open"
-                                            class="absolute left-0 right-0 bg-white border border-blue-400 rounded-md mt-2 z-10">
-                                            <li @click="selected = '>1.000'; open = false"
-                                                class="px-4 py-3 hover:bg-blue-100 cursor-pointer">
-                                                >1.000
-                                            </li>
-                                            <li @click="selected = '>2.500'; open = false"
-                                                class="px-4 py-3 hover:bg-blue-100 cursor-pointer">
-                                                >2.500
-                                            </li>
-                                            <li @click="selected = '>5.000'; open = false"
-                                                class="px-4 py-3 hover:bg-blue-100 cursor-pointer">
-                                                >5.000
-                                            </li>
-                                            <li @click="selected = '>7.500'; open = false"
-                                                class="px-4 py-3 hover:bg-blue-100 cursor-pointer">
-                                                >7.500
-                                            </li>
-                                            <li @click="selected = '>10.000'; open = false"
-                                                class="px-4 py-3 hover:bg-blue-100 cursor-pointer">
-                                                >10.000
-                                            </li>
-                                            <li @click="selected = 'more than 10.000 QR Codes'; open = false"
-                                                class="px-4 py-3 hover:bg-blue-100 cursor-pointer">
-                                                > more than 10.000 QR Codes
-                                            </li>
+                                        <ul x-show="selectOpen" class="modal_dropdown" @click.away="selectOpen = false">
+                                            <li @click="selected = '>1.000'; selectOpen = false"
+                                                class="modal_dropdown_item">
+                                                >1.000</li>
+                                            <li @click="selected = '>2.500'; selectOpen = false"
+                                                class="modal_dropdown_item">
+                                                >2.500</li>
+                                            <li @click="selected = '>5.000'; selectOpen = false"
+                                                class="modal_dropdown_item">
+                                                >5.000</li>
+                                            <li @click="selected = '>7.500'; selectOpen = false"
+                                                class="modal_dropdown_item">
+                                                >7.500</li>
+                                            <li @click="selected = '>10.000'; selectOpen = false"
+                                                class="modal_dropdown_item">
+                                                >10.000</li>
+                                            <li @click="selected = 'more than 10.000 QR Codes'; selectOpen = false"
+                                                class="modal_dropdown_item">> more than 10.000 QR
+                                                Codes</li>
                                         </ul>
+                                    </div>
+
+                                    <!-- Dropdown -->
+                                    <div x-data="{  selectOpen: false, selected: 'What type of QR codes do you want to create?' }"
+                                        class="relative w-full">
+                                        <!-- Dropdown Header -->
+                                        <button @click.stop="selectOpen = !selectOpen" class="modal_select"
+                                            type="button">
+                                            <span x-text="selected"></span>
+                                            <svg class="modal_select-icon"
+                                                :class="selectOpen ? 'rotate-180' : 'rotate-0'"
+                                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </button>
+
+                                        <!-- Dropdown Options -->
+                                        <ul x-show="selectOpen" class="modal_dropdown" @click.away="selectOpen = false">
+                                            <li @click="selected = 'Dynamic QR Codes'; selectOpen = false"
+                                                class="modal_dropdown_item">
+                                                Dynamic QR Codes</li>
+                                            <li @click="selected = 'Static QR Codes'; selectOpen = false"
+                                                class="modal_dropdown_item">
+                                                Static QR Codes</li>
+                                            <li @click="selected = 'Both (more Static)'; selectOpen = false"
+                                                class="modal_dropdown_item">
+                                                Both (more Static)</li>
+                                            <li @click="selected = 'Both (more Dynamic)'; selectOpen = false"
+                                                class="modal_dropdown_item">
+                                                Both (more Dynamic)</li>
+                                        </ul>
+                                    </div>
+
+                                    <p class="modal_text">
+                                        Tell us how you plan on incorporating QR Codes into your business. This will
+                                        help us better understand how we can assist
+                                        you in achieving your projects and goals. Our aim is to recommend the plan that
+                                        best suits your needs
+                                    </p>
+
+                                    <textarea class="modal_input" placeholder="Comment"></textarea>
+
+                                    <div class="modal_terms">
+                                        <input type="checkbox" id="terms" name="terms" value="terms"
+                                            class="modal_checkbox">
+                                        <p class="modal_text">Tell us how you plan on incorporating QR Codes into your
+                                            business. This will
+                                            help us better understand how we can assist
+                                            you in achieving your projects and goals. Our aim is to recommend the plan
+                                            that best suits your needs</p>
                                     </div>
                                 </form>
 
-                                <div class="flex justify-end">
-                                    <button @click="isOpen = false"
-                                        class="px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 mr-2">
-                                        Cancel
-                                    </button>
-                                    <button @click="isOpen = false"
-                                        class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                                <div class="flex justify-start">
+                                    <button @click="isOpen = false" class="modal_submit">
+                                        <span>+</span>
                                         Confirm
                                     </button>
                                 </div>
@@ -1153,7 +1189,137 @@
                         </div>
                     </div>
 
+
+
+
+
                 </div>
+            </div>
+
+            <div class="FAQ_container">
+                <div class="accordion_image">
+                    <img src="/public/images/Learn-about-QR-codes.png" alt="qr code">
+                </div>
+
+                <div class="FAQ_text">
+                    <h3>FAQ</h3>
+
+                    <div class="accordion_container">
+                        <!-- Accordion Item -->
+                        <div x-data="{ open: false }">
+                            <!-- Title -->
+                            <button @click="open = !open" class="accordion_button">
+                                <span class="accordion_title">What payment methods do you accept?</span>
+                                <!-- Icon -->
+                                <svg class="accordion_icon" :class="open ? 'rotate-180 ' : 'rotate-0'"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <!-- Content -->
+                            <div x-show="open" x-collapse class="accordion_content">
+                                Depending on your location, we accept payments through credit cards (MasterCard, Visa,
+                                or American Express), wire
+                                transfers, or direct debits. Payments are processed in Euros, and all prices exclude
+                                VAT.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion_container">
+                        <!-- Accordion Item -->
+                        <div x-data="{ open: false }">
+                            <!-- Title -->
+                            <button @click="open = !open" class="accordion_button">
+                                <span class="accordion_title">When can I start using my plan?</span>
+                                <!-- Icon -->
+                                <svg class="accordion_icon" :class="open ? 'rotate-180 ' : 'rotate-0'"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <!-- Content -->
+                            <div x-show="open" x-collapse class="accordion_content">
+                                Your plan is available immediately after you select it, provide your payment details,
+                                and confirm your order.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion_container">
+                        <!-- Accordion Item -->
+                        <div x-data="{ open: false }">
+                            <!-- Title -->
+                            <button @click="open = !open" class="accordion_button">
+                                <span class="accordion_title">What is the duration of the subscription?</span>
+                                <!-- Icon -->
+                                <svg class="accordion_icon" :class="open ? 'rotate-180 ' : 'rotate-0'"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <!-- Content -->
+                            <div x-show="open" x-collapse class="accordion_content">
+                                The subscription term lasts for one year.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion_container">
+                        <!-- Accordion Item -->
+                        <div x-data="{ open: false }">
+                            <!-- Title -->
+                            <button @click="open = !open" class="accordion_button">
+                                <span class="accordion_title">How can I cancel my subscription?</span>
+                                <!-- Icon -->
+                                <svg class="accordion_icon" :class="open ? 'rotate-180 ' : 'rotate-0'"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <!-- Content -->
+                            <div x-show="open" x-collapse class="accordion_content">
+                                If you wish to cancel your contract and prevent renewal, simply send us an informal
+                                email. Please ensure you provide a
+                                30-day notice before the end of the billing cycle.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion_container">
+                        <!-- Accordion Item -->
+                        <div x-data="{ open: false }">
+                            <!-- Title -->
+                            <button @click="open = !open" class="accordion_button">
+                                <span class="accordion_title">Can I change my subscription plan later?</span>
+                                <!-- Icon -->
+                                <svg class="accordion_icon" :class="open ? 'rotate-180 ' : 'rotate-0'"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <!-- Content -->
+                            <div x-show="open" x-collapse class="accordion_content">
+                                You can upgrade your plan anytime, and we will issue a prorated refund. Downgrading is
+                                only possible after the initial
+                                contract period.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
             </div>
         </section>
     </div>

@@ -88,6 +88,10 @@ export default {
         'solution_card-item_bg-dark': '#121519',
         'solution_card_item_border': '#47997E',
         'solution_card_item_hover': '#47997E',
+
+        // Pricing page
+        'pricing_dropdown_item_bg_even': '#B3B3B3',
+        'pricing_dropdown_item_hover': '#D0D0D1',
       },
     },
   },

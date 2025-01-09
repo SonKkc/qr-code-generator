@@ -13,7 +13,7 @@
     }
 
     &_content {
-        @apply bg-white rounded-lg shadow-lg w-[90%] max-w-xl p-6 relative;
+        @apply bg-white h-screen rounded-lg shadow-lg w-[90%] max-w-xl p-6 relative;
     }
 
     &_header {
@@ -25,7 +25,7 @@
     }
 
     &_body {
-        @apply flex flex-col gap-4 my-4;
+        @apply flex flex-col gap-5 my-4;
     }
 
     &_input {
@@ -39,5 +39,25 @@
         &-icon {
             @apply size-6
         }
+    }
+
+    &_dropdown {
+        @apply absolute left-0 right-0 bg-white border rounded-md mt-2 z-10 overflow-auto;
+
+        &_item {
+            @apply px-4 py-3 cursor-pointer even:bg-pricing_dropdown_item_bg_even hover:bg-pricing_dropdown_item_hover;
+        }
+    }
+
+    &_text {
+        @apply text-sm font-normal text-start;
+    }
+
+    &_terms {
+        @apply flex gap-[10px] items-start;
+    }
+
+    &_submit {
+        @apply flex items-center gap-2 px-4 py-2 text-white bg-black rounded-3xl font-medium text-base;
     }
 }

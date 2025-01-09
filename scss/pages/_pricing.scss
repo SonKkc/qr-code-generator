@@ -136,4 +136,49 @@
             @apply text-2xl text-white font-semibold;
         }
     }
+
+    .FAQ_container {
+        @apply flex sm:flex-col md:flex-col max-w-[1300px] items-center mx-auto text-solution_text_black sm:gap-9 md:gap-9 lg:gap-[116px] xl:gap-[116px] 2xl:gap-[116px] pt-[90px] pb-[170px] px-4 dark:text-solution_text_white-dark;
+    }
+
+    .FAQ_text {
+
+        @apply max-w-3xl w-full flex-1;
+
+        div {
+            @apply py-[15px] first:pt-0 last:pb-0;
+        }
+
+        h3 {
+            @apply text-4xl font-bold mb-10;
+        }
+    }
+
+    .accordion_container {
+        @apply w-full mx-auto;
+    }
+
+    .accordion_button {
+        @apply w-full text-left flex justify-between items-center;
+    }
+
+    .accordion_title {
+        @apply text-lg font-semibold text-solution_text_black dark:text-solution_text_white-dark;
+    }
+
+    .accordion_icon {
+        @apply h-6 w-6 transition-transform duration-300;
+    }
+
+    .accordion_content {
+        @apply text-solution_text_black text-base font-normal dark:text-solution_text_white-dark;
+    }
+
+    .accordion_image {
+        @apply sm:order-first md:order-first sm:w-full md:w-full flex justify-self-end lg:max-w-[455px] xl:max-w-[455px] 2xl:max-w-[455px] h-[448px];
+
+        img {
+            @apply w-full h-full object-cover shrink-0;
+        }
+    }
 }
